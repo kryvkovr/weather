@@ -6,6 +6,7 @@ Ext.define('Weather.Application', {
     views: [
         // TODO: add views here
         //Header
+        
     ],
 
     controllers: [

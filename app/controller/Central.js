@@ -23,13 +23,9 @@ Ext.define('Weather.controller.Central', {
 	        params: {
 	        },
 	        
-	        success : function(response){
-
-	                            
+	        success : function(response){	                            
 	          console.log(response)         
-	       
 	         },
-
 	         failure: function(response) {
 	              Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
 	          }

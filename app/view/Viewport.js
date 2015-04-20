@@ -6,12 +6,10 @@ Ext.define('Weather.view.Viewport', {
     ],
 
     layout: {
-        type: 'border'
+        type: 'fit'
     },
 
     items: [{
-        xtype: 'aliasmyheader'
-    },{
-        xtype: 'centerPanel'
+        xtype: 'app-main'
     }]
 });

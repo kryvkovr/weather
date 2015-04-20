@@ -11,15 +11,8 @@ Ext.define('Weather.view.Main', {
         type: 'border'
     },
     items: [{
-        region: 'west',
-        xtype: 'panel',
-        title: 'west',
-        width: 150
+        xtype: 'aliasmyheader'
     },{
-        region: 'center',
-        xtype: 'tabpanel',
-        items:[{
-            title: 'Center Tab 1'
-        }]
+        xtype: 'centerPanel'
     }]
 });
