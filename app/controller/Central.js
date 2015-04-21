@@ -54,7 +54,7 @@ Ext.define('Weather.controller.Central', {
 	        },	        
 	        success : function(response){
 	        	var el=Ext.getCmp('weatherFiveDays')
-	        	//var mass=[1,2,3,4,5];
+	        	var mass=[1,2,3,4,5];
 
 	        	//console.log(response)
 	        	//console.log(self.transformListToData(response.list))
@@ -70,8 +70,8 @@ Ext.define('Weather.controller.Central', {
 	        			max_temperature:150
 	        		}]
 
-	        	var arr=[{max_temperature:'vova', min_temperature:'ivan'}, {max_temperature:'petro', min_temperature:'igor'}]
-	        		 el.update(data)	                            	
+	        	
+	        		 el.update(self.transformListToData(mass))	                            	
 	        		
 	         },
 
