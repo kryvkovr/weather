@@ -47,55 +47,56 @@ Ext.define('Weather.controller.Central', {
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{
-			Ext.data.JsonP.request({
+    		Ext.Ajax.useDefaultXhrHeader = false;
+    		Ext.Ajax.request({
+			    url: "http://api.openweathermap.org/data/2.5/forecast?q="+cityName,
+			    
+			    success: function(response){
+			        var text = response.responseText;
+			        var weatherList=JSON.parse(text).list;
+			        var el=Ext.getCmp('weatherFiveDays');			       			     
+	        		el.update(self.transformListToData(weatherList));	                            	
+	         	}			    
+			});
 
-	        url: "http://api.openweathermap.org/data/2.5/forecast?q="+cityName,
-	        params: {
-	        },	        
-	        success : function(response){
-	        	var el=Ext.getCmp('weatherFiveDays')
-	        	var mass=[1,2,3,4,5];
 
-	        		data=[{
-	        			name:'Lviv',
-	        			icon:"http://openweathermap.org/img/w/"+'10d'+".png",
-	        			min_temperature:100,
-	        			max_temperature:150
-	        		},{
-	        			name:'Lviv',
-	        			icon:"http://openweathermap.org/img/w/"+'10d'+".png",
-	        			min_temperature:100,
-	        			max_temperature:150
-	        		}]
 
-	        	
-	        		 el.update(self.transformListToData(response.list))	                            	
+			// Ext.data.JsonP.request({
+
+	  //       url: "http://api.openweathermap.org/data/2.5/forecast?q="+cityName,
+	  //       params: {
+	  //       },	        
+	  //       success : function(response){
+	  //       	console.log(response.list)
+
+	  //       	var el=Ext.getCmp('weatherFiveDays')
+	  //       		el.update(self.transformListToData(response.list))	                            	
 	        		
-	         },
+	  //        },
 
-	         failure: function(response) {
-	              Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
-	          }
-    		});
+	  //        failure: function(response) {
+	  //             Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
+	  //         }
+   //  		});
 		}
 	},
 
 	getAllWeather:function(){
 		this.getWeatherOneDay()
 		this.getWeatherFiveDays()
-
 	},
 
 	transformListToData:function(weatherList){
 		var data=[];
 		for(i=0; i<weatherList.length; i++){
-			data.push({name:'Vova',
-						icon:"http://openweathermap.org/img/w/"+'10d'+".png",
-						min_temperature:100,
-						max_temperature:150
+			data.push({
+						data:weatherList[i].dt_txt,
+						icon:"http://openweathermap.org/img/w/"+weatherList[i].weather[0].icon+".png",
+						min_temperature: weatherList[i].main.temp_min,
+						max_temperature: weatherList[i].main.temp_max
 					})
 		}
-		return data
+		return data;
 	}
 
 });
