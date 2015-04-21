@@ -25,7 +25,13 @@ Ext.define('Weather.controller.Central', {
 	        
 	        success : function(response){
 	        	var el=Ext.getCmp('weatherOneDay')
-	        		data={name:response.name, min_temperature:response.main.temp_min, max_temperature:response.main.temp_max}
+	        		data={
+	        			name:response.name,
+	        			icon:"http://openweathermap.org/img/w/10d.png",
+	        			min_temperature:response.main.temp_min,
+	        			max_temperature:response.main.temp_max
+	        		}
+
 	        		el.update(data)	                            
 	          	console.log(response)         
 	         },
