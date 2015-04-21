@@ -58,15 +58,20 @@ Ext.define('Weather.controller.Central', {
 
 	        	//console.log(response)
 	        	//console.log(self.transformListToData(response.list))
-	        		// data=[{
-	        		// 	name:response.name,
-	        		// 	icon:"http://openweathermap.org/img/w/"+response.weather[0].icon+".png",
-	        		// 	min_temperature:response.main.temp_min,
-	        		// 	max_temperature:response.main.temp_max
-	        		// }]
+	        		data=[{
+	        			name:'Lviv',
+	        			icon:"http://openweathermap.org/img/w/"+'10d'+".png",
+	        			min_temperature:100,
+	        			max_temperature:150
+	        		},{
+	        			name:'Lviv',
+	        			icon:"http://openweathermap.org/img/w/"+'10d'+".png",
+	        			min_temperature:100,
+	        			max_temperature:150
+	        		}]
 
 	        	var arr=[{max_temperature:'vova', min_temperature:'ivan'}, {max_temperature:'petro', min_temperature:'igor'}]
-	        		 el.update(arr)	                            	
+	        		 el.update(data)	                            	
 	        		
 	         },
 
