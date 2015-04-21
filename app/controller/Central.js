@@ -56,8 +56,6 @@ Ext.define('Weather.controller.Central', {
 	        	var el=Ext.getCmp('weatherFiveDays')
 	        	var mass=[1,2,3,4,5];
 
-	        	//console.log(response)
-	        	//console.log(self.transformListToData(response.list))
 	        		data=[{
 	        			name:'Lviv',
 	        			icon:"http://openweathermap.org/img/w/"+'10d'+".png",
@@ -71,7 +69,7 @@ Ext.define('Weather.controller.Central', {
 	        		}]
 
 	        	
-	        		 el.update(self.transformListToData(mass))	                            	
+	        		 el.update(self.transformListToData(response.list))	                            	
 	        		
 	         },
 
