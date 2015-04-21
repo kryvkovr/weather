@@ -27,13 +27,12 @@ Ext.define('Weather.controller.Central', {
 	        	var el=Ext.getCmp('weatherOneDay')
 	        		data={
 	        			name:response.name,
-	        			icon:"http://openweathermap.org/img/w/10d.png",
+	        			icon:"http://openweathermap.org/img/w/"+response.weather[0].icon+".png",
 	        			min_temperature:response.main.temp_min,
 	        			max_temperature:response.main.temp_max
 	        		}
-
-	        		el.update(data)	                            
-	          	console.log(response)         
+	        		
+	        		el.update(data)	                            	
 	         },
 	         failure: function(response) {
 	              Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
