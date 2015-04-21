@@ -5,7 +5,7 @@ Ext.define('Weather.controller.Central', {
     ],
     requires: ['Ext.data.JsonP', 'Ext.Msg'],
     init: function(){
-    
+
         this.control({
              'aliasmyheader button': {
                  click: this.getAllWeather
@@ -13,6 +13,15 @@ Ext.define('Weather.controller.Central', {
              }
         });
     },
+
+    transformListToData:function(weatherList){
+		var data=[];
+		for(i=0; i<weatherList.length; i++){
+			data.push({name:'Vova'})
+		}
+		return data
+	},
+
     getWeatherOneDay:function(){
     	var cityName=Ext.getCmp('cityName').getValue()
     	if(cityName==''){
@@ -41,6 +50,7 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	getWeatherFiveDays:function(){
+		var self=this;
     	var cityName=Ext.getCmp('cityName').getValue()
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
@@ -52,7 +62,10 @@ Ext.define('Weather.controller.Central', {
 	        },	        
 	        success : function(response){
 	        	var el=Ext.getCmp('weatherFiveDays')
-	        	console.log(response)
+	        	//var mass=[1,2,3,4,5];
+
+
+	        	console.log(self.transformListToData(response.list))
 	        		// data={
 	        		// 	name:response.name,
 	        		// 	icon:"http://openweathermap.org/img/w/"+response.weather[0].icon+".png",
@@ -73,14 +86,14 @@ Ext.define('Weather.controller.Central', {
 		this.getWeatherOneDay()
 		this.getWeatherFiveDays()
 
-	},
-	
-	transformListToData:function(weatherList){
-		var data=[];
-		for(i=0; i<weatherList.length; i++){
-			data.push({name:'Vova'})
-		}
-		return data
 	}
+
+	// transformListToData:function(weatherList){
+	// 	var data=[];
+	// 	for(i=0; i<weatherList.length; i++){
+	// 		data.push({name:'Vova'})
+	// 	}
+	// 	return data
+	// }
 
 });
