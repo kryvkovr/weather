@@ -65,7 +65,7 @@ Ext.define('Weather.controller.Central', {
 	        		// 	max_temperature:response.main.temp_max
 	        		// }]
 
-	        	var arr=[{surname:'vova'}, {surname:'petro'}]
+	        	var arr=[{max_temperature:'vova', min_temperature:'ivan'}, {max_temperature:'petro', min_temperature:'igor'}]
 	        		 el.update(arr)	                            	
 	        		
 	         },
