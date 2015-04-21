@@ -14,14 +14,6 @@ Ext.define('Weather.controller.Central', {
         });
     },
 
-    transformListToData:function(weatherList){
-		var data=[];
-		for(i=0; i<weatherList.length; i++){
-			data.push({name:'Vova'})
-		}
-		return data
-	},
-
     getWeatherOneDay:function(){
     	var cityName=Ext.getCmp('cityName').getValue()
     	if(cityName==''){
@@ -64,15 +56,18 @@ Ext.define('Weather.controller.Central', {
 	        	var el=Ext.getCmp('weatherFiveDays')
 	        	//var mass=[1,2,3,4,5];
 
-
-	        	console.log(self.transformListToData(response.list))
-	        		// data={
+	        	//console.log(response)
+	        	//console.log(self.transformListToData(response.list))
+	        		// data=[{
 	        		// 	name:response.name,
 	        		// 	icon:"http://openweathermap.org/img/w/"+response.weather[0].icon+".png",
 	        		// 	min_temperature:response.main.temp_min,
 	        		// 	max_temperature:response.main.temp_max
-	        		// }
-	        		// el.update(data)	                            	
+	        		// }]
+
+	        	var arr=[{surname:'vova'}, {surname:'petro'}]
+	        		 el.update(arr)	                            	
+	        		
 	         },
 
 	         failure: function(response) {
@@ -86,14 +81,18 @@ Ext.define('Weather.controller.Central', {
 		this.getWeatherOneDay()
 		this.getWeatherFiveDays()
 
-	}
+	},
 
-	// transformListToData:function(weatherList){
-	// 	var data=[];
-	// 	for(i=0; i<weatherList.length; i++){
-	// 		data.push({name:'Vova'})
-	// 	}
-	// 	return data
-	// }
+	transformListToData:function(weatherList){
+		var data=[];
+		for(i=0; i<weatherList.length; i++){
+			data.push({name:'Vova',
+						icon:"http://openweathermap.org/img/w/"+'10d'+".png",
+						min_temperature:100,
+						max_temperature:150
+					})
+		}
+		return data
+	}
 
 });
