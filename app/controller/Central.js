@@ -73,6 +73,14 @@ Ext.define('Weather.controller.Central', {
 		this.getWeatherOneDay()
 		this.getWeatherFiveDays()
 
+	},
+	
+	transformListToData:function(weatherList){
+		var data=[];
+		for(i=0; i<weatherList.length; i++){
+			data.push({name:'Vova'})
+		}
+		return data
 	}
 
 });
