@@ -25,7 +25,7 @@ Ext.define('Weather.controller.Central', {
 	        
 	        success : function(response){
 	        	var el=Ext.getCmp('weatherOneDay')
-	        		data={name:'Vova', min_temperature:100, max_temperature:150}
+	        		data={name:response.name, min_temperature:response.main.temp_min, max_temperature:response.main.temp_max}
 	        		el.update(data)	                            
 	          	console.log(response)         
 	         },

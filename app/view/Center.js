@@ -6,9 +6,9 @@ Ext.define("Weather.view.Center", {
     items:[{
         id: 'weatherOneDay',
         title: '1 день',
-        tpl: new Ext.XTemplate('<p>City Name:{name}</p>',
-                                '<p>min-temperature:{max_temperature}</p>',
-                                '<p>max-temperature:{min_temperature}</p>'
+        tpl: new Ext.XTemplate('<h1>City Name:{name}</h1>',
+                                '<h2>min-temperature:<b>{max_temperature}</b></h2>',
+                                '<h2>max-temperature:<b>{min_temperature}</b></h2>'
                                 )
         
     },{
