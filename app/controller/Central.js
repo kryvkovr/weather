@@ -19,25 +19,23 @@ Ext.define('Weather.controller.Central', {
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{
-			Ext.data.JsonP.request({
-	        url: "http://api.openweathermap.org/data/2.5/weather?q="+cityName,
-	        params: {
-	        },        
-	        success : function(response){
-	        	var el=Ext.getCmp('weatherOneDay')
-	        		data={
-	        			name:response.name,
-	        			icon:"http://openweathermap.org/img/w/"+response.weather[0].icon+".png",
-	        			min_temperature:response.main.temp_min,
-	        			max_temperature:response.main.temp_max
-	        		}
-	        		
-	        		el.update(data)	                            	
-	         },
-	         failure: function(response) {
-	              Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
-	          }
-    		});
+    		Ext.Ajax.useDefaultXhrHeader = false;
+    		Ext.Ajax.request({
+			    url: "http://api.openweathermap.org/data/2.5/weather?q="+cityName,	
+
+		    success: function(response){
+		    	var text = response.responseText;
+			    var weatherObject=JSON.parse(text);
+				var el=Ext.getCmp('weatherOneDay')
+				data={
+					name:weatherObject.name,
+					icon:"http://openweathermap.org/img/w/"+weatherObject.weather[0].icon+".png",
+					min_temperature:weatherObject.main.temp_min,
+					max_temperature:weatherObject.main.temp_max
+				}
+    		el.update(data)	                            	
+         	} 
+		});		
 		}
 	},
 
@@ -58,26 +56,6 @@ Ext.define('Weather.controller.Central', {
 	        		el.update(self.transformListToData(weatherList));	                            	
 	         	}			    
 			});
-
-
-
-			// Ext.data.JsonP.request({
-
-	  //       url: "http://api.openweathermap.org/data/2.5/forecast?q="+cityName,
-	  //       params: {
-	  //       },	        
-	  //       success : function(response){
-	  //       	console.log(response.list)
-
-	  //       	var el=Ext.getCmp('weatherFiveDays')
-	  //       		el.update(self.transformListToData(response.list))	                            	
-	        		
-	  //        },
-
-	  //        failure: function(response) {
-	  //             Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
-	  //         }
-   //  		});
 		}
 	},
 
