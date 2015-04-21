@@ -4,13 +4,10 @@ Ext.define('Weather.Application', {
     extend: 'Ext.app.Application',
 
     views: [
-        // TODO: add views here
-        //Header
-        
+        "Weather.view.Center"      
     ],
 
-    controllers: [
-        
+    controllers: [        
        'Weather.controller.Central'
     ],
 

@@ -1,11 +1,11 @@
-var callback=function(){
-	console.log('hello')
-}
-
 Ext.define('Weather.controller.Central', {
     extend: 'Ext.app.Controller',
+    views: [
+        "Weather.view.Center"
+    ],
     requires: ['Ext.data.JsonP', 'Ext.Msg'],
     init: function(){
+    
         this.control({
              'aliasmyheader button': {
                  click: this.getJsonOneDay
@@ -23,8 +23,11 @@ Ext.define('Weather.controller.Central', {
 	        params: {
 	        },
 	        
-	        success : function(response){	                            
-	          console.log(response)         
+	        success : function(response){
+	        	var el=Ext.getCmp('weatherOneDay')
+	        		data={name:'Vova', min_temperature:100, max_temperature:150}
+	        		el.update(data)	                            
+	          	console.log(response)         
 	         },
 	         failure: function(response) {
 	              Ext.Msg.alert('Помилка', 'Не вдалося знайти заданого міста', Ext.emptyFn);
