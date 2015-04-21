@@ -2,7 +2,10 @@ Ext.define('Weather.view.Main', {
     extend: 'Ext.container.Container',
     requires:[
         'Ext.tab.Panel',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'Weather.view.Header',
+        'Weather.view.Center',
+        'Ext.toolbar.TextItem'
     ],
     
     xtype: 'app-main',
@@ -11,7 +14,7 @@ Ext.define('Weather.view.Main', {
         type: 'border'
     },
     items: [{
-        xtype: 'aliasmyheader'
+        xtype: 'weatherHeader'
     },{
         xtype: 'centerPanel'
     }]

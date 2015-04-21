@@ -7,7 +7,7 @@ Ext.define('Weather.controller.Central', {
     init: function(){
 
         this.control({
-             'aliasmyheader button': {
+             'weatherHeader button': {
                  click: this.getAllWeather
 
              }
@@ -15,7 +15,8 @@ Ext.define('Weather.controller.Central', {
     },
 
     getWeatherOneDay:function(){
-    	var cityName=Ext.getCmp('cityName').getValue()
+    	
+    	var cityName=Ext.getCmp("cityName").getValue()
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{

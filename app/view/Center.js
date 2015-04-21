@@ -21,8 +21,7 @@ Ext.define("Weather.view.Center", {
                                 '<p>min-temperature:{max_temperature}</p>',
                                 '<p>max-temperature:{min_temperature}</p>',
                                 '</tpl>')
-        
-        
+              
     },{
         title: '16 днів',
         html: 'Тут буде погода за 16 днів'
