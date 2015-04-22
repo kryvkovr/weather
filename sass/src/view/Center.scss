@@ -3,9 +3,7 @@
 	font-size:10px;
 }
 
-#weatherFiveDays-innerCt p{
-	background:#dd2
-}
+
 
 #weatherFiveDays-innerCt{
 	display:flex !important;
@@ -16,17 +14,18 @@
 
 
 #weatherFiveDays-innerCt div.weather_block{
-	background:#422;
-	width: 270px;
-	margin:50px;
-	border:1px solid #33d;
+	width: 250px;
+	padding:20px;
+	margin:20px;
+	border:1px solid #1B8BD1;
 }
 
-#weatherOneDay-innerCt span.min{
-	
+#weatherFiveDays-innerCt span.min{
+	color:#b33;
+
 }
 
-#weatherOneDay-innerCt span.max{
-	
+#weatherFiveDays-innerCt span.max{
+	color:#3b3;
 }
 

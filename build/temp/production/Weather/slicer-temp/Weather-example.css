@@ -22805,24 +22805,29 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   font-size: 10px;
 }
 
-/* line 6, ../../../../../sass/src/view/Center.scss */
-#weatherFiveDays-innerCt p {
-  background: #dd2;
-}
-
-/* line 10, ../../../../../sass/src/view/Center.scss */
+/* line 8, ../../../../../sass/src/view/Center.scss */
 #weatherFiveDays-innerCt {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 18, ../../../../../sass/src/view/Center.scss */
+/* line 16, ../../../../../sass/src/view/Center.scss */
 #weatherFiveDays-innerCt div.weather_block {
-  background: #422;
-  width: 270px;
-  margin: 50px;
-  border: 1px solid #33d;
+  width: 250px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #1B8BD1;
+}
+
+/* line 23, ../../../../../sass/src/view/Center.scss */
+#weatherFiveDays-innerCt span.min {
+  color: #b33;
+}
+
+/* line 28, ../../../../../sass/src/view/Center.scss */
+#weatherFiveDays-innerCt span.max {
+  color: #3b3;
 }
 
 /* line 1, ../../../../../sass/src/view/Header.scss */
