@@ -1,11 +1,9 @@
 Ext.define("Weather.view.weatherOneDayHourly", {
    extend:'Ext.tab.Panel',
 	alias:'widget.aliasweatherOneDayHourly',
-	title: 'Погода',
     height:500,
     region:'south',
     items:[{
-        
         tpl: new Ext.XTemplate('<tpl for=".">',
                                 '<div class="weather_block">',
                                     '<p>Data: {data}</p>',
