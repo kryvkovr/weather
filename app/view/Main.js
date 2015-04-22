@@ -17,5 +17,7 @@ Ext.define('Weather.view.Main', {
         xtype: 'weatherHeader'
     },{
         xtype: 'centerPanel'
+    },{
+        xtype: 'aliasweatherOneDayHourly'
     }]
 });

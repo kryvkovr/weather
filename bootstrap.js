@@ -850,7 +850,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Weather.view.Center": [],
   "Weather.view.Header": [],
   "Weather.view.Main": [],
-  "Weather.view.Viewport": []
+  "Weather.view.Viewport": [],
+  "Weather.view.weatherOneDayHourly": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1865,7 +1866,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.view.Main": [
     "widget.app-main"
   ],
-  "Weather.view.Viewport": []
+  "Weather.view.Viewport": [],
+  "Weather.view.weatherOneDayHourly": [
+    "widget.weatherOneDayHourly"
+  ]
 });
 Ext.setVersion("ext-theme-base", "4.2.1");
 Ext.setVersion("ext-theme-neptune", "4.2.1");
