@@ -17,6 +17,7 @@ Ext.define('Weather.controller.Central', {
     getWeatherOneDay:function(){
     	
     	var cityName=Ext.getCmp("cityName").getValue()
+    	//console.log(cityName)
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{

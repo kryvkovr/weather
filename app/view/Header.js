@@ -4,10 +4,12 @@ Ext.define("Weather.view.Header", {
     region:'north',
     height:50,
     items: [{
-            text: 'Назва міста',                   
+            text: 'Назва міста',
+            id  :"newId"                   
         },'  ',{
             xtype    : 'textfield',
             id       : 'cityName',
+            cls :'myheader',
             name     : 'field',
             emptyText: 'Найти'
         },{

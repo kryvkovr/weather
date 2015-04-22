@@ -6,6 +6,7 @@ Ext.define("Weather.view.Center", {
     items:[{
         id: 'weatherOneDay',
         title: '1 день',
+        width:'300px',
         tpl: new Ext.XTemplate('<h1>{name}</h1>',
                                 '<p><img src="{icon}" width=150></p>',
                                 '<h2>min-temperature:<b>{max_temperature}</b></h2>',
@@ -25,6 +26,7 @@ Ext.define("Weather.view.Center", {
     },{
         title: '16 днів',
         html: 'Тут буде погода за 16 днів'
+
     },{
         title: 'Історія',
         html: 'Історія погоди'
