@@ -17,10 +17,12 @@ Ext.define("Weather.view.Center", {
         title: '5 Днів',
         id: 'weatherFiveDays',
         tpl: new Ext.XTemplate('<tpl for=".">',
-                                '<h2>Data: {data}</h2>',
-                                '<p><img src="{icon}"></p>',
-                                '<p>min-temperature:{max_temperature}</p>',
-                                '<p>max-temperature:{min_temperature}</p>',
+                                '<div class="weather_block">',
+                                    '<h2>Data: {data}</h2>',
+                                    '<p><img src="{icon}"></p>',
+                                    '<p>min-temperature:{max_temperature}</p>',
+                                    '<p>max-temperature:{min_temperature}</p>',
+                                '</div>',
                                 '</tpl>')
               
     },{

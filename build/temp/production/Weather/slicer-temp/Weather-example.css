@@ -22811,13 +22811,18 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* line 10, ../../../../../sass/src/view/Center.scss */
-#weatherOneDay-innerCt span.min {
-  background: #d22;
+#weatherFiveDays-innerCt {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
-/* line 14, ../../../../../sass/src/view/Center.scss */
-#weatherOneDay-innerCt span.max {
-  background: #d2d;
+/* line 18, ../../../../../sass/src/view/Center.scss */
+#weatherFiveDays-innerCt div.weather_block {
+  background: #422;
+  width: 270px;
+  margin: 50px;
+  border: 1px solid #33d;
 }
 
 /* line 1, ../../../../../sass/src/view/Header.scss */

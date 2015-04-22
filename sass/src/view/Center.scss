@@ -7,11 +7,26 @@
 	background:#dd2
 }
 
+#weatherFiveDays-innerCt{
+	display:flex !important;
+	flex-wrap:wrap;
+	align-content:flex-start;
+}
+
+
+
+#weatherFiveDays-innerCt div.weather_block{
+	background:#422;
+	width: 270px;
+	margin:50px;
+	border:1px solid #33d;
+}
+
 #weatherOneDay-innerCt span.min{
-	background:#d22
+	
 }
 
 #weatherOneDay-innerCt span.max{
-	background:#d2d
+	
 }
 
