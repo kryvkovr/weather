@@ -8,8 +8,8 @@ Ext.define("Weather.view.Center", {
         title: '1 день',
         width:'300px',
         tpl: new Ext.XTemplate('<h1>{name}</h1>',
-                                '<p><img src="{icon}" width=150></p>',
-                                '<h2>min-temperature:<b>{max_temperature}</b></h2>',
+                                '<p class="my"><img src="{icon}" width=150></p>',
+                                '<h2><span class="min">min-temperature:</span><b>{max_temperature}</b></h2>',
                                 '<h2>max-temperature:<b>{min_temperature}</b></h2>'
                                 )
         

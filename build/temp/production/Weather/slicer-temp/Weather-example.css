@@ -22806,8 +22806,13 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* line 6, ../../../../../sass/src/view/Center.scss */
-#tab-1017 {
-  width: 300px;
+#weatherFiveDays-innerCt p {
+  background: #dd2;
+}
+
+/* line 10, ../../../../../sass/src/view/Center.scss */
+#weatherOneDay-innerCt span.min {
+  background: #d22;
 }
 
 /* line 1, ../../../../../sass/src/view/Header.scss */

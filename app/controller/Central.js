@@ -22,6 +22,9 @@ Ext.define('Weather.controller.Central', {
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{
     		Ext.Ajax.useDefaultXhrHeader = false;
+    		
+
+
     		Ext.Ajax.request({
 			    url: "http://api.openweathermap.org/data/2.5/weather?q="+cityName,	
 
