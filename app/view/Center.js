@@ -10,7 +10,7 @@ Ext.define("Weather.view.Center", {
         tpl: new Ext.XTemplate('<h1>{name}</h1>',
                                 '<p class="my"><img src="{icon}" width=150></p>',
                                 '<h2><span class="min">min-temperature:</span><b>{max_temperature}</b></h2>',
-                                '<h2>max-temperature:<b>{min_temperature}</b></h2>'
+                                '<h2><span class="max">max-temperature:</span><b>{min_temperature}</b></h2>'
                                 )
         
     },{

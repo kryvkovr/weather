@@ -22815,6 +22815,11 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   background: #d22;
 }
 
+/* line 14, ../../../../../sass/src/view/Center.scss */
+#weatherOneDay-innerCt span.max {
+  background: #d2d;
+}
+
 /* line 1, ../../../../../sass/src/view/Header.scss */
 #newId {
   color: #d22;
