@@ -44,7 +44,7 @@ Ext.define('Weather.controller.Central', {
 		}
 	},
 
-	getWeatherFiveDays:function(){
+	getWeatherFiveDaysHourly:function(){
 		var self=this;
     	var cityName=Ext.getCmp('cityName').getValue()
     	if(cityName==''){
@@ -64,9 +64,49 @@ Ext.define('Weather.controller.Central', {
 		}
 	},
 
+	getWeatherFiveDaysDaily:function(){
+		var self=this;
+    	var cityName=Ext.getCmp('cityName').getValue()
+    	if(cityName==''){
+    		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
+    	}else{
+    		Ext.Ajax.useDefaultXhrHeader = false;
+    		Ext.Ajax.request({
+			    url: "http://api.openweathermap.org/data/2.5/forecast/daily?q="+cityName+"&cnt=5&mode=json",
+			    
+			    success: function(response){
+			        var text = response.responseText;
+			        var weatherList=JSON.parse(text).list;
+			        //console.log(weatherList[2])
+			        var el=Ext.getCmp('weatherFiveDays');			       			     
+	        		el.update(self.transformListToDataFiveDaysDaily(weatherList));	                            	
+	         	}			    
+			});
+		}
+	},
+
+
+
+
+
+
 	getAllWeather:function(){
-		this.getWeatherOneDay()
-		this.getWeatherFiveDays()
+		//this.getWeatherOneDay()
+		//this.getWeatherFiveDaysHourly()
+		this.getWeatherFiveDaysDaily()
+	},
+
+	transformListToDataFiveDaysDaily:function(weatherList){
+		var data=[];
+		for(i=0; i<weatherList.length; i++){
+			data.push({
+						data:weatherList[i].dt
+						// icon:"http://openweathermap.org/img/w/"+weatherList[i].weather[0].icon+".png",
+						// min_temperature: weatherList[i].main.temp_min,
+						// max_temperature: weatherList[i].main.temp_max
+					})
+		}
+		return data;
 	},
 
 	transformListToData:function(weatherList){
