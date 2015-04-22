@@ -77,7 +77,7 @@ Ext.define('Weather.controller.Central', {
 			    success: function(response){
 			        var text = response.responseText;
 			        var weatherList=JSON.parse(text).list;
-			        //console.log(weatherList[2])
+			        console.log(weatherList[2])
 			        var el=Ext.getCmp('weatherFiveDays');			       			     
 	        		el.update(self.transformListToDataFiveDaysDaily(weatherList));	                            	
 	         	}			    
@@ -100,10 +100,10 @@ Ext.define('Weather.controller.Central', {
 		var data=[];
 		for(i=0; i<weatherList.length; i++){
 			data.push({
-						data:weatherList[i].dt
+						data:weatherList[i].dt,
 						// icon:"http://openweathermap.org/img/w/"+weatherList[i].weather[0].icon+".png",
-						// min_temperature: weatherList[i].main.temp_min,
-						// max_temperature: weatherList[i].main.temp_max
+						 min_temperature: weatherList[i].temp.min,
+						 max_temperature: weatherList[i].temp.max
 					})
 		}
 		return data;
