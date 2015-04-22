@@ -5,7 +5,6 @@ Ext.define('Weather.controller.Central', {
     ],
     requires: ['Ext.data.JsonP', 'Ext.Msg'],
     init: function(){
-
         this.control({
              'weatherHeader button': {
                  click: this.getAllWeather
