@@ -9,7 +9,7 @@ Ext.define("Weather.view.Header", {
         },'  ',{
             xtype    : 'textfield',
             id       : 'cityName',
-            cls :'myheader',
+            cls      :'myheader',
             name     : 'field',
             emptyText: 'Найти'
         },{

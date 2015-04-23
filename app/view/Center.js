@@ -15,17 +15,37 @@ Ext.define("Weather.view.Center", {
                                 )
         
     },{
-        title: '5 Днів',
-        id: 'weatherFiveDays',
-        tpl: new Ext.XTemplate('<tpl for=".">',
-                                '<div class="weather_block">',
-                                    '<p>Data: {data}</p>',
-                                    '<p><img src="{icon}" width=150></p>',
-                                    '<p><span class="min">min-temperature:</span>{max_temperature}</p>',
-                                    '<p><span class="max">max-temperature:{min_temperature}:</span></p>',
-                                '</div>',
-                                '</tpl>')
-              
+        title:"5 днів",
+        xtype:'container',
+        layout:'card',        
+        items: [      
+        {
+        title:"second container",
+        xtype:'container',
+        items: [
+        {
+            id:"secondContainer",
+            height:200,
+            xtype: 'container',
+            title: 'Л. Толстой',
+            html: 'hello world'
+        },
+        {
+            xtype: 'container',
+            height:200,
+            title: 'Ф. Достоевский',
+            html: 'друга панель'
+        },
+        {
+            xtype: 'container',
+            height:200,
+            title: 'И. Тургенев',
+            html: 'Произведения И. Тургенева: ...'
+        }]   
+            
+    }
+       ]   
+            
     },{
         title: '16 днів',
         html: 'Тут буде погода за 16 днів'

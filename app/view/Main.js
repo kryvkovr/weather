@@ -7,7 +7,7 @@ Ext.define('Weather.view.Main', {
         'Weather.view.Center',
         'Ext.toolbar.TextItem'
     ],
-    
+      
     xtype: 'app-main',
 
     layout: {
@@ -17,7 +17,5 @@ Ext.define('Weather.view.Main', {
         xtype: 'weatherHeader'
     },{
         xtype: 'centerPanel'
-    },{
-        xtype: 'aliasweatherOneDayHourly'
     }]
 });

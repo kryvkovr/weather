@@ -83,7 +83,7 @@ Ext.define('Weather.controller.Central', {
 			    success: function(response){
 			        var text = response.responseText;
 			        var weatherList=JSON.parse(text).list;
-			        console.log(weatherList)
+			        console.log(JSON.parse(text))
 			        var el=Ext.getCmp('weatherFiveDays');
 
 			       // var pa=Ext.getCmp('weatherFiveDays');
