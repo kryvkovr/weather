@@ -3,12 +3,18 @@ Ext.define('Weather.controller.Central', {
     views: [
         "Weather.view.Center"
     ],
-    requires: ['Ext.data.JsonP', 'Ext.Msg'],
+    requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
     init: function(){
+    	var element = Ext.getCmp('newId');
+
+    	//   element.on('click', function(e, target, options){
+     //    alert('Элемент был нажат');
+    	// }, this);
+
+
         this.control({
              'weatherHeader button': {
                  click: this.getAllWeather
-
              }
         });
     },
@@ -83,7 +89,7 @@ Ext.define('Weather.controller.Central', {
 			       // var pa=Ext.getCmp('weatherFiveDays');
 			        var grid = Ext.ComponentQuery.query('aliasweatherOneDayHourly')[0];	
 			        grid.show();
-			        
+
 	        		el.update(self.transformListToDataFiveDaysDaily(weatherList));	                            	
 	         	}			    
 			});
