@@ -1868,7 +1868,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Weather.view.Viewport": [],
   "Weather.view.weatherOneDayHourly": [
-    "widget.weatherOneDayHourly"
+    "widget.aliasweatherOneDayHourly"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.1");

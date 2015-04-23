@@ -22814,18 +22814,19 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 
 /* line 16, ../../../../../sass/src/view/Center.scss */
 #weatherFiveDays-innerCt div.weather_block {
-  width: 250px;
+  background: #add2ed;
+  width: 200px;
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
   border: 1px solid #1B8BD1;
 }
 
-/* line 23, ../../../../../sass/src/view/Center.scss */
+/* line 24, ../../../../../sass/src/view/Center.scss */
 #weatherFiveDays-innerCt span.min {
   color: #b33;
 }
 
-/* line 28, ../../../../../sass/src/view/Center.scss */
+/* line 29, ../../../../../sass/src/view/Center.scss */
 #weatherFiveDays-innerCt span.max {
   color: #3b3;
 }

@@ -1,9 +1,11 @@
 Ext.define("Weather.view.weatherOneDayHourly", {
-   extend:'Ext.tab.Panel',
+    extend:'Ext.tab.Panel',
 	alias:'widget.aliasweatherOneDayHourly',
+    //xtype: 'panel',
     height:500,
     region:'south',
     hidden: true,
+
     items:[{
         tpl: new Ext.XTemplate('<tpl for=".">',
                                 '<div class="weather_block">',
@@ -12,7 +14,6 @@ Ext.define("Weather.view.weatherOneDayHourly", {
                                     '<p><span class="min">min-temperature:</span>{max_temperature}</p>',
                                     '<p><span class="max">max-temperature:{min_temperature}:</span></p>',
                                 '</div>',
-                                '</tpl>')
-              
+                                '</tpl>')         
     }]
 });

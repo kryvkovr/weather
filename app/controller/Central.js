@@ -82,7 +82,8 @@ Ext.define('Weather.controller.Central', {
 
 			       // var pa=Ext.getCmp('weatherFiveDays');
 			        var grid = Ext.ComponentQuery.query('aliasweatherOneDayHourly')[0];	
-			        grid.show()
+			        grid.show();
+			        
 	        		el.update(self.transformListToDataFiveDaysDaily(weatherList));	                            	
 	         	}			    
 			});
