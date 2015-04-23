@@ -69,6 +69,7 @@ Ext.define('Weather.controller.Central', {
     	if(cityName==''){
     		Ext.Msg.alert('Помилка', 'Введіть назву міста', Ext.emptyFn);
     	}else{
+
     		Ext.Ajax.useDefaultXhrHeader = false;
     		Ext.Ajax.request({
 			    url: "http://api.openweathermap.org/data/2.5/forecast/daily?q="+cityName+"&cnt=5&mode=json",
@@ -77,7 +78,11 @@ Ext.define('Weather.controller.Central', {
 			        var text = response.responseText;
 			        var weatherList=JSON.parse(text).list;
 			        console.log(weatherList)
-			        var el=Ext.getCmp('weatherFiveDays');			       			     
+			        var el=Ext.getCmp('weatherFiveDays');
+
+			       // var pa=Ext.getCmp('weatherFiveDays');
+			        var grid = Ext.ComponentQuery.query('aliasweatherOneDayHourly')[0];	
+			        grid.show()
 	        		el.update(self.transformListToDataFiveDaysDaily(weatherList));	                            	
 	         	}			    
 			});

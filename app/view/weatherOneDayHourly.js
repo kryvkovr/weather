@@ -3,6 +3,7 @@ Ext.define("Weather.view.weatherOneDayHourly", {
 	alias:'widget.aliasweatherOneDayHourly',
     height:500,
     region:'south',
+    hidden: true,
     items:[{
         tpl: new Ext.XTemplate('<tpl for=".">',
                                 '<div class="weather_block">',

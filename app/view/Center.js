@@ -1,8 +1,9 @@
 Ext.define("Weather.view.Center", {
    extend:'Ext.tab.Panel',
 	alias:'widget.centerPanel',
-	header: false,
+	title: 'Погода',
     region:'center',
+    overflow : 'scroll',
     items:[{
         id: 'weatherOneDay',
         title: '1 день',
