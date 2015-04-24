@@ -27,6 +27,11 @@ Ext.define('Weather.controller.Central', {
         }  
 	},
 
+	sendAlert:function(){
+		alert('hello world')
+	},
+	
+
 	getAllWeather:function(){
 		//this.getWeatherOneDay()		
 		this.getWeatherFiveDaysDaily()

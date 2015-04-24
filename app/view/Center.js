@@ -27,11 +27,13 @@ Ext.define("Weather.view.Center", {
                 itemTpl:'<div style="font-size:20px">{dt}</div>'+
                         '<div style="color:red">{temp.max}</div>'+
                         '<div style="color:green">{temp.min}</div>',
-                        
+
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                   alert(idx)
+                   Weather.app.getController('Central').sendAlert()
+                   //alert(idx)
+
                 }
              }
             },{
