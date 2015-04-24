@@ -6,6 +6,8 @@ Ext.define('Weather.model.FiveDaysHourly', {
                         return moment.unix(v).format('dddd');
                     }
         },{
-        	name:'temp'        	
+        	name:'main'        	
+    },{
+        	name:'weather'        	
     }]   
 });

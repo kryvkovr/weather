@@ -40,8 +40,8 @@ Ext.define("Weather.view.Center", {
                 xtype: 'dataview', 
                 height:400,
                 itemTpl:'<div style="font-size:10px">{dt}</div>'+
-                        '<div style="color:red">{temp.max}</div>'+
-                        '<div style="color:green">{temp.min}</div>',
+                        '<div style="color:red">{main.temp_min}</div>'+
+                        '<div style="color:green">{main.temp_max}</div>',
 
                 store:'WeatherFiveDaysHourly',
                 listeners: {

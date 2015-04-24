@@ -28,11 +28,11 @@ Ext.define('Weather.controller.Central', {
 
         var stor=Ext.getStore('WeatherFiveDaysHourly')
             stor.load({
-            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
+            	url: 'http://api.openweathermap.org/data/2.5/forecast?q=London,us',
                 headers: { 'Access-Control-Allow-Origin': '*'},         
                 callback: function(response){console.log(response)}
             })
-        }  
+         }  
 	},
 
 	sendAlert:function(){
