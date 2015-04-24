@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "users": [
+        {name: 'Jamie Avins',  age: 100},
+        {name: 'Rob Dougan',   age: 21},
+        {name: 'Tommy Maintz', age: 24},
+        {name: 'Jacky Nguyen', age: 24},
+        {name: 'Ed Spencer',   age: 26}
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "users": [
+        {name: 'Vova',  age: 100},
+        {name: 'Igor',   age: 21},
+        {name: 'Taras', age: 24},
+        {name: 'Petro', age: 24},
+        {name: 'Ivan',   age: 26}
+    ]
+}

@@ -1,9 +1,13 @@
 Ext.define('Weather.store.WeatherFiveDaysDaily', {
     extend: 'Ext.data.Store',
-    autoload:true,
+    //autoload:true,
     fields: ['name'],
     data: [
-        {name: 'Ed'},
-        {name: 'Tommy'}
+        {name: 'Vova'},
+        {name: 'Rob'},
+        {name: 'Tommy'},
+        {name: 'Jacky'},
+        {name: 'Ed'}
     ]
+                        
 });

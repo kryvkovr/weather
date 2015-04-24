@@ -4,7 +4,7 @@ Ext.define('Weather.controller.Central', {
         "Weather.view.Center"
     ],
     stores: [
-        "Weather.view.Center"
+        "Weather.store.WeatherFiveDaysDaily"
     ],
     requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
     init: function(){
