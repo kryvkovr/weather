@@ -24,18 +24,8 @@ Ext.define("Weather.view.Center", {
             items: [{
                 xtype: 'dataview', 
                 height:300,
-                itemTpl:'<span style="font-size:20px">{dt}</span>',
+                itemTpl:'<div style="font-size:20px">{dt}</div><div style="color:red">{temp.max}</div><div style="color:green">{temp.min}</div>',
                 store:'WeatherFiveDaysDaily'
-               // store:{
-               //          fields: ['name'],
-               //              data: [
-               //                  {name: 'Jamie'},
-               //                  {name: 'Rob'},
-               //                  {name: 'Tommy'},
-               //                  {name: 'Jacky'},
-               //                  {name: 'Ed'}
-               //              ]
-               //          }
             },{
 
                 xtype: 'container',
