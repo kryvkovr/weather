@@ -39,7 +39,7 @@ Ext.define("Weather.view.Center", {
             },{
                 xtype: 'dataview', 
                 height:400,
-                itemTpl:'<div style="font-size:20px">{dt}</div>'+
+                itemTpl:'<div style="font-size:10px">{dt}</div>'+
                         '<div style="color:red">{temp.max}</div>'+
                         '<div style="color:green">{temp.min}</div>',
 
