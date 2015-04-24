@@ -18,33 +18,25 @@ Ext.define("Weather.view.Center", {
         title:"5 днів",
         xtype:'container',
         layout:'card',        
-        items: [      
-        {
-        title:"second container",
-        xtype:'container',
-        items: [
-        {
-            id:"secondContainer",
-            height:200,
-            xtype: 'container',
-            title: 'Л. Толстой',
-            html: 'hello world'
-        },
-        {
-            xtype: 'container',
-            height:200,
-            title: 'Ф. Достоевский',
-            html: 'друга панель'
-        },
-        {
-            xtype: 'container',
-            height:200,
-            title: 'И. Тургенев',
-            html: 'Произведения И. Тургенева: ...'
+        items: [{
+            title:"second container",
+            xtype:'container',
+            items: [{
+
+                id:"secondContainer",
+                height:300,
+                xtype: 'container',
+                title: 'Л. Толстой',
+                html: 'hello world'
+            },{
+
+                xtype: 'container',
+                height:300,
+                title: 'Ф. Достоевский',
+                html: 'друга панель'
+                
+            }]   
         }]   
-            
-    }
-       ]   
             
     },{
         title: '16 днів',
