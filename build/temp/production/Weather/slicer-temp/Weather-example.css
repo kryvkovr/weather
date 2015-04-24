@@ -22799,39 +22799,39 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* including package Weather */
-/* line 1, ../../../../../sass/src/view/Center.scss */
-#weatherOneDay-innerCt {
-  background: #55d;
-  font-size: 10px;
+/* line 1, ../../../../../sass/src/view/Header.scss */
+#newId {
+  color: #d22;
 }
 
-/* line 8, ../../../../../sass/src/view/Center.scss */
-#weatherFiveDays-innerCt {
+/* line 1, ../../../../../sass/src/view/Center.scss */
+.weatherDayBlock {
+  margin: 20px;
+  width: 150px;
+  padding: 10px;
+  background: #ADD2ED;
+  border: 1px solid #157fcc;
+}
+
+/* line 9, ../../../../../sass/src/view/Center.scss */
+.weatherDayHour {
+  margin: 20px;
+  width: 150px;
+  padding: 10px;
+  background: #157fcc;
+  border: 1px solid #ADD2ED;
+}
+
+/* line 17, ../../../../../sass/src/view/Center.scss */
+#dataview-1018 {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 16, ../../../../../sass/src/view/Center.scss */
-#weatherFiveDays-innerCt div.weather_block {
-  background: #add2ed;
-  width: 200px;
-  padding: 20px;
-  margin: 10px;
-  border: 1px solid #1B8BD1;
-}
-
-/* line 24, ../../../../../sass/src/view/Center.scss */
-#weatherFiveDays-innerCt span.min {
-  color: #b33;
-}
-
-/* line 29, ../../../../../sass/src/view/Center.scss */
-#weatherFiveDays-innerCt span.max {
-  color: #3b3;
-}
-
-/* line 1, ../../../../../sass/src/view/Header.scss */
-#newId {
-  color: #d22;
+/* line 23, ../../../../../sass/src/view/Center.scss */
+#dataview-1019 {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }

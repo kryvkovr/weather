@@ -553,11 +553,14 @@ $include-extthemeneptune-toolbar-toolbar: true;
 $include-weather-application: true;
 $include-weather-controller-central: true;
 $include-weather-controller-main: true;
+$include-weather-model-fivedaysdaily: true;
+$include-weather-model-fivedayshourly: true;
+$include-weather-store-weatherfivedaysdaily: true;
+$include-weather-store-weatherfivedayshourly: true;
 $include-weather-view-center: true;
 $include-weather-view-header: true;
 $include-weather-view-main: true;
 $include-weather-view-viewport: true;
-$include-weather-view-weatheronedayhourly: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */
@@ -804,5 +807,5 @@ $relative-image-path-for-uis: $ext-theme-neptune-resource-path;
 /* including package Weather */
 $Weather-resource-path: 'images' !default;
 $relative-image-path-for-uis: $Weather-resource-path;
-@import '../../../../../sass/src/view/Center';
 @import '../../../../../sass/src/view/Header';
+@import '../../../../../sass/src/view/Center';

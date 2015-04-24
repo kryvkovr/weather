@@ -23,26 +23,29 @@ Ext.define("Weather.view.Center", {
             xtype:'container',
             items: [{
                 xtype: 'dataview', 
-                height:400,
-                itemTpl:'<div style="font-size:20px">{dt}</div>'+
-                        '<div style="color:red">{temp.max}</div>'+
-                        '<div style="color:green">{temp.min}</div>',
-
+                height:250,
+                itemTpl:'<div class="weatherDayBlock">'+
+                            '<div style="font-size:20px">Day:{dt}</div>'+
+                            '<div style="color:red">temp max {temp.max}</div>'+
+                            '<div style="color:green">temp min {temp.min}</div>'+
+                        '</div>',
+                        
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                    Weather.app.getController('Central').sendAlert(idx)
+                   // Weather.app.getController('Central').sendAlert(idx)
                    //alert(idx)
 
                 }
              }
             },{
                 xtype: 'dataview', 
-                height:400,
-                itemTpl:'<div style="font-size:15px">Година-{dt}</div>'+
-                        '<div style="color:red">мінмальна температура {main.temp_min}</div>'+
-                        '<div style="color:green">максимальна температура{main.temp_max}</div>'+
-                        '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
+                itemTpl:'<div class="weatherDayHour">'+
+                            '<div style="font-size:15px;color:#fff">Hour-{dt}</div>'+
+                            '<div style="color:red">temp min {main.temp_min}</div>'+
+                            '<div style="color:green">temp max {main.temp_max}</div>'+
+                            '<img src="http://openweathermap.org/img/w/{weather}.png" width="100"></img>'+
+                        '</div>',
 
                 store:'WeatherFiveDaysHourly',
                 listeners: {

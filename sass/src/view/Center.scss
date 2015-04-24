@@ -1,32 +1,27 @@
-#weatherOneDay-innerCt{
-	background:#55d;
-	font-size:10px;
+.weatherDayBlock{
+	margin:20px;
+	width:150px;
+	padding:10px;
+	background:#ADD2ED;
+	border:1px solid #157fcc;
 }
 
+.weatherDayHour{
+	margin:20px;
+	width:150px;
+	padding:10px;
+	background:#157fcc;
+	border:1px solid #ADD2ED;
 
-
-#weatherFiveDays-innerCt{
+}
+#dataview-1018{
 	display:flex !important;
 	flex-wrap:wrap;
 	align-content:flex-start;
 }
 
-
-
-#weatherFiveDays-innerCt div.weather_block{
-	background:#add2ed;
-	width: 200px;
-	padding:20px;
-	margin:10px;
-	border:1px solid #1B8BD1;
+#dataview-1019{
+	display:flex !important; 
+	flex-wrap:wrap;
+	align-content:flex-start;
 }
-
-#weatherFiveDays-innerCt span.min{
-	color:#b33;
-
-}
-
-#weatherFiveDays-innerCt span.max{
-	color:#3b3;
-}
-
