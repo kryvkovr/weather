@@ -7,7 +7,5 @@ Ext.define('Weather.model.FiveDaysDaily', {
                     }
         },{
         	name:'temp'        	
-    }]
-
-    
+    }]   
 });
