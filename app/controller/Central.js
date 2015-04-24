@@ -3,9 +3,11 @@ Ext.define('Weather.controller.Central', {
     views: [
         "Weather.view.Center"
     ],
-    stores: [
-        "Weather.store.WeatherFiveDaysDaily"
-    ],
+    
+    // stores: [
+    //     "Weather.store.WeatherFiveDaysDaily"
+    // ],
+
     requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
     init: function(){
     	Ext.Ajax.useDefaultXhrHeader = false;
