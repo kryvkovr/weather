@@ -8,6 +8,7 @@ Ext.define('Weather.controller.Central', {
     ],
     requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
     init: function(){
+    	Ext.Ajax.useDefaultXhrHeader = false;
     	var element = Ext.getCmp('newId');
 
     	//   element.on('click', function(e, target, options){
@@ -105,7 +106,14 @@ Ext.define('Weather.controller.Central', {
 
 
 	getAllWeather:function(){
-		this.getWeatherOneDay()
+
+		alert('hello world')
+		var stor=Ext.getStore('WeatherFiveDaysDaily')
+            stor.load({
+                headers: { 'Access-Control-Allow-Origin': '*'},         
+                callback: function(response){console.log(response)}
+            })     
+		//this.getWeatherOneDay()
 		//this.getWeatherFiveDaysHourly()
 		//this.getWeatherFiveDaysDaily()
 	},

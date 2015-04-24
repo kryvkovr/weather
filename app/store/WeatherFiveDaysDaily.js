@@ -1,13 +1,15 @@
 Ext.define('Weather.store.WeatherFiveDaysDaily', {
     extend: 'Ext.data.Store',
     //autoload:true,
-    fields: ['name'],
-    data: [
-        {name: 'Vova'},
-        {name: 'Rob'},
-        {name: 'Tommy'},
-        {name: 'Jacky'},
-        {name: 'Ed'}
-    ]
-                        
+    fields: ['dt', 'temp'],    
+    proxy: {
+        type: 'ajax',
+        // url:'/users.json',
+        url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=5&mode=json',
+        reader: {
+            type: 'json',
+            root: 'list',
+            // successProperty: 'success'
+        }
+    }       
 });
