@@ -22807,29 +22807,28 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 /* line 1, ../../../../../sass/src/view/Center.scss */
 .weatherDayBlock {
   margin: 20px;
-  width: 150px;
-  padding: 10px;
+  padding: 10px 30px;
   background: #ADD2ED;
   border: 1px solid #157fcc;
 }
 
-/* line 9, ../../../../../sass/src/view/Center.scss */
+/* line 8, ../../../../../sass/src/view/Center.scss */
 .weatherDayHour {
   margin: 20px;
-  width: 150px;
+  width: 130px;
   padding: 10px;
   background: #157fcc;
   border: 1px solid #ADD2ED;
 }
 
-/* line 17, ../../../../../sass/src/view/Center.scss */
+/* line 16, ../../../../../sass/src/view/Center.scss */
 #dataview-1018 {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 23, ../../../../../sass/src/view/Center.scss */
+/* line 22, ../../../../../sass/src/view/Center.scss */
 #dataview-1019 {
   display: flex !important;
   flex-wrap: wrap;
