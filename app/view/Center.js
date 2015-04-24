@@ -42,7 +42,7 @@ Ext.define("Weather.view.Center", {
                 itemTpl:'<div style="font-size:15px">Година-{dt}</div>'+
                         '<div style="color:red">мінмальна температура {main.temp_min}</div>'+
                         '<div style="color:green">максимальна температура{main.temp_max}</div>'+
-                        '<div>{weather}</div>',
+                        '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
 
                 store:'WeatherFiveDaysHourly',
                 listeners: {
