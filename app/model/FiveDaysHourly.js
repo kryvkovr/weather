@@ -8,6 +8,9 @@ Ext.define('Weather.model.FiveDaysHourly', {
         },{
         	name:'main'        	
     },{
-        	name:'weather'        	
+        	name:'weather',
+        	convert: function(v, record){
+                        return v[0].icon;
+                    }        	
     }]   
 });
