@@ -3,6 +3,9 @@ Ext.define('Weather.controller.Central', {
     views: [
         "Weather.view.Center"
     ],
+    stores: [
+        "Weather.view.Center"
+    ],
     requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
     init: function(){
     	var element = Ext.getCmp('newId');

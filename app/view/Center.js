@@ -5,7 +5,7 @@ Ext.define("Weather.view.Center", {
     region:'center',
     overflow : 'scroll',
     items:[{
-        id: 'weatherOneDay',
+        //id: 'weatherOneDay',
         title: '1 день',
         width:'300px',
         tpl: new Ext.XTemplate('<h1>{name}</h1>',
@@ -22,12 +22,10 @@ Ext.define("Weather.view.Center", {
             title:"second container",
             xtype:'container',
             items: [{
-
-                id:"secondContainer",
+                xtype: 'dataview', 
                 height:300,
-                xtype: 'container',
-                title: 'Л. Толстой',
-                html: 'hello world'
+                itemTpl:'<span style="font-size:20px">{name}</span>',
+                store:'WeatherFiveDaysDaily'
             },{
 
                 xtype: 'container',
