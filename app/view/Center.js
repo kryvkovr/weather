@@ -39,9 +39,9 @@ Ext.define("Weather.view.Center", {
             },{
                 xtype: 'dataview', 
                 height:400,
-                itemTpl:'<div style="font-size:10px">{dt}</div>'+
-                        '<div style="color:red">{main.temp_min}</div>'+
-                        '<div style="color:green">{main.temp_max}</div>'+
+                itemTpl:'<div style="font-size:15px">Година-{dt}</div>'+
+                        '<div style="color:red">мінмальна температура {main.temp_min}</div>'+
+                        '<div style="color:green">максимальна температура{main.temp_max}</div>'+
                         '<div>{weather}</div>',
 
                 store:'WeatherFiveDaysHourly',
