@@ -24,6 +24,14 @@ Ext.define('Weather.controller.Central', {
                 headers: { 'Access-Control-Allow-Origin': '*'},         
                 callback: function(response){console.log(response)}
             })
+
+
+        var stor=Ext.getStore('WeatherFiveDaysHourly')
+            stor.load({
+            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
+                headers: { 'Access-Control-Allow-Origin': '*'},         
+                callback: function(response){console.log(response)}
+            })
         }  
 	},
 

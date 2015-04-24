@@ -31,18 +31,26 @@ Ext.define("Weather.view.Center", {
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                   Weather.app.getController('Central').sendAlert()
+                    Weather.app.getController('Central').sendAlert(idx)
                    //alert(idx)
 
                 }
              }
             },{
-
-                xtype: 'container',
+                xtype: 'dataview', 
                 height:400,
-                title: 'Ф. Достоевский',
-                html: 'друга панель'
-                
+                itemTpl:'<div style="font-size:20px">{dt}</div>'+
+                        '<div style="color:red">{temp.max}</div>'+
+                        '<div style="color:green">{temp.min}</div>',
+
+                store:'WeatherFiveDaysHourly',
+                listeners: {
+                 'itemclick': function(view, record, item, idx, event, opts) {
+                    Weather.app.getController('Central').sendAlert(idx)
+                   //alert(idx)
+
+                }
+             }
             }]   
         }]   
             
