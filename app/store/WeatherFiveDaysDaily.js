@@ -3,7 +3,7 @@ Ext.define('Weather.store.WeatherFiveDaysDaily', {
     model:'Weather.model.FiveDaysDaily',
     proxy: {
         type: 'ajax',      
-        url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=5&mode=json',
+        //url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=5&mode=json',
         reader: {
             type: 'json',
             root: 'list'         

@@ -23,13 +23,21 @@ Ext.define("Weather.view.Center", {
             xtype:'container',
             items: [{
                 xtype: 'dataview', 
-                height:300,
-                itemTpl:'<div style="font-size:20px">{dt}</div><div style="color:red">{temp.max}</div><div style="color:green">{temp.min}</div>',
-                store:'WeatherFiveDaysDaily'
+                height:400,
+                itemTpl:'<div style="font-size:20px">{dt}</div>'+
+                        '<div style="color:red">{temp.max}</div>'+
+                        '<div style="color:green">{temp.min}</div>',
+                        
+                store:'WeatherFiveDaysDaily',
+                listeners: {
+                 'itemclick': function(view, record, item, idx, event, opts) {
+                   alert(idx)
+                }
+             }
             },{
 
                 xtype: 'container',
-                height:300,
+                height:400,
                 title: 'Ф. Достоевский',
                 html: 'друга панель'
                 
