@@ -4,17 +4,22 @@
 	-webkit-border-radius:$radius;
 }
 
-.weatherDayBlock{
-	@include border_radius(10px);
+.font_color_and_hover_theme_style{
 	color:#157fcc;
-	margin:20px;
-	padding:10px 30px;
 	background:#ADD2ED;
 	border:1px solid #157fcc;
 	&:hover{
 		background:#157fcc;
 		color:#fff;
 	}
+
+}
+
+.weatherDayBlock{
+	@include border_radius(5px);
+	@extend .font_color_and_hover_theme_style;
+	margin:20px;
+	padding:10px 30px;
 }
 
 .weatherDayHour{
@@ -40,4 +45,12 @@
 }
 .height_300{
 	height:300px !important;
+}
+
+.sixteenWeatherDayBlock{
+	@extend .font_color_and_hover_theme_style;
+}
+.weatherDescription{
+	
+	
 }

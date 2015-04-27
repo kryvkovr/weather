@@ -849,8 +849,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Weather.controller.Main": [],
   "Weather.model.FiveDaysDaily": [],
   "Weather.model.FiveDaysHourly": [],
+  "Weather.model.SixteenDays": [],
   "Weather.store.WeatherFiveDaysDaily": [],
   "Weather.store.WeatherFiveDaysHourly": [],
+  "Weather.store.WeatherSixteenDays": [],
   "Weather.view.Center": [],
   "Weather.view.Header": [],
   "Weather.view.Main": [],
@@ -1862,8 +1864,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.controller.Main": [],
   "Weather.model.FiveDaysDaily": [],
   "Weather.model.FiveDaysHourly": [],
+  "Weather.model.SixteenDays": [],
   "Weather.store.WeatherFiveDaysDaily": [],
   "Weather.store.WeatherFiveDaysHourly": [],
+  "Weather.store.WeatherSixteenDays": [],
   "Weather.view.Center": [
     "widget.centerPanel"
   ],
