@@ -18,8 +18,10 @@
 .weatherDayBlock{
 	@include border_radius(5px);
 	@extend .font_color_and_hover_theme_style;
+	margin-top:20px;
 	flex: 1 1 200px;
 	padding:10px 30px;
+	text-align:center;
 	border-top:0;
 }
 
@@ -30,7 +32,6 @@
 	padding:10px;
 	background:#157fcc;
 	border:1px solid #ADD2ED;
-
 }
 
 #weatherDaily{
@@ -70,6 +71,9 @@
 
 .tempMin{
 		color:#f9f154
+	}
+.tempNight{
+		color:#fff
 	}	
 .weatherDescription{
 	display:none;
@@ -80,6 +84,6 @@
 	height:300px;
 	background:#157fcc;
 	& img{
-		width:150px
+		width:100px
 	}
 }
