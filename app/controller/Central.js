@@ -25,10 +25,7 @@ Ext.define('Weather.controller.Central', {
                 callback: function(response){}
             })
 
-
         var stor=Ext.getStore('WeatherFiveDaysHourly')
-
-
             stor.load({
             	url: 'http://api.openweathermap.org/data/2.5/forecast?q=London,us',
                 headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         

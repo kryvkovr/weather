@@ -22814,7 +22814,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 
 /* line 8, ../../../../../sass/src/view/Center.scss */
 .weatherDayHour {
-  margin: 20px;
+  margin: 5px;
   width: 130px;
   padding: 10px;
   background: #157fcc;

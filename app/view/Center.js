@@ -13,8 +13,7 @@ Ext.define("Weather.view.Center", {
                                 '<p class="my"><img src="{icon}" width=150></p>',
                                 '<h2><span class="min">min-temperature:</span><b>{max_temperature}</b></h2>',
                                 '<h2><span class="max">max-temperature:</span><b>{min_temperature}</b></h2>'
-                                )
-        
+                                )       
     },{
         title:"5 днів",
         xtype:'container',
@@ -26,7 +25,6 @@ Ext.define("Weather.view.Center", {
             items: [{
                 id:'weatherDaily',
                 xtype: 'dataview', 
-                height:250,
                 itemTpl:'<div class="weatherDayBlock">'+
                             '<div style="font-size:20px">Day:{dt}</div>'+
                             '<div style="color:red">temp max {temp.max}</div>'+
@@ -35,30 +33,19 @@ Ext.define("Weather.view.Center", {
                         
                 store:'WeatherFiveDaysDaily',
                 listeners: {
-                 'itemclick': function(view, record, item, idx, event, opts) {
-                    //alert(idx)
-                    Weather.app.getController('Central').showWeatherHourly(idx)
+                    'itemclick': function(view, record, item, idx, event, opts){                   
+                         Weather.app.getController('Central').showWeatherHourly(idx)
                 }
              }
             },{
-                id:'daysWeatherHourly',
-                autoScroll: true,
+                id:'daysWeatherHourly',               
                 xtype: 'dataview', 
                 itemTpl:'<div class="weatherDayHour">'+
                             '<div style="font-size:15px;color:#fff">Hour-{dt}</div>'+
                             '<div style="color:red">temp min {main.temp_min}</div>'+
                             '<div style="color:yellow">temp max {main.temp_max}</div>'+
                             '<img src="http://openweathermap.org/img/w/{weather}.png" width="100"></img>'+
-                        '</div>',
-
-                //store:'WeatherFiveDaysHourly',
-                listeners: {
-                 'itemclick': function(view, record, item, idx, event, opts) {
-                    //Weather.app.getController('Central').showWeatherHourly(idx)
-                   //alert(idx)
-
-                }
-             }
+                        '</div>'            
             }]   
         }]   
             
