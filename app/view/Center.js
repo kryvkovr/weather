@@ -34,6 +34,7 @@ Ext.define("Weather.view.Center", {
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
+                    //alert(idx)
                     Weather.app.getController('Central').showWeatherHourly(idx)
                 }
              }

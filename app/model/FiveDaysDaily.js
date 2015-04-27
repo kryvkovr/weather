@@ -3,7 +3,7 @@ Ext.define('Weather.model.FiveDaysDaily', {
     fields: [{
             name: 'dt',           
             convert: function(v, record){
-                        return moment.unix(v).format('dddd');
+                        return moment.unix(v).format('dddd') +'time is'+v;
                     }
         },{
         	name:'temp'        	
