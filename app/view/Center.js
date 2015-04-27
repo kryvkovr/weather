@@ -4,6 +4,7 @@ Ext.define("Weather.view.Center", {
 	title: 'Погода',
     region:'center',
     overflow : 'scroll',
+    //autoScroll: true,
     items:[{
         //id: 'weatherOneDay',
         title: '1 день',
@@ -17,7 +18,8 @@ Ext.define("Weather.view.Center", {
     },{
         title:"5 днів",
         xtype:'container',
-        layout:'card',        
+        layout:'card',
+        autoScroll: true,        
         items: [{
             title:"second container",
             xtype:'container',
@@ -40,6 +42,7 @@ Ext.define("Weather.view.Center", {
              }
             },{
                 id:'daysWeatherHourly',
+                autoScroll: true,
                 xtype: 'dataview', 
                 itemTpl:'<div class="weatherDayHour">'+
                             '<div style="font-size:15px;color:#fff">Hour-{dt}</div>'+

@@ -22,7 +22,7 @@ Ext.define('Weather.controller.Central', {
             stor.load({
             	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
                 headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
-                callback: function(response){console.log(response)}
+                callback: function(response){}
             })
 
 
@@ -40,18 +40,23 @@ Ext.define('Weather.controller.Central', {
 	showWeatherHourly:function(idx){
 		   var myView=Ext.getCmp('daysWeatherHourly');
 		   var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
-		   var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-		   if (weatherCurrentDay==0){
-		   		alert('this is first day')
-		   		dataWeatherHourly=weatherHourlyStore.getRange( 0, weatherCurrentDay)
-		   }else{
-		   		dataWeatherHourly=weatherHourlyStore.getRange( weatherCurrentDay + (idx*8), weatherCurrentDay + (idx+1)*8)
-		   }
+		   // for(i=0; i<weatherHourlyStore.count(); i++){
+		   // 		console.log(weatherHourlyStore.getAt(i).data, i)
+		   // }
+
+		   //var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
+
+		   		//alert(weatherCurrentDay)
+		   // if (idx==0){		   		
+		   // 		dataWeatherHourly=weatherHourlyStore.getRange(0,3);
+		   // }else{
+		   // 		dataWeatherHourly=weatherHourlyStore.getRange( weatherCurrentDay + (idx*8), weatherCurrentDay + (idx+1)*8)
+		   // }
 		   	
 
 		   	 var newstore = new Ext.data.Store({
             	model:'Weather.model.FiveDaysHourly',
-             	data:dataWeatherHourly
+             	data:weatherHourlyStore.getRange(0,3*idx)
          	});
 
          	myView.bindStore(newstore)	
