@@ -18,8 +18,9 @@
 .weatherDayBlock{
 	@include border_radius(5px);
 	@extend .font_color_and_hover_theme_style;
-	margin:20px;
+	flex: 1 1 200px;
 	padding:10px 30px;
+	border-top:0;
 }
 
 .weatherDayHour{
@@ -36,6 +37,9 @@
 	display:flex !important;
 	flex-wrap:wrap;
 	align-content:flex-start;
+	& div.x-dataview-item{
+		flex:1 1 150px;
+	}
 }
 
 #daysWeatherHourly{
@@ -43,6 +47,7 @@
 	flex-wrap:wrap;
 	align-content:flex-start;
 }
+
 .height_300{
 	height:300px !important;
 }

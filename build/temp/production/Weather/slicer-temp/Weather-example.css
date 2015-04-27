@@ -22821,11 +22821,12 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  margin: 20px;
+  flex: 1 1 200px;
   padding: 10px 30px;
+  border-top: 0;
 }
 
-/* line 25, ../../../../../sass/src/view/Center.scss */
+/* line 26, ../../../../../sass/src/view/Center.scss */
 .weatherDayHour {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -22837,26 +22838,30 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   border: 1px solid #ADD2ED;
 }
 
-/* line 35, ../../../../../sass/src/view/Center.scss */
+/* line 36, ../../../../../sass/src/view/Center.scss */
 #weatherDaily {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
+/* line 40, ../../../../../sass/src/view/Center.scss */
+#weatherDaily div.x-dataview-item {
+  flex: 1 1 150px;
+}
 
-/* line 41, ../../../../../sass/src/view/Center.scss */
+/* line 45, ../../../../../sass/src/view/Center.scss */
 #daysWeatherHourly {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 46, ../../../../../sass/src/view/Center.scss */
+/* line 51, ../../../../../sass/src/view/Center.scss */
 .height_300 {
   height: 300px !important;
 }
 
-/* line 50, ../../../../../sass/src/view/Center.scss */
+/* line 55, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock {
   position: relative;
   height: 50px;
@@ -22865,22 +22870,22 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   width: 300px;
   font-size: 20px;
 }
-/* line 58, ../../../../../sass/src/view/Center.scss */
+/* line 63, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock:hover .weatherDescription {
   display: block;
 }
 
-/* line 62, ../../../../../sass/src/view/Center.scss */
+/* line 67, ../../../../../sass/src/view/Center.scss */
 .tempMax {
   color: #ffa63a;
 }
 
-/* line 66, ../../../../../sass/src/view/Center.scss */
+/* line 71, ../../../../../sass/src/view/Center.scss */
 .tempMin {
   color: #f9f154;
 }
 
-/* line 69, ../../../../../sass/src/view/Center.scss */
+/* line 74, ../../../../../sass/src/view/Center.scss */
 .weatherDescription {
   display: none;
   position: absolute;
@@ -22890,7 +22895,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   height: 300px;
   background: #157fcc;
 }
-/* line 77, ../../../../../sass/src/view/Center.scss */
+/* line 82, ../../../../../sass/src/view/Center.scss */
 .weatherDescription img {
   width: 150px;
 }
