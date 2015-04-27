@@ -27,6 +27,8 @@ Ext.define('Weather.controller.Central', {
 
 
         var stor=Ext.getStore('WeatherFiveDaysHourly')
+
+
             stor.load({
             	url: 'http://api.openweathermap.org/data/2.5/forecast?q=London,us',
                 headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
@@ -35,8 +37,31 @@ Ext.define('Weather.controller.Central', {
          }  
 	},
 
-	sendAlert:function(){
-		alert('hello world')
+	showWeatherHourly:function(idx){
+		   var myView=Ext.getCmp('daysWeatherHourly');
+		   var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
+		   var weatherCurrentDay=weatherHourlyStore.count() % 4;
+		   	//console.log(weatherHourlyStore)
+
+		   	 var newstore = new Ext.data.Store({
+            	model:'Weather.model.FiveDaysHourly',
+             	data:weatherHourlyStore.getRange( weatherCurrentDay + (idx*5), weatherCurrentDay + (idx+1)*5)
+         	});
+
+         	myView.bindStore(newstore)	
+		      
+    //         storeAllName=Ext.getStore('AllName')
+    //         ostacha=storeAllName.count() % 4;
+    //         console.log(ostacha)
+    //         mystore=storeAllName.getRange( ostacha + (idx*5), ostacha + (idx+1)*5)
+           
+    //   var newstore = new Ext.data.Store({
+    //         model:'AM.model.AllName',
+    //         data:mystore
+    //     });
+
+    // myview.bindStore(newstore)
+		//alert('hello world')
 	},
 	
 

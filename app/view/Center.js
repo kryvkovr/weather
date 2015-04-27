@@ -34,10 +34,11 @@ Ext.define("Weather.view.Center", {
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                    alert(idx)
+                    Weather.app.getController('Central').showWeatherHourly(idx)
                 }
              }
             },{
+                id:'daysWeatherHourly',
                 xtype: 'dataview', 
                 itemTpl:'<div class="weatherDayHour">'+
                             '<div style="font-size:15px;color:#fff">Hour-{dt}</div>'+
@@ -46,10 +47,10 @@ Ext.define("Weather.view.Center", {
                             '<img src="http://openweathermap.org/img/w/{weather}.png" width="100"></img>'+
                         '</div>',
 
-                store:'WeatherFiveDaysHourly',
+                //store:'WeatherFiveDaysHourly',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                    Weather.app.getController('Central').sendAlert(idx)
+                    //Weather.app.getController('Central').showWeatherHourly(idx)
                    //alert(idx)
 
                 }
