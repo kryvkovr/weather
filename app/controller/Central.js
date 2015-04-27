@@ -40,40 +40,18 @@ Ext.define('Weather.controller.Central', {
 	showWeatherHourly:function(idx){
 		   var myView=Ext.getCmp('daysWeatherHourly');
 		   var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
-		   
-
-
 		   var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
 		   if(idx==0){
-		   		var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay)
+		   		var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
 		   }else{
-		   		var mydata=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8)
-		   		alert(weatherCurrentDay + (idx*8))
-		   		alert(weatherCurrentDay-1 + (idx+1)*8)
+		   		var mydata=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8);
 		   }
-		   
-		  
-		   	
-
 		   	 var newstore = new Ext.data.Store({
             	model:'Weather.model.FiveDaysHourly',
              	data:mydata
          	});
 
-         	myView.bindStore(newstore)	
-		      
-    //         storeAllName=Ext.getStore('AllName')
-    //         ostacha=storeAllName.count() % 4;
-    //         console.log(ostacha)
-    //         mystore=storeAllName.getRange( ostacha + (idx*5), ostacha + (idx+1)*5)
-           
-    //   var newstore = new Ext.data.Store({
-    //         model:'AM.model.AllName',
-    //         data:mystore
-    //     });
-
-    // myview.bindStore(newstore)
-		//alert('hello world')
+         	myView.bindStore(newstore)	 
 	},
 	
 
