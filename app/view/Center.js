@@ -55,19 +55,8 @@ Ext.define("Weather.view.Center", {
         xtype: 'dataview', 
         itemTpl:'<div class="weatherDayBlock">'+
                     '<div style="font-size:20px">Day:{dt}</div>'+
-                    // '<div style="color:red">temp max {temp.max}</div>'+
-                    // '<div style="color:green">temp min {temp.min}</div>'+
                 '</div>',
         store:'WeatherSixteenDays'
-                        
-        // store: Ext.create('Ext.data.Store', {
-        //     fields:['dt'],
-        //     data : [
-        //          {dt: 'Ed'},
-        //          {dt: 'Tommy'}               
-        //      ]
-        //  })
-
     },{
         title: 'Історія',
         html: 'Історія погоди'
