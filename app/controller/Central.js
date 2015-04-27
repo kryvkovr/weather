@@ -53,7 +53,6 @@ Ext.define('Weather.controller.Central', {
         	model:'Weather.model.FiveDaysHourly',
          	data:mydata
      	});
-
      	myView.bindStore(newstore)	 
 	},
 	
