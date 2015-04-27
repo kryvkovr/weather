@@ -1,11 +1,22 @@
+@mixin border_radius($radius){
+	border-radius:$radius;
+	-moz-border-radius:$radius;
+	-webkit-border-radius:$radius;
+}
+
 .weatherDayBlock{
+	@include border_radius(10px);
 	margin:20px;
 	padding:10px 30px;
 	background:#ADD2ED;
 	border:1px solid #157fcc;
+	&:hover{
+		background:#157fcc;
+	}
 }
 
 .weatherDayHour{
+	@include border_radius(5px);
 	margin:5px;
 	width:130px;
 	padding:10px;

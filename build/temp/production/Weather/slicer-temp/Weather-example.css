@@ -22804,16 +22804,26 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   color: #d22;
 }
 
-/* line 1, ../../../../../sass/src/view/Center.scss */
+/* line 7, ../../../../../sass/src/view/Center.scss */
 .weatherDayBlock {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   margin: 20px;
   padding: 10px 30px;
   background: #ADD2ED;
   border: 1px solid #157fcc;
 }
+/* line 13, ../../../../../sass/src/view/Center.scss */
+.weatherDayBlock:hover {
+  background: #157fcc;
+}
 
-/* line 8, ../../../../../sass/src/view/Center.scss */
+/* line 18, ../../../../../sass/src/view/Center.scss */
 .weatherDayHour {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   margin: 5px;
   width: 130px;
   padding: 10px;
@@ -22821,21 +22831,21 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   border: 1px solid #ADD2ED;
 }
 
-/* line 16, ../../../../../sass/src/view/Center.scss */
+/* line 27, ../../../../../sass/src/view/Center.scss */
 #weatherDaily {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 22, ../../../../../sass/src/view/Center.scss */
+/* line 33, ../../../../../sass/src/view/Center.scss */
 #daysWeatherHourly {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 27, ../../../../../sass/src/view/Center.scss */
+/* line 38, ../../../../../sass/src/view/Center.scss */
 .height_300 {
   height: 300px !important;
 }
