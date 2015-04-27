@@ -6,12 +6,14 @@
 
 .weatherDayBlock{
 	@include border_radius(10px);
+	color:#157fcc;
 	margin:20px;
 	padding:10px 30px;
 	background:#ADD2ED;
 	border:1px solid #157fcc;
 	&:hover{
 		background:#157fcc;
+		color:#fff;
 	}
 }
 
