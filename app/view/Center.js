@@ -62,7 +62,7 @@ Ext.define("Weather.view.Center", {
                                                 '<div class="tempNight">Night-temp: {temp.night}</div>',
                                             '</div>',                                        
                                     '</div>'),
-        store:'WeatherSixteenDays'
+         store:'WeatherSixteenDays'
     },{
         title: 'Історія',
         html: 'Історія погоди'

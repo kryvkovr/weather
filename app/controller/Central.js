@@ -14,7 +14,6 @@ Ext.define('Weather.controller.Central', {
     },
 
 	getWeatherFiveDaysDaily:function(cityName){
-
 		var stor=Ext.getStore('WeatherFiveDaysDaily')
         stor.load({
         	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
@@ -26,7 +25,7 @@ Ext.define('Weather.controller.Central', {
         stor.load({
         	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName,
             headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
-            callback: function(response){}
+            callback: function(response){console.log(response)}
         })
            
 	},
@@ -35,17 +34,22 @@ Ext.define('Weather.controller.Central', {
 		var anotherElements=Ext.query('.weatherDayBlock');
 		Ext.get(anotherElements).setHeight(100);
 		var clickedElement=Ext.query('.weatherDayBlock')[idx];
-		var anotherElements=Ext.query('.weatherDayBlock');
 		Ext.get(clickedElement).setHeight(150);
 			
 		var myView=Ext.getCmp('daysWeatherHourly');
 		var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
 		var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
+		//var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
+		//alert(weatherCurrentDay)
 
 	    if(idx==0){
 	   		var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
+	   		//alert('first element')
+	   		//alert([0, weatherCurrentDay-1])
+	   		//alert(weatherCurrentDay-1)
 	    }else{
 	   		var mydata=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8);
+	   		//alert([weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8])
 	    }
 
 	   	var newstore = new Ext.data.Store({
@@ -53,16 +57,14 @@ Ext.define('Weather.controller.Central', {
          	data:mydata
      	});
 
-     	myView.bindStore(newstore)	 
+     	myView.bindStore(newstore);	 
 	},
 
 	getWeatherSixteenDays:function(cityName){
-		alert(cityName)
 		var stor=Ext.getStore('WeatherSixteenDays')
             stor.load({
             	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
-                headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
-                callback: function(response){console.log(response)}
+                headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}
             })
 	},
 
@@ -71,7 +73,7 @@ Ext.define('Weather.controller.Central', {
 		if(cityName==''){
 			Ext.Msg.alert('Error', 'Pls enter a city name.');
 		}else{
-		//this.getWeatherOneDay()		
+		  //this.getWeatherOneDay()		
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
 		}
