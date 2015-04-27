@@ -48,16 +48,22 @@
 }
 
 .sixteenWeatherDayBlock{
+	position:relative;
 	@extend .font_color_and_hover_theme_style;
 	height:50px;
 	line-height:50px;
 	width:300px;
 	font-size:20px;
 }
+
+.sixteenWeatherDayBlock:hover .weatherDescription{
+	display:block;
+}
 .weatherDescription{
+	display:none;
 	position:absolute;
 	top:0;
-	left:100%;
+	left:300px;
 	width:300px;
 	height:300px;
 	background:green;
