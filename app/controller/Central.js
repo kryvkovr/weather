@@ -34,7 +34,17 @@ Ext.define('Weather.controller.Central', {
          }  
 	},
 
-	showWeatherHourly:function(idx){
+	showWeatherHourly:function(idx, item){
+		var anotherElements=Ext.query('.weatherDayBlock');
+			Ext.get(anotherElements).setHeight(100);
+		var clickedElement=Ext.query('.weatherDayBlock')[idx];
+		var anotherElements=Ext.query('.weatherDayBlock');
+			Ext.get(clickedElement).setHeight(150);
+		 
+
+		 	
+
+
 		   var myView=Ext.getCmp('daysWeatherHourly');
 		   var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
 		   var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;

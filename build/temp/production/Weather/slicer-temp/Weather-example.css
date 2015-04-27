@@ -22834,3 +22834,8 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   flex-wrap: wrap;
   align-content: flex-start;
 }
+
+/* line 27, ../../../../../sass/src/view/Center.scss */
+.height_300 {
+  height: 300px !important;
+}

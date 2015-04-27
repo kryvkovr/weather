@@ -24,6 +24,7 @@ Ext.define("Weather.view.Center", {
             xtype:'container',
             items: [{
                 id:'weatherDaily',
+                height:200,
                 xtype: 'dataview', 
                 itemTpl:'<div class="weatherDayBlock">'+
                             '<div style="font-size:20px">Day:{dt}</div>'+
