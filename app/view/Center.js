@@ -58,14 +58,15 @@ Ext.define("Weather.view.Center", {
                     // '<div style="color:red">temp max {temp.max}</div>'+
                     // '<div style="color:green">temp min {temp.min}</div>'+
                 '</div>',
+        store:'WeatherSixteenDays'
                         
-        store: Ext.create('Ext.data.Store', {
-            fields:['dt'],
-            data : [
-                 {dt: 'Ed'},
-                 {dt: 'Tommy'}               
-             ]
-         })
+        // store: Ext.create('Ext.data.Store', {
+        //     fields:['dt'],
+        //     data : [
+        //          {dt: 'Ed'},
+        //          {dt: 'Tommy'}               
+        //      ]
+        //  })
 
     },{
         title: 'Історія',
