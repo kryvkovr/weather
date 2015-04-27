@@ -20,7 +20,7 @@ Ext.define("Weather.view.Center", {
         layout:'card',
         autoScroll: true,        
         items: [{
-            title:"second container",
+            
             xtype:'container',
             items: [{
                 id:'weatherDaily',
@@ -52,7 +52,20 @@ Ext.define("Weather.view.Center", {
             
     },{
         title: '16 днів',
-        html: 'Тут буде погода за 16 днів'
+        xtype: 'dataview', 
+        itemTpl:'<div class="weatherDayBlock">'+
+                    '<div style="font-size:20px">Day:{dt}</div>'+
+                    // '<div style="color:red">temp max {temp.max}</div>'+
+                    // '<div style="color:green">temp min {temp.min}</div>'+
+                '</div>',
+                        
+        store: Ext.create('Ext.data.Store', {
+            fields:['dt'],
+            data : [
+                 {dt: 'Ed'},
+                 {dt: 'Tommy'}               
+             ]
+         })
 
     },{
         title: 'Історія',
