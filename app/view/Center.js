@@ -22,6 +22,7 @@ Ext.define("Weather.view.Center", {
             title:"second container",
             xtype:'container',
             items: [{
+                id:'weatherDaily',
                 xtype: 'dataview', 
                 height:250,
                 itemTpl:'<div class="weatherDayBlock">'+
@@ -33,9 +34,7 @@ Ext.define("Weather.view.Center", {
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                  'itemclick': function(view, record, item, idx, event, opts) {
-                   // Weather.app.getController('Central').sendAlert(idx)
-                   //alert(idx)
-
+                    alert(idx)
                 }
              }
             },{

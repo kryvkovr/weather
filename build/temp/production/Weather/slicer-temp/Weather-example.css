@@ -22822,14 +22822,14 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* line 16, ../../../../../sass/src/view/Center.scss */
-#dataview-1018 {
+#weatherDaily {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
 /* line 22, ../../../../../sass/src/view/Center.scss */
-#dataview-1019 {
+#dataview-1018 {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
