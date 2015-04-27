@@ -22870,7 +22870,17 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   display: block;
 }
 
-/* line 63, ../../../../../sass/src/view/Center.scss */
+/* line 62, ../../../../../sass/src/view/Center.scss */
+.tempMax {
+  color: #ffa63a;
+}
+
+/* line 66, ../../../../../sass/src/view/Center.scss */
+.tempMin {
+  color: #f9f154;
+}
+
+/* line 69, ../../../../../sass/src/view/Center.scss */
 .weatherDescription {
   display: none;
   position: absolute;
@@ -22879,4 +22889,8 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   width: 300px;
   height: 300px;
   background: #157fcc;
+}
+/* line 77, ../../../../../sass/src/view/Center.scss */
+.weatherDescription img {
+  width: 150px;
 }
