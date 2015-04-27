@@ -22855,3 +22855,21 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 .height_300 {
   height: 300px !important;
 }
+
+/* line 50, ../../../../../sass/src/view/Center.scss */
+.sixteenWeatherDayBlock {
+  height: 50px;
+  line-height: 50px;
+  width: 300px;
+  font-size: 20px;
+}
+
+/* line 57, ../../../../../sass/src/view/Center.scss */
+.weatherDescription {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 300px;
+  height: 300px;
+  background: green;
+}
