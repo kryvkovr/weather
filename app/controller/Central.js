@@ -40,12 +40,11 @@ Ext.define('Weather.controller.Central', {
 	showWeatherHourly:function(idx){
 		   var myView=Ext.getCmp('daysWeatherHourly');
 		   var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
-		   // for(i=0; i<weatherHourlyStore.count(); i++){
-		   // 		console.log(weatherHourlyStore.getAt(i).data, i)
-		   // }
+		   
 
-		   //var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
 
+		   var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
+		   var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay)
 		   		//alert(weatherCurrentDay)
 		   // if (idx==0){		   		
 		   // 		dataWeatherHourly=weatherHourlyStore.getRange(0,3);
@@ -56,7 +55,7 @@ Ext.define('Weather.controller.Central', {
 
 		   	 var newstore = new Ext.data.Store({
             	model:'Weather.model.FiveDaysHourly',
-             	data:weatherHourlyStore.getRange(0,3*idx)
+             	data:mydata
          	});
 
          	myView.bindStore(newstore)	
