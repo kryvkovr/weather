@@ -8,15 +8,4 @@ Ext.define('Weather.store.WeatherSixteenDays', {
             root: 'list'         
         }
     } 
-
-    // fields:['dt'],
-            // data : [
-            //      {dt: 'Ed'},
-            //      {dt: 'Tommy'},
-            //      {dt: 'Ed'},
-            //      {dt: 'Tommy'},
-            //      {dt: 'Ed'},
-            //      {dt: 'Tommy'}
-
-            //  ]      
 });

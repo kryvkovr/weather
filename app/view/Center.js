@@ -52,9 +52,10 @@ Ext.define("Weather.view.Center", {
             
     },{
         title: '16 днів',
+        autoScroll: true,  
         xtype: 'dataview', 
         itemTpl:'<div class="weatherDayBlock">'+
-                    '<div style="font-size:20px">{dt}</div>'+
+                    '<div style="font-size:20px">{dt} {temp.max} {temp.min}</div>'+
                 '</div>',
         store:'WeatherSixteenDays'
     },{
