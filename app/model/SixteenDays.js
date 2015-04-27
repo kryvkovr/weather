@@ -7,5 +7,10 @@ Ext.define('Weather.model.SixteenDays', {
                     }
         },{
         	name:'temp'        	
+    },{
+        	name:'weather' ,
+        	convert: function(v, record){
+                        return v[0].icon;
+                    }       	
     }]   
 });
