@@ -44,13 +44,15 @@ Ext.define('Weather.controller.Central', {
 
 
 		   var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-		   var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay)
-		   		//alert(weatherCurrentDay)
-		   // if (idx==0){		   		
-		   // 		dataWeatherHourly=weatherHourlyStore.getRange(0,3);
-		   // }else{
-		   // 		dataWeatherHourly=weatherHourlyStore.getRange( weatherCurrentDay + (idx*8), weatherCurrentDay + (idx+1)*8)
-		   // }
+		   if(idx==0){
+		   		var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay)
+		   }else{
+		   		var mydata=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8)
+		   		alert(weatherCurrentDay + (idx*8))
+		   		alert(weatherCurrentDay-1 + (idx+1)*8)
+		   }
+		   
+		  
 		   	
 
 		   	 var newstore = new Ext.data.Store({
