@@ -54,7 +54,7 @@ Ext.define("Weather.view.Center", {
         title: '16 днів',
         xtype: 'dataview', 
         itemTpl:'<div class="weatherDayBlock">'+
-                    '<div style="font-size:20px">Day:{dt}</div>'+
+                    '<div style="font-size:20px">{dt}</div>'+
                 '</div>',
         store:'WeatherSixteenDays'
     },{
