@@ -5,7 +5,6 @@ Ext.define('Weather.controller.Central', {
 
     init: function(){
     	Ext.Ajax.useDefaultXhrHeader = false;
-    	var element = Ext.getCmp('newId');
         this.control({
              'weatherHeader button': {
                  click: this.getAllWeather
@@ -14,18 +13,16 @@ Ext.define('Weather.controller.Central', {
     },
 
 	getWeatherFiveDaysDaily:function(cityName){
-		var stor=Ext.getStore('WeatherFiveDaysDaily')
-        stor.load({
+		var storeFiveDaysDaily=Ext.getStore('WeatherFiveDaysDaily')
+        storeFiveDaysDaily.load({
         	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
-            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
-            callback: function(response){}
+            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}                    
         });
 
-        var stor=Ext.getStore('WeatherFiveDaysHourly')
-        stor.load({
+        var storeDayHourly=Ext.getStore('WeatherFiveDaysHourly')
+        storeDayHourly.load({
         	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName,
-            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'},         
-            callback: function(response){console.log(response)}
+            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}        
         })
            
 	},
