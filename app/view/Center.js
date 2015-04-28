@@ -18,21 +18,22 @@ Ext.define("Weather.view.Center", {
         items: [{           
             xtype:'container',
             items: [{
-                id:'weatherDaily',
-                height:200,
-                xtype: 'dataview', 
-                itemTpl:new Ext.XTemplate('<div class="weatherDayBlock">',
-                                                '<div style="font-size:20px">Day:{dt}</div>',
-                                                '<div style="color:red">temp max {temp.max}</div>',
-                                                '<div style="color:green">temp min {temp.min}</div>',
-                                            '</div>'
-                                        ),                        
-                store:'WeatherFiveDaysDaily',
-                listeners: {
-                    'itemclick': function(view, record, item, idx, event, opts){                   
-                         Weather.app.getController('Central').showWeatherHourly(idx)
-                }
-             }
+                xtype:'weather-five-days-daily'
+                // id:'weatherDaily',
+                // height:200,
+                // xtype: 'dataview', 
+                // itemTpl:new Ext.XTemplate('<div class="weatherDayBlock">',
+                //                                 '<div style="font-size:20px">Day:{dt}</div>',
+                //                                 '<div style="color:red">temp max {temp.max}</div>',
+                //                                 '<div style="color:green">temp min {temp.min}</div>',
+                //                             '</div>'
+                //                         ),                        
+                // store:'WeatherFiveDaysDaily',
+                // listeners: {
+                //     'itemclick': function(view, record, item, idx, event, opts){                   
+                //          Weather.app.getController('Central').showWeatherHourly(idx)
+                // }
+             
             },{
                 id:'daysWeatherHourly',               
                 xtype: 'dataview', 
