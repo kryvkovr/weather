@@ -28,38 +28,33 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	showWeatherHourly:function(idx, item){
-		var anotherElements=Ext.query('.weatherDayBlock');
-		Ext.get(anotherElements).setHeight(100);
-		var clickedElement=Ext.query('.weatherDayBlock')[idx];
-		Ext.get(clickedElement).setHeight(150);
+		var allWeatherBlock=Ext.query('.weatherDayBlock');
+		Ext.get(allWeatherBlock).setHeight(100);
+		var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];
+		Ext.get(clickedWeatherBlock).setHeight(150);
 			
-		var myView=Ext.getCmp('daysWeatherHourly');
+		var viewDayHourly=Ext.getCmp('daysWeatherHourly');
 		var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
 		var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-		//var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-		//alert(weatherCurrentDay)
+		
 
 	    if(idx==0){
-	   		var mydata=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
-	   		//alert('first element')
-	   		//alert([0, weatherCurrentDay-1])
-	   		//alert(weatherCurrentDay-1)
+	   		var oneDayWeather=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
 	    }else{
-	   		var mydata=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8);
-	   		//alert([weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8])
+	   		var oneDayWeather=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8);
 	    }
 
-	   	var newstore = new Ext.data.Store({
+	   	var storeOneDayWeather = new Ext.data.Store({
         	model:'Weather.model.FiveDaysHourly',
-         	data:mydata
+         	data:oneDayWeather
      	});
 
-     	myView.bindStore(newstore);	 
+     	viewDayHourly.bindStore(storeOneDayWeather);	 
 	},
 
 	getWeatherSixteenDays:function(cityName){
-		var stor=Ext.getStore('WeatherSixteenDays')
-            stor.load({
+		var storeSixteenDay=Ext.getStore('WeatherSixteenDays')
+            storeSixteenDay.load({
             	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
                 headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}
             })
@@ -70,7 +65,6 @@ Ext.define('Weather.controller.Central', {
 		if(cityName==''){
 			Ext.Msg.alert('Error', 'Pls enter a city name.');
 		}else{
-		  //this.getWeatherOneDay()		
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
 		}

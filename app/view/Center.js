@@ -28,8 +28,7 @@ Ext.define("Weather.view.Center", {
                                                 '<div style="color:red">temp max {temp.max}</div>',
                                                 '<div style="color:green">temp min {temp.min}</div>',
                                             '</div>'
-                                        ),
-                        
+                                        ),                        
                 store:'WeatherFiveDaysDaily',
                 listeners: {
                     'itemclick': function(view, record, item, idx, event, opts){                   

@@ -4,8 +4,7 @@ Ext.define("Weather.view.Header", {
     region:'north',
     height:50,
     items: [{
-            text: 'CITY NAME',
-            id  :"newId"                   
+            text: 'CITY NAME',                 
         },'  ',{
             xtype    : 'textfield',
             id       : 'cityName',
