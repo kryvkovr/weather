@@ -25,8 +25,7 @@ Ext.define('Weather.controller.Central', {
 
         var storeDayHourly=Ext.getStore('WeatherFiveDaysHourly')
         storeDayHourly.load({
-        	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName
-                
+        	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName              
         })
            
 	},
@@ -37,10 +36,10 @@ Ext.define('Weather.controller.Central', {
 
 	showWeatherHourly:function(view, record, item, idx, event, opts){
 		console.log('item wa clicked');
-		var allWeatherBlock=Ext.query('.weatherDayBlock');
-		Ext.get(allWeatherBlock).setHeight(100);
-		var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];
-		Ext.get(clickedWeatherBlock).setHeight(150);
+		// var allWeatherBlock=Ext.query('.weatherDayBlock');
+		// Ext.get(allWeatherBlock).setHeight(100);
+		// var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];
+		// Ext.get(clickedWeatherBlock).setHeight(150);
 			
 		var viewDayHourly=Ext.getCmp('daysWeatherHourly');
 		var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');

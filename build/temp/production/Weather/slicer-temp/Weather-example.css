@@ -22850,20 +22850,24 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 #weatherDaily div.x-dataview-item {
   flex: 1 1 150px;
 }
+/* line 44, ../../../../../sass/src/view/Center.scss */
+#weatherDaily x-item-selected {
+  height: 150px;
+}
 
-/* line 46, ../../../../../sass/src/view/Center.scss */
+/* line 49, ../../../../../sass/src/view/Center.scss */
 #daysWeatherHourly {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 52, ../../../../../sass/src/view/Center.scss */
+/* line 55, ../../../../../sass/src/view/Center.scss */
 .height_300 {
   height: 300px !important;
 }
 
-/* line 56, ../../../../../sass/src/view/Center.scss */
+/* line 59, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock {
   position: relative;
   height: 50px;
@@ -22872,27 +22876,27 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   width: 300px;
   font-size: 20px;
 }
-/* line 64, ../../../../../sass/src/view/Center.scss */
+/* line 67, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock:hover .weatherDescription {
   display: block;
 }
 
-/* line 68, ../../../../../sass/src/view/Center.scss */
+/* line 72, ../../../../../sass/src/view/Center.scss */
 .tempMax {
   color: #ffa63a;
 }
 
-/* line 72, ../../../../../sass/src/view/Center.scss */
+/* line 76, ../../../../../sass/src/view/Center.scss */
 .tempMin {
   color: #f9f154;
 }
 
-/* line 75, ../../../../../sass/src/view/Center.scss */
+/* line 80, ../../../../../sass/src/view/Center.scss */
 .tempNight {
   color: #fff;
 }
 
-/* line 78, ../../../../../sass/src/view/Center.scss */
+/* line 84, ../../../../../sass/src/view/Center.scss */
 .weatherDescription {
   display: none;
   position: absolute;
@@ -22902,7 +22906,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   height: 300px;
   background: #157fcc;
 }
-/* line 86, ../../../../../sass/src/view/Center.scss */
+/* line 92, ../../../../../sass/src/view/Center.scss */
 .weatherDescription img {
   width: 100px;
 }

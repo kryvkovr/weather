@@ -40,6 +40,9 @@
 	align-content:flex-start;
 	& div.x-dataview-item{
 		flex:1 1 150px;
+	};
+	&  x-item-selected{
+		height:150px;
 	}
 }
 
