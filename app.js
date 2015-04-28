@@ -4,6 +4,10 @@
     Sencha Cmd when upgrading.
 */
 
+Ext.Loader.setConfig({
+    disableCaching:false
+});
+
 Ext.application({
     name: 'Weather',
 

@@ -23,5 +23,5 @@ Ext.define('Weather.Application', {
         'Weather.model.FiveDaysDaily',
         'Weather.model.FiveDaysHourly',
         'Weather.model.SixteenDays'
-    ]
+    ]    
 });
