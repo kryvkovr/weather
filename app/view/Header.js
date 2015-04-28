@@ -5,7 +5,6 @@ Ext.define("Weather.view.Header", {
         'Ext.toolbar.Spacer'
     ],
     alias: 'widget.weather-header',
-    region:'north',
     height:50,
     items: [{
             text: 'CITY NAME',                 
