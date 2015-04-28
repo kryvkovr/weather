@@ -27,6 +27,10 @@ Ext.define('Weather.controller.Central', {
            
 	},
 
+	greet:function(){
+		alert('hellow from controller')
+	},
+
 	showWeatherHourly:function(idx){
 		var allWeatherBlock=Ext.query('.weatherDayBlock');
 		Ext.get(allWeatherBlock).setHeight(100);

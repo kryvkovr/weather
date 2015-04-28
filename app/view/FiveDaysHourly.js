@@ -1,4 +1,5 @@
 Ext.define("Weather.view.FiveDaysHourly", {
+    id:'daysWeatherHourly',
     extend: 'Ext.view.View',
     //id:'weatherDaily',
     alias: 'widget.weather-five-days-hourly',
@@ -12,7 +13,7 @@ Ext.define("Weather.view.FiveDaysHourly", {
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysHourly.create({});
         this.callParent(arguments);
-    },
+    }
    
-    store:'WeatherFiveDaysHourly'
+    //store:'WeatherFiveDaysHourly'
 });
