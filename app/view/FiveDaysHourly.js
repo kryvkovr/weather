@@ -3,16 +3,16 @@ Ext.define("Weather.view.FiveDaysHourly", {
     //id:'weatherDaily',
     alias: 'widget.weather-five-days-hourly',
     requires:[
-        'Weather.template.FiveDaysDaily'
+        'Weather.template.FiveDaysHourly'
     ],
     
     height:200,
     itemSelector: '',
 
     initComponent: function() {
-        this.itemTpl=Weather.template.FiveDaysDaily.create({});
+        this.itemTpl=Weather.template.FiveDaysHourly.create({});
         this.callParent(arguments);
     },
    
-    store:'WeatherFiveDaysDaily'
+    store:'WeatherFiveDaysHourly'
 });
