@@ -8,6 +8,10 @@ Ext.define('Weather.controller.Central', {
         this.control({
              'weather-header button': {
                  click: this.getAllWeather
+             },
+
+             'weather-five-days-daily': {
+                 itemclick: this.showWeatherHourly
              }
         });
     },
@@ -27,11 +31,12 @@ Ext.define('Weather.controller.Central', {
            
 	},
 
-	greet:function(){
-		alert('hellow from controller')
+	greet:function(view, record, item, idx, event, opts){
+		alert(idx)
 	},
 
-	showWeatherHourly:function(idx){
+	showWeatherHourly:function(view, record, item, idx, event, opts){
+		console.log('item wa clicked');
 		var allWeatherBlock=Ext.query('.weatherDayBlock');
 		Ext.get(allWeatherBlock).setHeight(100);
 		var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];

@@ -14,11 +14,5 @@ Ext.define("Weather.view.FiveDaysDaily", {
         this.callParent(arguments);
     },
    
-    store:'WeatherFiveDaysDaily',
-    listeners: {
-
-        'itemclick': function(view, record, item, idx, event, opts) {
-           Weather.app.getController('Central').showWeatherHourly(idx)
-        }
-    }
+    store:'WeatherFiveDaysDaily'
 });
