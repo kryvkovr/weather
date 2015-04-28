@@ -8,7 +8,8 @@ Ext.define('Weather.Application', {
     ],
 
     controllers: [        
-       'Weather.controller.Central'
+       'Weather.controller.Central',
+       'Weather.controller.Main'
     ],
 
     stores: [

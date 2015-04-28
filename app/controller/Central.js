@@ -15,19 +15,19 @@ Ext.define('Weather.controller.Central', {
 	getWeatherFiveDaysDaily:function(cityName){
 		var storeFiveDaysDaily=Ext.getStore('WeatherFiveDaysDaily')
         storeFiveDaysDaily.load({
-        	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
-            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}                    
+        	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
+                         
         });
 
         var storeDayHourly=Ext.getStore('WeatherFiveDaysHourly')
         storeDayHourly.load({
-        	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName,
-            headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}        
+        	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName
+                
         })
            
 	},
 
-	showWeatherHourly:function(idx, item){
+	showWeatherHourly:function(idx){
 		var allWeatherBlock=Ext.query('.weatherDayBlock');
 		Ext.get(allWeatherBlock).setHeight(100);
 		var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];
@@ -55,8 +55,8 @@ Ext.define('Weather.controller.Central', {
 	getWeatherSixteenDays:function(cityName){
 		var storeSixteenDay=Ext.getStore('WeatherSixteenDays')
             storeSixteenDay.load({
-            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
-                headers: { 'Access-Control-Allow-Origin': 'http://localhost:1841'}
+            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json'
+              
             })
 	},
 
@@ -67,6 +67,11 @@ Ext.define('Weather.controller.Central', {
 		}else{
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
+			//this.getWeatherOneDay(cityName)
 		}
+	},
+
+	getWeatherOneDay:function(cityName){
+		alert(cityName);
 	}
 });

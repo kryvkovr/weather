@@ -42,7 +42,7 @@ Ext.define("Weather.view.Center", {
                                                 '<div style="font-size:15px;color:#fff">Hour-{dt}</div>',
                                                 '<div style="color:red">temp min {main.temp_min}</div>',
                                                 '<div style="color:yellow">temp max {main.temp_max}</div>',
-                                                '<img src="http://openweathermap.org/img/w/{weather}.png" width="100"></img>',
+                                                '<img src="http://openweathermap.org/img/w/{icon}.png" width="100"></img>',
                                             '</div>')
             }]   
         }]   
@@ -53,7 +53,7 @@ Ext.define("Weather.view.Center", {
         xtype: 'dataview', 
         itemTpl:new Ext.XTemplate('<div class="sixteenWeatherDayBlock">{dt}',                                      
                                             '<div class="weatherDescription">',
-                                                '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
+                                                '<img src="http://openweathermap.org/img/w/{icon}.png"></img>',
                                                 '<div class="tempMax">Max-temp: {temp.max}</div>',
                                                 '<div class="tempMin">Min-temp: {temp.min}</div>',
                                                 '<div class="tempNight">Night-temp: {temp.night}</div>',
