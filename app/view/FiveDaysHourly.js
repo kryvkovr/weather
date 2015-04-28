@@ -1,7 +1,7 @@
-Ext.define("Weather.view.FiveDaysDaily", {
+Ext.define("Weather.view.FiveDaysHourly", {
     extend: 'Ext.view.View',
-    id:'weatherDaily',
-    alias: 'widget.weather-five-days-daily',
+    //id:'weatherDaily',
+    alias: 'widget.weather-five-days-hourly',
     requires:[
         'Weather.template.FiveDaysDaily'
     ],
