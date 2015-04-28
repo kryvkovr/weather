@@ -4,8 +4,7 @@ Ext.define('Weather.view.Main', {
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
         'Weather.view.Header',
-        'Weather.view.Center',
-        'Ext.toolbar.TextItem'
+        'Weather.view.Center'
     ],
       
     xtype: 'app-main',
