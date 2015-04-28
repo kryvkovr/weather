@@ -1,6 +1,6 @@
 Ext.define("Weather.view.Center", {
     extend:'Ext.tab.Panel',
-	alias:'widget.centerPanel',
+	alias:'widget.center-panel',
 	title: 'WEATHER',
     region:'center',
     overflow : 'scroll',
@@ -15,7 +15,6 @@ Ext.define("Weather.view.Center", {
     },{
         title:"5 DAYS",
         xtype:'container',
-        layout:'card',
         autoScroll: true,        
         items: [{           
             xtype:'container',

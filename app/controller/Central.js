@@ -6,7 +6,7 @@ Ext.define('Weather.controller.Central', {
     init: function(){
     	Ext.Ajax.useDefaultXhrHeader = false;
         this.control({
-             'weatherHeader button': {
+             'weather-header button': {
                  click: this.getAllWeather
              }
         });

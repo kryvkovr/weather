@@ -1,17 +1,19 @@
 Ext.define("Weather.view.Header", {
     extend: 'Ext.toolbar.Toolbar',
     requires:[        
-        'Ext.toolbar.TextItem'
+        'Ext.toolbar.TextItem',
+        'Ext.toolbar.Spacer'
     ],
-    alias: 'widget.weatherHeader',
+    alias: 'widget.weather-header',
     region:'north',
     height:50,
     items: [{
             text: 'CITY NAME',                 
-        },'  ',{
+        },{
+            xtype: 'tbspacer'
+        },{
             xtype    : 'textfield',
             id       : 'cityName',
-            cls      :'myheader',
             name     : 'field',
             emptyText: 'search'
         },{

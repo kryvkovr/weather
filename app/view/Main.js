@@ -13,8 +13,8 @@ Ext.define('Weather.view.Main', {
         type: 'border'
     },
     items: [{
-        xtype: 'weatherHeader'
+        xtype: 'weather-header'
     },{
-        xtype: 'centerPanel'
+        xtype: 'center-panel'
     }]
 });
