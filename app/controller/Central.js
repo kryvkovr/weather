@@ -24,16 +24,12 @@ Ext.define('Weather.controller.Central', {
 
 	getWeatherFiveDaysDaily:function(cityName){
 		var storeFiveDaysDaily=Ext.getStore('WeatherFiveDaysDaily')
-        storeFiveDaysDaily.load({
-        	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
-                         
-        });
+		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
+        storeFiveDaysDaily.load();
 
         var storeDayHourly=Ext.getStore('WeatherFiveDaysHourly')
-        storeDayHourly.load({
-        	url: 'http://api.openweathermap.org/data/2.5/forecast?q='+cityName              
-        })
-           
+        storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName
+        storeDayHourly.load()
 	},
 
 	greet:function(view, record, item, idx, event, opts){
