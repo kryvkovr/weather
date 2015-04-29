@@ -20,7 +20,7 @@ Ext.define('Weather.controller.Central', {
              },
 
              'weather-five-days-daily': {
-                 itemclick: this.showWeatherHourly
+                 itemclick: this.showWeatherOneDayHourly
              }
         });
     },
@@ -35,7 +35,7 @@ Ext.define('Weather.controller.Central', {
         storeDayHourly.load();
 	},
 
-	showWeatherHourly:function(view, record, item, idx, event, opts){
+	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
 		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.data.dt;
