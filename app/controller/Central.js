@@ -6,6 +6,9 @@ Ext.define('Weather.controller.Central', {
         {
             ref: 'cityName',
             selector: 'weather-header #cityName'
+        },{
+            ref: 'viewDayHourly',
+            selector: 'weather-five-days-hourly'
         }
     ],
 
@@ -23,29 +26,22 @@ Ext.define('Weather.controller.Central', {
     },
 
 	getWeatherFiveDaysDaily:function(cityName){
-		var storeFiveDaysDaily=Ext.getStore('WeatherFiveDaysDaily')
-		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
+		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
+		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
         storeFiveDaysDaily.load();
 
-        var storeDayHourly=Ext.getStore('WeatherFiveDaysHourly')
-        storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName
-        storeDayHourly.load()
+        var storeDayHourly=this.getStore('WeatherFiveDaysHourly');
+        storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
+        storeDayHourly.load();
 	},
-
-	greet:function(view, record, item, idx, event, opts){
-		alert(idx)
-	},
-
-
-
-
 
 	showWeatherHourly:function(view, record, item, idx, event, opts){
-			
-		var viewDayHourly=Ext.getCmp('daysWeatherHourly');
-		var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
+		var viewDayHourly=this.getViewDayHourly();
+
+		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
+
+
 		var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-		
 
 	    if(idx==0){
 	   		var oneDayWeather=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
@@ -64,8 +60,7 @@ Ext.define('Weather.controller.Central', {
 	getWeatherSixteenDays:function(cityName){
 		var storeSixteenDay=Ext.getStore('WeatherSixteenDays')
             storeSixteenDay.load({
-            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json'
-              
+            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json'              
             })
 	},
 
