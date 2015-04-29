@@ -62,6 +62,7 @@
 
 .sixteenWeatherDayBlock{
 	position:relative;
+	border:1px solid #157fcc;
 	@extend .font_color_and_hover_theme_style;
 	height:50px;
 	line-height:50px;
@@ -73,29 +74,26 @@
 	}
 }
 
-.tempMax{
-		color:#ffa63a
-}
-
-.tempMin{
-		color:#f9f154
-}
-
-.tempNight{
-		color:#fff
-}
-
 .weatherDescription{
+	border:1px solid #157fcc;
+	line-height:normal;
+	font-size:20px;
+	color:#157fcc;
 	display:none;
 	position:absolute;
 	top:0;
 	left:300px;
-	width:400px;
-	height:400px;
+	width:320px;
+	height:350px;
 	background:#ADD2ED;
 	& img{
-		position:relative;
-		float:left;
-		width:200px;
+		width:150px;
 	}
+	& span{
+		color:#fff;
+		font-size:25px;
+	}
+	
+
+	
 }
