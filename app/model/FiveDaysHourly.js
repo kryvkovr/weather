@@ -13,9 +13,11 @@ Ext.define('Weather.model.FiveDaysHourly', {
         
         { name: 'weather', type: 'auto'},
 
-        { name: 'icon', convert: function (v, record){
-            var weather = record.get('weather')[0];
-            return weather.icon;
+        { 
+            name: 'icon',
+            convert: function (v, record){
+                var weather = record.get('weather')[0];
+                return weather.icon;
             }
         },
         { 

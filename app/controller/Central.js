@@ -36,40 +36,13 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	showWeatherHourly:function(view, record, item, idx, event, opts){
-		
 		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.data.dt;
 		weatherHourlyStore.filter("day", dayFilter);
 		console.log(weatherHourlyStore)
-		
-		//	console.log(weatherHourlyStore)
-
-		//console.log(record.data.dt)
-		//console.log(item)
-		//console.log(idx)
-
-
 		var viewDayHourly=this.getViewDayHourly();
-
-		// var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
-
-
-		// var weatherCurrentDay=(weatherHourlyStore.count() % 8)-1;
-
-	 //    if(idx==0){
-	 //   		var oneDayWeather=weatherHourlyStore.getRange(0, weatherCurrentDay-1)
-	 //    }else{
-	 //   		var oneDayWeather=weatherHourlyStore.getRange( weatherCurrentDay + ((idx-1)*8), weatherCurrentDay-1 + (idx)*8);
-	 //    }
-
-	   	// var storeOneDayWeather = new Ext.data.Store({
-     //    	model:'Weather.model.FiveDaysHourly',
-     //     	data:oneDayWeather
-     // 	});
-
-     	viewDayHourly.bindStore(weatherHourlyStore);
-     			 
+     	viewDayHourly.bindStore(weatherHourlyStore);     			 
 	},
 
 	getWeatherSixteenDays:function(cityName){
