@@ -45,10 +45,9 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	getWeatherSixteenDays:function(cityName){
-		var storeSixteenDay=Ext.getStore('WeatherSixteenDays')
-            storeSixteenDay.load({
-            	url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json'              
-            })
+		var storeSixteenDay=Ext.getStore('WeatherSixteenDays');
+		storeSixteenDay.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json';
+		storeSixteenDay.load();
 	},
 
 	getAllWeather:function(){
