@@ -553,24 +553,26 @@ $include-extthemeneptune-toolbar-toolbar: true;
 $include-weather-application: true;
 $include-weather-controller-central: true;
 $include-weather-controller-main: true;
+$include-weather-model-currentday: true;
 $include-weather-model-fivedaysdaily: true;
 $include-weather-model-fivedayshourly: true;
 $include-weather-model-sixteendays: true;
+$include-weather-store-currentday: true;
 $include-weather-store-weatherfivedaysdaily: true;
 $include-weather-store-weatherfivedayshourly: true;
 $include-weather-store-weathersixteendays: true;
+$include-weather-template-currentday: true;
 $include-weather-template-fivedaysdaily: true;
 $include-weather-template-fivedayshourly: true;
-$include-weather-template-mytemplate: true;
 $include-weather-template-sixteendays: true;
 $include-weather-view-center: true;
+$include-weather-view-currentday: true;
 $include-weather-view-fivedaysdaily: true;
 $include-weather-view-fivedayshourly: true;
 $include-weather-view-header: true;
 $include-weather-view-main: true;
 $include-weather-view-sixteendays: true;
 $include-weather-view-viewport: true;
-$include-weather-view-weatheronedayhourly: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */

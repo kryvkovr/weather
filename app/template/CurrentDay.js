@@ -32,7 +32,6 @@ Ext.define('Weather.template.CurrentDay', {
                 '<td>Wind speed</td>',
                 '<td>{wind.speed}</td>',
            ' </tr>',
-
         '</table>',
     ],
         

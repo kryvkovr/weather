@@ -847,24 +847,26 @@ Ext.ClassManager.addNameAlternateMappings({
   "Weather.Application": [],
   "Weather.controller.Central": [],
   "Weather.controller.Main": [],
+  "Weather.model.CurrentDay": [],
   "Weather.model.FiveDaysDaily": [],
   "Weather.model.FiveDaysHourly": [],
   "Weather.model.SixteenDays": [],
+  "Weather.store.CurrentDay": [],
   "Weather.store.WeatherFiveDaysDaily": [],
   "Weather.store.WeatherFiveDaysHourly": [],
   "Weather.store.WeatherSixteenDays": [],
+  "Weather.template.CurrentDay": [],
   "Weather.template.FiveDaysDaily": [],
   "Weather.template.FiveDaysHourly": [],
-  "Weather.template.Mytemplate": [],
   "Weather.template.SixteenDays": [],
   "Weather.view.Center": [],
+  "Weather.view.CurrentDay": [],
   "Weather.view.FiveDaysDaily": [],
   "Weather.view.FiveDaysHourly": [],
   "Weather.view.Header": [],
   "Weather.view.Main": [],
   "Weather.view.SixteenDays": [],
-  "Weather.view.Viewport": [],
-  "Weather.view.weatherOneDayHourly": []
+  "Weather.view.Viewport": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1870,18 +1872,23 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.Application": [],
   "Weather.controller.Central": [],
   "Weather.controller.Main": [],
+  "Weather.model.CurrentDay": [],
   "Weather.model.FiveDaysDaily": [],
   "Weather.model.FiveDaysHourly": [],
   "Weather.model.SixteenDays": [],
+  "Weather.store.CurrentDay": [],
   "Weather.store.WeatherFiveDaysDaily": [],
   "Weather.store.WeatherFiveDaysHourly": [],
   "Weather.store.WeatherSixteenDays": [],
+  "Weather.template.CurrentDay": [],
   "Weather.template.FiveDaysDaily": [],
   "Weather.template.FiveDaysHourly": [],
-  "Weather.template.Mytemplate": [],
   "Weather.template.SixteenDays": [],
   "Weather.view.Center": [
     "widget.center-panel"
+  ],
+  "Weather.view.CurrentDay": [
+    "widget.weather-current-day"
   ],
   "Weather.view.FiveDaysDaily": [
     "widget.weather-five-days-daily"
@@ -1898,10 +1905,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.view.SixteenDays": [
     "widget.sixteen-days"
   ],
-  "Weather.view.Viewport": [],
-  "Weather.view.weatherOneDayHourly": [
-    "widget.aliasweatherOneDayHourly"
-  ]
+  "Weather.view.Viewport": []
 });
 Ext.setVersion("ext-theme-base", "4.2.1");
 Ext.setVersion("ext-theme-neptune", "4.2.1");

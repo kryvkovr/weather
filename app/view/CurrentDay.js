@@ -1,5 +1,5 @@
 Ext.define("Weather.view.CurrentDay", {
-    //id:'daysWeatherHourly',
+    id:'current-day',
     title: 'CURRENT DAY',
     extend: 'Ext.view.View',
     alias: 'widget.weather-current-day',
