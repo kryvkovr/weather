@@ -13,6 +13,4 @@ Ext.define("Weather.view.FiveDaysHourly", {
         this.itemTpl=Weather.template.FiveDaysHourly.create({});
         this.callParent(arguments);
     }
-   
-    //store:'WeatherFiveDaysHourly'
 });

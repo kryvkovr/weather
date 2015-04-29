@@ -4,13 +4,7 @@ Ext.define("Weather.view.Center", {
 	title: 'WEATHER',
     overflow : 'scroll',
     items:[{    
-        title: '1 DAY',
-        width:'300px',
-        tpl: new Ext.XTemplate('<h1>{name}</h1>',
-                                '<p class="my"><img src="{icon}" width=150></p>',
-                                '<h2><span class="min">min-temperature:</span><b>{max_temperature}</b></h2>',
-                                '<h2><span class="max">max-temperature:</span><b>{min_temperature}</b></h2>'
-                                )       
+         xtype:'weather-current-day' 
     },{
         title:"5 DAYS",
         xtype:'container',

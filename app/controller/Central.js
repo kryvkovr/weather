@@ -29,7 +29,6 @@ Ext.define('Weather.controller.Central', {
 		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
         storeFiveDaysDaily.load();
-
         var storeDayHourly=this.getStore('WeatherFiveDaysHourly');
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
@@ -57,7 +56,7 @@ Ext.define('Weather.controller.Central', {
 		}else{
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
-			//this.getWeatherOneDay(cityName)
+			this.getWeatherOneDay(cityName)
 		}
 	},
 

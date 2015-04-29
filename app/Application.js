@@ -8,7 +8,8 @@ Ext.define('Weather.Application', {
         "Weather.view.Header",
         "Weather.view.FiveDaysDaily",
         "Weather.view.FiveDaysHourly",
-        "Weather.view.SixteenDays",    
+        "Weather.view.SixteenDays",
+        "Weather.view.CurrentDay",    
     ],
 
     controllers: [        
