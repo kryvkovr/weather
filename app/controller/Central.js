@@ -60,7 +60,10 @@ Ext.define('Weather.controller.Central', {
 		}
 	},
 
-	getWeatherOneDay:function(cityName){
-		alert(cityName);
+	getWeatherOneDay:function(cityName){		
+		var storeCurrentDay=Ext.getStore('CurrentDay');
+		storeCurrentDay.getProxy().url="http://api.openweathermap.org/data/2.5/weather?q="+cityName;
+		storeCurrentDay.load();
+		console.log(storeCurrentDay)
 	}
 });
