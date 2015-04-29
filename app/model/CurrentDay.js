@@ -4,6 +4,8 @@ Ext.define('Weather.model.CurrentDay', {
         { 	name:'sys', type:'auto'},
         {   name:'weather', type:'auto'},
         {   name:'main', type:'auto'},
+        {   name:'name', type:'auto'},
+        {   name:'wind', type:'auto'},
         {
             name:'icon', type:'auto',
             convert: function (v, record){
@@ -31,7 +33,7 @@ Ext.define('Weather.model.CurrentDay', {
                 var sunSystem = record.get('sys').sunset;
                 return moment.unix(sunSystem).format('h:mm:ss');
             }         
-        }                  	
+        }                    	
     ]   
 });
 
