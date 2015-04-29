@@ -12,10 +12,12 @@ Ext.define("Weather.view.CurrentDay", {
     itemSelector: '',
     
     store:{
-            fields: ['name'],
+            fields: ['sys', "weather", "main"],
             data  : [
-                {name: 'Ed'},
-                {name: 'Tommy'}
+                {sys: 'SYS1', weather:'WEATHER 1', main:'MAIN 1'},
+                {sys: 'SYS1', weather:'WEATHER 1', main:'MAIN 1'},
+                {sys: 'SYS1', weather:'WEATHER 1', main:'MAIN 1'}
+                
             ]
         },
 

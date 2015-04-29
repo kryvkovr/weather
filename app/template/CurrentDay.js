@@ -1,7 +1,7 @@
 Ext.define('Weather.template.CurrentDay', {
     extend: 'Ext.XTemplate',
 
-    tpl: ['hello from template{name}'
+    tpl: ['{sys}{weather}{main}'
     ],
         
     constructor: function () {
