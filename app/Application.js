@@ -4,7 +4,11 @@ Ext.define('Weather.Application', {
     extend: 'Ext.app.Application',
 
     views: [
-        "Weather.view.Center", "Weather.view.Header", "Weather.view.FiveDaysDaily","Weather.view.FiveDaysHourly"    
+        "Weather.view.Center",
+        "Weather.view.Header",
+        "Weather.view.FiveDaysDaily",
+        "Weather.view.FiveDaysHourly",
+        "Weather.view.SixteenDays",    
     ],
 
     controllers: [        

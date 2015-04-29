@@ -25,18 +25,24 @@ Ext.define("Weather.view.Center", {
         }]   
             
     },{
-        title: '16 DAYS',
-        autoScroll: true,  
-        xtype: 'dataview', 
-        itemTpl:new Ext.XTemplate('<div class="sixteenWeatherDayBlock">{dt}',                                      
-                                            '<div class="weatherDescription">',
-                                                '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
-                                                '<div class="tempMax">Max-temp: {temp.max}</div>',
-                                                '<div class="tempMin">Min-temp: {temp.min}</div>',
-                                                '<div class="tempNight">Night-temp: {temp.night}</div>',
-                                            '</div>',                                        
-                                    '</div>'
-                                ),
-         store:'WeatherSixteenDays'
+
+        xtype:'sixteen-days'
+
+
+
+
+        // title: '16 DAYS',
+        // autoScroll: true,  
+        // xtype: 'dataview', 
+        // itemTpl:new Ext.XTemplate('<div class="sixteenWeatherDayBlock">{dt}',                                      
+        //                                     '<div class="weatherDescription">',
+        //                                         '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
+        //                                         '<div class="tempMax">Max-temp: {temp.max}</div>',
+        //                                         '<div class="tempMin">Min-temp: {temp.min}</div>',
+        //                                         '<div class="tempNight">Night-temp: {temp.night}</div>',
+        //                                     '</div>',                                        
+        //                             '</div>'
+        //                         ),
+        //  store:'WeatherSixteenDays'
     }]
 });
