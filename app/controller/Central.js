@@ -2,11 +2,17 @@ Ext.define('Weather.controller.Central', {
     extend: 'Ext.app.Controller',
 
     requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
+    refs: [
+        {
+            ref: 'cityName',
+            selector: 'weather-header #cityName'
+        }
+    ],
 
     init: function(){
     	Ext.Ajax.useDefaultXhrHeader = false;
         this.control({
-             'weather-header button': {
+             'weather-header #showWeather': {
                  click: this.getAllWeather
              },
 
@@ -35,11 +41,6 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	showWeatherHourly:function(view, record, item, idx, event, opts){
-		console.log('item wa clicked');
-		// var allWeatherBlock=Ext.query('.weatherDayBlock');
-		// Ext.get(allWeatherBlock).setHeight(100);
-		// var clickedWeatherBlock=Ext.query('.weatherDayBlock')[idx];
-		// Ext.get(clickedWeatherBlock).setHeight(150);
 			
 		var viewDayHourly=Ext.getCmp('daysWeatherHourly');
 		var weatherHourlyStore=Ext.getStore('WeatherFiveDaysHourly');
@@ -69,7 +70,7 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	getAllWeather:function(){
-		var cityName=Ext.getCmp('cityName').getValue();
+		var cityName=this.getCityName().getValue();
 		if(cityName==''){
 			Ext.Msg.alert('Error', 'Pls enter a city name.');
 		}else{

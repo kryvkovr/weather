@@ -1,6 +1,6 @@
 Ext.define('Weather.template.FiveDaysHourly', {
     extend: 'Ext.XTemplate',
-
+    
     tpl: ['<div class="weatherDayHour">',
                 '<div style="font-size:15px;color:#fff">Hour-{dt}</div>',
                 '<div style="color:red">temp min {main.temp_min}</div>',
@@ -13,10 +13,3 @@ Ext.define('Weather.template.FiveDaysHourly', {
         this.callParent(this.tpl);
     }
 });
-
- // itemTpl:new Ext.XTemplate('<div class="weatherDayHour">',
-                //                                 '<div style="font-size:15px;color:#fff">Hour-{dt}</div>',
-                //                                 '<div style="color:red">temp min {main.temp_min}</div>',
-                //                                 '<div style="color:yellow">temp max {main.temp_max}</div>',
-                //                                 '<img src="http://openweathermap.org/img/w/{icon}.png" width="100"></img>',
-                //                             '</div>')

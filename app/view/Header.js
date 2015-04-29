@@ -12,11 +12,11 @@ Ext.define("Weather.view.Header", {
             xtype: 'tbspacer'
         },{
             xtype    : 'textfield',
-            id       : 'cityName',
+            itemId   : 'cityName',
             name     : 'field',
             emptyText: 'search'
         },{
-            id: 'showWeather',
+            itemId: 'showWeather',
             xtype: 'button',
             height:'100%',
             text : 'GET WEATHER',
