@@ -40,6 +40,10 @@ Ext.define('Weather.controller.Central', {
 		alert(idx)
 	},
 
+
+
+
+
 	showWeatherHourly:function(view, record, item, idx, event, opts){
 			
 		var viewDayHourly=Ext.getCmp('daysWeatherHourly');
