@@ -27,6 +27,7 @@ Ext.define('Weather.Application', {
         // TODO: add stores here
         'Weather.model.FiveDaysDaily',
         'Weather.model.FiveDaysHourly',
-        'Weather.model.SixteenDays'
+        'Weather.model.SixteenDays',
+        'Weather.model.CurrentDay'
     ]    
 });

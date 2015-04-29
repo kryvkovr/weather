@@ -12,7 +12,8 @@ Ext.define("Weather.view.CurrentDay", {
     itemSelector: '',
     
     store:{
-            fields: ['sys', "weather", "main"],
+            //fields: ['sys', "weather", "main"],
+            model:"Weather.model.CurrentDay",
             data  : [
                 {sys: 'SYS1', weather:'WEATHER 1', main:'MAIN 1'},
                 {sys: 'SYS1', weather:'WEATHER 1', main:'MAIN 1'},
