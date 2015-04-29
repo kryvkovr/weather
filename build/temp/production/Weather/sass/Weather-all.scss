@@ -561,12 +561,16 @@ $include-weather-store-weatherfivedayshourly: true;
 $include-weather-store-weathersixteendays: true;
 $include-weather-template-fivedaysdaily: true;
 $include-weather-template-fivedayshourly: true;
+$include-weather-template-mytemplate: false;
+$include-weather-template-sixteendays: true;
 $include-weather-view-center: true;
 $include-weather-view-fivedaysdaily: true;
 $include-weather-view-fivedayshourly: true;
 $include-weather-view-header: true;
 $include-weather-view-main: true;
+$include-weather-view-sixteendays: true;
 $include-weather-view-viewport: true;
+$include-weather-view-weatheronedayhourly: false;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */

@@ -10,7 +10,6 @@ Ext.define("Weather.view.SixteenDays", {
     autoScroll: true,  
     store:'WeatherSixteenDays',
    
-
     initComponent: function() {
         this.itemTpl=Weather.template.SixteenDays.create({});
         this.callParent(arguments);
