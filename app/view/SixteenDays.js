@@ -4,7 +4,6 @@ Ext.define("Weather.view.SixteenDays", {
     alias: 'widget.sixteen-days',
     title: '16 DAYS',
     autoScroll: true,  
-    xtype: 'dataview', 
     itemTpl:new Ext.XTemplate('<div class="sixteenWeatherDayBlock">{dt}',                                      
                                         '<div class="weatherDescription">',
                                             '<img src="http://openweathermap.org/img/w/{weather}.png"></img>',
