@@ -40,7 +40,6 @@ Ext.define('Weather.controller.Central', {
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.data.dt;
 		weatherHourlyStore.filter("day", dayFilter);
-		console.log(weatherHourlyStore)
 		var viewDayHourly=this.getViewDayHourly();
      	viewDayHourly.bindStore(weatherHourlyStore);     			 
 	},
