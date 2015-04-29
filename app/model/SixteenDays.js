@@ -11,10 +11,11 @@ Ext.define('Weather.model.SixteenDays', {
         	name:'weather' ,
         	convert: function(v, record){
                         return v[0].icon;
+            }
         },{
             name:'pressure'         
         },{
             name:'speed'         
         }       	
-    }]   
+    ]   
 });
