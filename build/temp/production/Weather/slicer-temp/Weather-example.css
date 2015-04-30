@@ -22913,12 +22913,26 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 
 /* line 98, ../../../../../sass/src/view/Center.scss */
 #current-day {
-  border: 1px solid #157fcc;
-  background: #ADD2ED;
   font-size: 20px;
   color: #157fcc;
 }
-/* line 103, ../../../../../sass/src/view/Center.scss */
+/* line 101, ../../../../../sass/src/view/Center.scss */
 #current-day img {
   width: 200px;
+}
+/* line 104, ../../../../../sass/src/view/Center.scss */
+#current-day table {
+  border: 1px solid #157fcc;
+  text-align: center;
+  background: #ADD2ED;
+  padding: 30px;
+}
+/* line 110, ../../../../../sass/src/view/Center.scss */
+#current-day h1 {
+  margin-left: 50px;
+}
+/* line 113, ../../../../../sass/src/view/Center.scss */
+#current-day table span {
+  color: #fff;
+  font-size: 30px;
 }

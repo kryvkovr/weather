@@ -95,12 +95,23 @@
 	}	
 }
 
-#current-day{
-	border:1px solid #157fcc;
-	background:#ADD2ED;
+#current-day{	
 	font-size:20px;
 	color:#157fcc;
 	& img{
 		width:200px;
+	}
+	& table {
+		border:1px solid #157fcc;
+		text-align:center;
+		background:#ADD2ED;
+		padding: 30px
+	}
+	& h1{
+		margin-left:50px;
+	}
+	& table span{
+		color:#fff;
+		font-size:30px;
 	}
 }
