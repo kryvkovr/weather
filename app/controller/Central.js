@@ -30,19 +30,6 @@ Ext.define('Weather.controller.Central', {
         });
     },
 
-    getWeatherEnterClick:function(textfield, eventObject){
-    	if (eventObject.getCharCode() == Ext.EventObject.ENTER) {
-            var cityName=this.getCityName().getValue();
-			if(cityName==''){
-				Ext.Msg.alert('Error', 'Pls enter a city name.');
-			}else{
-				this.getWeatherFiveDaysDaily(cityName)
-				this.getWeatherSixteenDays(cityName)
-				this.getWeatherOneDay(cityName)
-			}
-        }
-    },
-
 	getWeatherFiveDaysDaily:function(cityName){
 		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
@@ -76,12 +63,18 @@ Ext.define('Weather.controller.Central', {
 			this.getWeatherSixteenDays(cityName)
 			this.getWeatherOneDay(cityName)
 		}
+		this.getCityName().setValue('');
 	},
 
 	getWeatherOneDay:function(cityName){		
 		var storeCurrentDay=Ext.getStore('CurrentDay');
 		storeCurrentDay.getProxy().url="http://api.openweathermap.org/data/2.5/weather?q="+cityName;
 		storeCurrentDay.load();
-		console.log(storeCurrentDay)
-	}
+	},
+
+	getWeatherEnterClick:function(textfield, eventObject){
+    	if (eventObject.getCharCode() == Ext.EventObject.ENTER) {
+        	this.getAllWeather();
+        }
+    }
 });
