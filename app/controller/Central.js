@@ -1,7 +1,11 @@
 Ext.define('Weather.controller.Central', {
     extend: 'Ext.app.Controller',
 
-    requires: ['Ext.data.JsonP', 'Ext.Msg', 'Weather.view.Header'],
+    requires: ['Ext.data.JsonP',
+               'Ext.Msg',
+                'Weather.view.Header',
+                'Weather.store.WeatherFiveDaysDaily'
+                ],
     refs: [
         {
             ref: 'cityName',
@@ -15,6 +19,17 @@ Ext.define('Weather.controller.Central', {
 
     init: function(){
     	Ext.Ajax.useDefaultXhrHeader = false;
+
+        this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
+            model: 'Weather.model.FiveDaysDaily'
+        })
+
+        // var view= this.getView("FiveDaysDaily");
+        //    // view.bindStore(this.fiveDayStore);
+        //     //console.log(view)
+
+
+
         this.control({
              'weather-header #showWeather': {
                  click: this.getAllWeather
@@ -27,22 +42,38 @@ Ext.define('Weather.controller.Central', {
              'weather-five-days-daily': {
                  itemclick: this.showWeatherOneDayHourly
              }
+
+             // 'weather-five-days-daily': {
+             //     render: this.setStore
+             // }
         });
-        // this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
-        //     model: ''
-        // })
+
+
+
+
+       
     },
 
 	getWeatherFiveDaysDaily:function (cityName){
 		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
+        // late bind store
+        // var storeFiveDaysDaily=this.fiveDayStore;
+
+        console.log(storeFiveDaysDaily)
+
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
         storeFiveDaysDaily.load();
+
+        console.log(storeFiveDaysDaily)
+
         var storeDayHourly=this.getStore('WeatherFiveDaysHourly');
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
 	},
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
+        console.log('clicked')
+
 		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.get('dt');

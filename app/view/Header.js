@@ -20,11 +20,12 @@ Ext.define("Weather.view.Header", {
             name     : 'field',
             emptyText: 'search'
         },{
+            cls: 'get-weather-button',
             itemId  : 'showWeather',
             xtype   : 'button',
-            height  :'100%',
+           // height  :'100%',
             text    : 'GET WEATHER',
-            margin  :'15 0 0 25',
+            //margin  :'15 0 0 25',
         }
     ]  
 });

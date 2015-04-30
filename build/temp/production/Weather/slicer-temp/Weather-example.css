@@ -22799,6 +22799,12 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* including package Weather */
+/* line 1, ../../../../../sass/src/view/Header.scss */
+.get-weather-button {
+  /*height:100%;
+  margin:15px 0 0 25px;*/
+}
+
 /* line 7, ../../../../../sass/src/view/Center.scss */
 .font_color_and_hover_theme_style, .weatherDayBlock, .sixteenWeatherDayBlock {
   color: #157fcc;

@@ -11,13 +11,8 @@ Ext.define("Weather.view.Center", {
             xtype:'container',
             autoScroll: true,        
             items: [
-                {           
-                    xtype:'container',
-                    items: [
-                        { xtype:'weather-five-days-daily'},
-                        { xtype:'weather-five-days-hourly'}
-                    ]   
-                }
+                { xtype:'weather-five-days-daily'},
+                { xtype:'weather-five-days-hourly'}
             ]              
         },
         

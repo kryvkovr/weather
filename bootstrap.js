@@ -858,6 +858,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Weather.template.CurrentDay": [],
   "Weather.template.FiveDaysDaily": [],
   "Weather.template.FiveDaysHourly": [],
+  "Weather.template.Mytemplate": [],
   "Weather.template.SixteenDays": [],
   "Weather.view.Center": [],
   "Weather.view.CurrentDay": [],
@@ -866,7 +867,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "Weather.view.Header": [],
   "Weather.view.Main": [],
   "Weather.view.SixteenDays": [],
-  "Weather.view.Viewport": []
+  "Weather.view.Viewport": [],
+  "Weather.view.weatherOneDayHourly": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1883,6 +1885,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.template.CurrentDay": [],
   "Weather.template.FiveDaysDaily": [],
   "Weather.template.FiveDaysHourly": [],
+  "Weather.template.Mytemplate": [],
   "Weather.template.SixteenDays": [],
   "Weather.view.Center": [
     "widget.center-panel"
@@ -1905,7 +1908,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Weather.view.SixteenDays": [
     "widget.sixteen-days"
   ],
-  "Weather.view.Viewport": []
+  "Weather.view.Viewport": [],
+  "Weather.view.weatherOneDayHourly": [
+    "widget.aliasweatherOneDayHourly"
+  ]
 });
 Ext.setVersion("ext-theme-base", "4.2.1");
 Ext.setVersion("ext-theme-neptune", "4.2.1");
