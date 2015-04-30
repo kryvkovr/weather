@@ -1,10 +1,10 @@
 Ext.define('Weather.model.SixteenDays', {
     extend: 'Ext.data.Model',
     fields: [
-        { name:'pressure', type:'auto' },
-        { name:'weather' , type:'auto' },  
-        { name:'speed', type:'auto'}, 
-        { name:'temp', type:'auto' },          
+        {   name:'pressure', type:'auto' },
+        {   name:'weather' , type:'auto' },  
+        {   name:'speed', type:'auto'}, 
+        {   name:'temp', type:'auto' },          
 
         {
             name: 'dt', type:'auto',          
