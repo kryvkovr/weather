@@ -28,7 +28,6 @@ Ext.define('Weather.template.SixteenDays', {
                             '<td>Night-temp</td>',
                             '<td>{temp.night}</td>',
                        ' </tr>',
-
                     '</table>',
                  '</div>',  
             '</div>'

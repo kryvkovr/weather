@@ -12,7 +12,6 @@
 		background:#157fcc;
 		color:#fff;
 	}
-
 }
 
 .weatherDayBlock{
@@ -27,6 +26,15 @@
 	.x-item-selected &{
 		height:150px;
 	}
+	& .date{
+		font-size:20px;
+	}
+	& .temp-max{
+		color:red;
+	}
+	& .temp-min{
+		color:white;
+	}
 }
 
 .weatherDayHour{
@@ -36,6 +44,19 @@
 	padding:10px;
 	background:#157fcc;
 	border:1px solid #ADD2ED;
+	& .day{
+		font-size:15px;
+		color:#fff
+	}
+	& .temp-min{
+		color:red;
+	}
+	& .temp-max{
+		color:#fff;
+	}
+	& img{
+		width:100px;
+	}
 }
 
 #weatherDaily{

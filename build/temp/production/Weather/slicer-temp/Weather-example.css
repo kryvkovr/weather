@@ -22816,7 +22816,7 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   color: #fff;
 }
 
-/* line 18, ../../../../../sass/src/view/Center.scss */
+/* line 17, ../../../../../sass/src/view/Center.scss */
 .weatherDayBlock {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -22828,12 +22828,24 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   border-top: 0;
   height: 100px;
 }
-/* line 27, ../../../../../sass/src/view/Center.scss */
+/* line 26, ../../../../../sass/src/view/Center.scss */
 .x-item-selected .weatherDayBlock {
   height: 150px;
 }
-
+/* line 29, ../../../../../sass/src/view/Center.scss */
+.weatherDayBlock .date {
+  font-size: 20px;
+}
 /* line 32, ../../../../../sass/src/view/Center.scss */
+.weatherDayBlock .temp-max {
+  color: red;
+}
+/* line 35, ../../../../../sass/src/view/Center.scss */
+.weatherDayBlock .temp-min {
+  color: white;
+}
+
+/* line 40, ../../../../../sass/src/view/Center.scss */
 .weatherDayHour {
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -22844,35 +22856,52 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   background: #157fcc;
   border: 1px solid #ADD2ED;
 }
+/* line 47, ../../../../../sass/src/view/Center.scss */
+.weatherDayHour .day {
+  font-size: 15px;
+  color: #fff;
+}
+/* line 51, ../../../../../sass/src/view/Center.scss */
+.weatherDayHour .temp-min {
+  color: red;
+}
+/* line 54, ../../../../../sass/src/view/Center.scss */
+.weatherDayHour .temp-max {
+  color: #fff;
+}
+/* line 57, ../../../../../sass/src/view/Center.scss */
+.weatherDayHour img {
+  width: 100px;
+}
 
-/* line 41, ../../../../../sass/src/view/Center.scss */
+/* line 62, ../../../../../sass/src/view/Center.scss */
 #weatherDaily {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
-/* line 45, ../../../../../sass/src/view/Center.scss */
+/* line 66, ../../../../../sass/src/view/Center.scss */
 #weatherDaily div.x-dataview-item {
   flex: 1 1 150px;
 }
-/* line 48, ../../../../../sass/src/view/Center.scss */
+/* line 69, ../../../../../sass/src/view/Center.scss */
 #weatherDaily x-item-selected {
   height: 150px;
 }
 
-/* line 53, ../../../../../sass/src/view/Center.scss */
+/* line 74, ../../../../../sass/src/view/Center.scss */
 #daysWeatherHourly {
   display: flex !important;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-/* line 59, ../../../../../sass/src/view/Center.scss */
+/* line 80, ../../../../../sass/src/view/Center.scss */
 .height_300 {
   height: 300px !important;
 }
 
-/* line 63, ../../../../../sass/src/view/Center.scss */
+/* line 84, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock {
   position: relative;
   border: 1px solid #157fcc;
@@ -22882,12 +22911,12 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   width: 300px;
   font-size: 20px;
 }
-/* line 72, ../../../../../sass/src/view/Center.scss */
+/* line 93, ../../../../../sass/src/view/Center.scss */
 .sixteenWeatherDayBlock:hover .weatherDescription {
   display: block;
 }
 
-/* line 77, ../../../../../sass/src/view/Center.scss */
+/* line 98, ../../../../../sass/src/view/Center.scss */
 .weatherDescription {
   border: 1px solid #157fcc;
   line-height: normal;
@@ -22901,37 +22930,37 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
   height: 350px;
   background: #ADD2ED;
 }
-/* line 89, ../../../../../sass/src/view/Center.scss */
+/* line 110, ../../../../../sass/src/view/Center.scss */
 .weatherDescription img {
   width: 150px;
 }
-/* line 92, ../../../../../sass/src/view/Center.scss */
+/* line 113, ../../../../../sass/src/view/Center.scss */
 .weatherDescription span {
   color: #fff;
   font-size: 25px;
 }
 
-/* line 98, ../../../../../sass/src/view/Center.scss */
+/* line 119, ../../../../../sass/src/view/Center.scss */
 #current-day {
   font-size: 20px;
   color: #157fcc;
 }
-/* line 101, ../../../../../sass/src/view/Center.scss */
+/* line 122, ../../../../../sass/src/view/Center.scss */
 #current-day img {
   width: 200px;
 }
-/* line 104, ../../../../../sass/src/view/Center.scss */
+/* line 125, ../../../../../sass/src/view/Center.scss */
 #current-day table {
   border: 1px solid #157fcc;
   text-align: center;
   background: #ADD2ED;
   padding: 30px;
 }
-/* line 110, ../../../../../sass/src/view/Center.scss */
+/* line 131, ../../../../../sass/src/view/Center.scss */
 #current-day h1 {
   margin-left: 50px;
 }
-/* line 113, ../../../../../sass/src/view/Center.scss */
+/* line 134, ../../../../../sass/src/view/Center.scss */
 #current-day table span {
   color: #fff;
   font-size: 30px;

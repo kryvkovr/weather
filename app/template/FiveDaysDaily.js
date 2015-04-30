@@ -2,9 +2,9 @@ Ext.define('Weather.template.FiveDaysDaily', {
     extend: 'Ext.XTemplate',
 
     tpl: ['<div class="weatherDayBlock">',
-                '<div style="font-size:20px">Day:{dt}</div>',
-                '<div style="color:red">temp max {temp.max}</div>',
-                '<div style="color:green">temp min {temp.min}</div>',
+                '<div class="date">Day:{dt}</div>',
+                '<div class="temp-max">temp max {temp.max}</div>',
+                '<div class="temp-min">temp min {temp.min}</div>',
             '</div>'
     ],
         
