@@ -6,6 +6,7 @@ Ext.define('Weather.model.CurrentDay', {
         {   name:'main', type:'auto'},
         {   name:'name', type:'auto'},
         {   name:'wind', type:'auto'},
+        
         {
             name:'icon', type:'auto',
             convert: function (v, record){

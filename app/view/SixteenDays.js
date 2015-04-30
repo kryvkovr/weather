@@ -15,6 +15,5 @@ Ext.define("Weather.view.SixteenDays", {
         this.callParent(arguments);
     }
    
-   
 });
 

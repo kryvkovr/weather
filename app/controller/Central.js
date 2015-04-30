@@ -6,7 +6,8 @@ Ext.define('Weather.controller.Central', {
         {
             ref: 'cityName',
             selector: 'weather-header #cityName'
-        },{
+        },
+        {
             ref: 'viewDayHourly',
             selector: 'weather-five-days-hourly'
         }

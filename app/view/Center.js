@@ -3,21 +3,24 @@ Ext.define("Weather.view.Center", {
 	alias:'widget.center-panel',
 	title: 'WEATHER',
     overflow : 'scroll',
-    items:[{    
-         xtype:'weather-current-day' 
-    },{
-        title:"5 DAYS",
-        xtype:'container',
-        autoScroll: true,        
-        items: [{           
+    items:[
+        { xtype:'weather-current-day' },
+
+        {
+            title:"5 DAYS",
             xtype:'container',
-            items: [{
-                xtype:'weather-five-days-daily'
-            },{
-                xtype:'weather-five-days-hourly'
-            }]   
-        }]              
-    },{
-        xtype:'sixteen-days'
-    }]
+            autoScroll: true,        
+            items: [
+                {           
+                    xtype:'container',
+                    items: [
+                        { xtype:'weather-five-days-daily'},
+                        { xtype:'weather-five-days-hourly'}
+                    ]   
+                }
+            ]              
+        },
+        
+        { xtype:'sixteen-days'}
+    ]
 });
