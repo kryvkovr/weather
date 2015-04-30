@@ -1,10 +1,11 @@
 Ext.define("Weather.view.Header", {
     extend: 'Ext.toolbar.Toolbar',
+    alias: 'widget.weather-header',
     requires:[        
         'Ext.toolbar.TextItem',
-        'Ext.toolbar.Spacer'
+        'Ext.toolbar.Spacer',
+        'Ext.form.Label'
     ],
-    alias: 'widget.weather-header',
     height:50,
     items: [
         {

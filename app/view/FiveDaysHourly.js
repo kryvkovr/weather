@@ -1,13 +1,13 @@
-Ext.define("Weather.view.FiveDaysHourly", {
-    id:'daysWeatherHourly',
+Ext.define("Weather.view.FiveDaysHourly", {    
     extend: 'Ext.view.View',
     alias: 'widget.weather-five-days-hourly',
     requires:[
         'Weather.template.FiveDaysHourly'
     ],
-    
+
+    id:'daysWeatherHourly',
     height:200,
-    itemSelector: '',
+    itemSelector: 'weatherDayHour',
 
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysHourly.create({});

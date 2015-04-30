@@ -1,13 +1,14 @@
 Ext.define("Weather.view.CurrentDay", {
-    id:'current-day',
-    title: 'CURRENT DAY',
     extend: 'Ext.view.View',
+
     alias: 'widget.weather-current-day',
 
     requires:[
         'Weather.template.CurrentDay'
     ],
-
+    
+    id:'current-day',
+    title: 'CURRENT DAY',
     itemSelector: '',
     store:"CurrentDay",
 
