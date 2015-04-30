@@ -20,10 +20,27 @@ Ext.define('Weather.controller.Central', {
                  click: this.getAllWeather
              },
 
+             'weather-header #cityName': {
+                 keypress: this.getWeatherEnterClick
+             },
+
              'weather-five-days-daily': {
                  itemclick: this.showWeatherOneDayHourly
              }
         });
+    },
+
+    getWeatherEnterClick:function(textfield, eventObject){
+    	if (eventObject.getCharCode() == Ext.EventObject.ENTER) {
+            var cityName=this.getCityName().getValue();
+			if(cityName==''){
+				Ext.Msg.alert('Error', 'Pls enter a city name.');
+			}else{
+				this.getWeatherFiveDaysDaily(cityName)
+				this.getWeatherSixteenDays(cityName)
+				this.getWeatherOneDay(cityName)
+			}
+        }
     },
 
 	getWeatherFiveDaysDaily:function(cityName){

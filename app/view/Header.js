@@ -7,16 +7,17 @@ Ext.define("Weather.view.Header", {
     alias: 'widget.weather-header',
     height:50,
     items: [
-        { text: 'CITY NAME' },
-        { xtype: 'tbspacer' },
+        {   text: 'CITY NAME' },
+        {   xtype: 'tbspacer' },
 
         {
             xtype    : 'textfield',
             itemId   : 'cityName',
+            enableKeyEvents: true,
             name     : 'field',
             emptyText: 'search'
         },
-        
+
         {
             itemId: 'showWeather',
             xtype: 'button',
