@@ -7,7 +7,7 @@ Ext.define("Weather.view.FiveDaysHourly", {
 
     id:'daysWeatherHourly',
     height:200,
-    itemSelector: 'weatherDayHour',
+   // itemSelector: 'weatherDayHour',
 
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysHourly.create({});

@@ -6,10 +6,10 @@ Ext.define("Weather.view.FiveDaysDaily", {
     requires:[
         'Weather.template.FiveDaysDaily'
     ],
-    
+
     id:'weatherDaily',
     height:200,
-    itemSelector: 'weatherDayBlock',
+    //itemSelector: 'weatherDayBlock',
 
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysDaily.create({});
