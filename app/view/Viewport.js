@@ -3,7 +3,6 @@ Ext.define('Weather.view.Viewport', {
     requires:[
         'Ext.layout.container.Fit',
         'Weather.view.Main',
-        'Ext.view.View'
     ],
 
     layout: {

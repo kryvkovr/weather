@@ -28,9 +28,12 @@ Ext.define('Weather.controller.Central', {
                  itemclick: this.showWeatherOneDayHourly
              }
         });
+        // this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
+        //     model: ''
+        // })
     },
 
-	getWeatherFiveDaysDaily:function(cityName){
+	getWeatherFiveDaysDaily:function (cityName){
 		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
         storeFiveDaysDaily.load();
@@ -42,7 +45,7 @@ Ext.define('Weather.controller.Central', {
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
 		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
 		weatherHourlyStore.clearFilter(true);
-		var dayFilter=record.data.dt;
+		var dayFilter=record.get('dt');
 		weatherHourlyStore.filter("day", dayFilter);
 		var viewDayHourly=this.getViewDayHourly();
      	viewDayHourly.bindStore(weatherHourlyStore);     			 
@@ -55,10 +58,11 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	getAllWeather:function(){
-		var cityName=this.getCityName().getValue();
+		var cityName =this.getCityName().getValue();
 		if(cityName==''){
 			Ext.Msg.alert('Error', 'Pls enter a city name.');
 		}else{
+            
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
 			this.getWeatherOneDay(cityName)
@@ -73,7 +77,7 @@ Ext.define('Weather.controller.Central', {
 	},
 
 	getWeatherEnterClick:function(textfield, eventObject){
-    	if (eventObject.getCharCode() == Ext.EventObject.ENTER) {
+    	if (eventObject.getCharCode() === Ext.EventObject.ENTER) {
         	this.getAllWeather();
         }
     }

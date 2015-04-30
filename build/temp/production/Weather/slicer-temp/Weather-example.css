@@ -22799,11 +22799,6 @@ body.x-nbr .x-panel-header-light-framed-collapsed-left-frameInfo {
 }
 
 /* including package Weather */
-/* line 1, ../../../../../sass/src/view/Header.scss */
-#newId {
-  color: #d22;
-}
-
 /* line 7, ../../../../../sass/src/view/Center.scss */
 .font_color_and_hover_theme_style, .weatherDayBlock, .sixteenWeatherDayBlock {
   color: #157fcc;
