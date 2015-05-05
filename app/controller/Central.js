@@ -75,7 +75,7 @@ Ext.define('Weather.controller.Central', {
                 if (success) {
                     deferred.resolve(this);
                 } else {
-                    deferred.reject("Error loading weather.");
+                    deferred.reject('Cant load weather for current day ');
                 }
             }
           });
@@ -89,7 +89,11 @@ Ext.define('Weather.controller.Central', {
                 viewCurrentDay.bindStore(store)            
             },
             failure: function(error) {
-                alert(error)
+                Ext.Msg.show({
+                    title: error,
+                    msg: 'Pls try again later.',
+                    buttons: Ext.Msg.OK
+                });
             }
         })
     },
@@ -104,7 +108,7 @@ Ext.define('Weather.controller.Central', {
                 if (success) {
                     deferred.resolve(this);
                 } else {
-                    deferred.reject("Error loading weather.");
+                    deferred.reject('Cant load weather for five days daily ');
                 }
             }
           });
@@ -120,7 +124,7 @@ Ext.define('Weather.controller.Central', {
                 if (success) {
                     deferred.resolve(this);
                 } else {
-                    deferred.reject("Error loading weather.");
+                    deferred.reject('Cant load weather for five days hourly ');
                 }
             }
           });
@@ -135,21 +139,27 @@ Ext.define('Weather.controller.Central', {
                 viewFiveDaysDaily.bindStore(store)            
             },
             failure: function(error) {
-                alert(error)
+               Ext.Msg.show({
+                    title:error,
+                    msg: 'Pls try again later.',
+                    buttons: Ext.Msg.OK
+                });
             }
         })
 
         this.storeLoadFiveDaysHourlyDefer(cityName).then({
             success: function(store) {
-                console.log(store)         
+               // console.log(store)         
             },
             failure: function(error) {
-                alert(error)
+               Ext.Msg.show({
+                    title:error,
+                    msg: 'Pls try again later.',
+                    buttons: Ext.Msg.OK
+                });
             }
         })
 	},
-
-
 
 
     storeLoadSixteenDayDefer: function(cityName) {
@@ -161,7 +171,7 @@ Ext.define('Weather.controller.Central', {
                 if (success) {
                     deferred.resolve(this);
                 } else {
-                    deferred.reject("Error loading weather.");
+                    deferred.reject('Cant load weather for sixteen days');
                 }
             }
           });
@@ -175,12 +185,14 @@ Ext.define('Weather.controller.Central', {
                 viewSexteenDays.bindStore(store)            
             },
             failure: function(error) {
-                alert(error)
+                Ext.Msg.show({
+                    title: error,
+                    msg: 'Pls try again later.',
+                    buttons: Ext.Msg.OK
+                });
             }
         })
     },
-
-
 
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){        
@@ -196,7 +208,12 @@ Ext.define('Weather.controller.Central', {
 	getAllWeather:function(){
 		var cityName =this.getCityName().getValue();
 		if(cityName==''){
-			Ext.Msg.alert('Error', 'Pls enter a city name.');
+            Ext.Msg.show({
+            title:'No city name',
+            msg: 'Pls enter a city name.',
+            buttons: Ext.Msg.OK
+        });
+
 		}else{            
 			this.getWeatherFiveDays(cityName)
 			this.getWeatherSixteenDays(cityName)
