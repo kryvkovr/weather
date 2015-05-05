@@ -1,11 +1,10 @@
-Ext.define('Weather.store.WeatherFiveDaysHourly', {
+Ext.define('Weather.store.WeatherMainStore', {
     extend: 'Ext.data.Store',
-    //model:'Weather.model.FiveDaysHourly',
     proxy: {
         type: 'ajax',      
         reader: {
             type: 'json',
             root: 'list'         
         }
-    }       
+    } 
 });

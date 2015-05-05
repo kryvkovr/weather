@@ -4,7 +4,10 @@ Ext.define("Weather.view.FiveDaysDaily", {
     alias: 'widget.weather-five-days-daily',
 
     requires:[
-        'Weather.template.FiveDaysDaily'
+        'Weather.template.FiveDaysDaily',
+        'Weather.store.WeatherFiveDaysDaily',
+        'Weather.model.FiveDaysDaily'
+
     ],
 
     id:'weatherDaily',
@@ -13,10 +16,6 @@ Ext.define("Weather.view.FiveDaysDaily", {
 
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysDaily.create({});
-        this.store=Weather.store.WeatherFiveDaysDaily.create({});
-        console.log(this.store)
         this.callParent(arguments);
     }
-   
-   // store:'WeatherFiveDaysDaily'
 });
