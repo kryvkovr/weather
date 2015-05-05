@@ -72,27 +72,24 @@ Ext.define('Weather.controller.Central', {
         var storeDayHourly=this.fiveDayHourlyStore;
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
-        //console.log(storeDayHourly)
 	},
 
 
+    storeLoadSixteenDayDefer: function(cityName) {
 
-    storeLoadSixteenDayDefer: function() {
         var deferred = Ext.create('Deft.Deferred');
-       // var viewSexteenDays=this.getViewSexteenDays()        
-        var storeSixteenDay=this.sixteenDayStore
+
+        var storeSixteenDay=this.sixteenDayStore;
         storeSixteenDay.load({
-            url:'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=16&mode=json',
+            url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
 
             callback: function(records, operation, success) {
-              if (success) {
-                console.log(storeSixteenDay)
-                deferred.resolve(this);
-              } else {
-                deferred.reject("Error loading Companies.");
-              }
+                if (success) {
+                    deferred.resolve(this);
+                } else {
+                    deferred.reject("Error loading Companies.");
+                }
             }
-
           });
 
       return deferred.promise;
@@ -116,25 +113,14 @@ Ext.define('Weather.controller.Central', {
 
 	getWeatherSixteenDays:function(cityName){
         var viewSexteenDays=this.getViewSexteenDays()        
-        this.storeLoadSixteenDayDefer().then({
-            success: function(store, view) {
-                console.log(store)
-                console.log(view)
-                viewSexteenDays.bindStore(store)
-               // console.log(view)
-              
+        this.storeLoadSixteenDayDefer(cityName).then({
+            success: function(store) {
+                viewSexteenDays.bindStore(store)            
             },
             failure: function(error) {
                 alert('everusing bad')
-        // Do something on failure.alert
             }
         })
-
-  //       var viewSexteenDays=this.getViewSexteenDays()        
-  //       var storeSixteenDay=this.sixteenDayStore
-		// storeSixteenDay.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json';
-		// storeSixteenDay.load();
-  //       viewSexteenDays.bindStore(storeSixteenDay)
 	},
 
 
