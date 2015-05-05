@@ -111,8 +111,24 @@ Ext.define('Weather.controller.Central', {
       return deferred.promise;
     },
 
+    storeLoadFiveDaysHourlyDefer: function(cityName) {
+        var deferred = Ext.create('Deft.Deferred');
+        var storeFiveDaysHourly=this.fiveDayHourlyStore
+        storeFiveDaysHourly.load({
+            url:'http://api.openweathermap.org/data/2.5/forecast?q='+cityName,
+            callback: function(records, operation, success) {
+                if (success) {
+                    deferred.resolve(this);
+                } else {
+                    deferred.reject("Error loading weather.");
+                }
+            }
+          });
+      return deferred.promise;
+    },
 
-	getWeatherFiveDaysDaily:function (cityName){
+
+	getWeatherFiveDays:function (cityName){
         var viewFiveDaysDaily=this.getViewFiveDaysDaily()
         this.storeLoadFiveDaysDailyDefer(cityName).then({
             success: function(store) {
@@ -123,27 +139,15 @@ Ext.define('Weather.controller.Central', {
             }
         })
 
-
-		// var storeFiveDaysDaily=this.fiveDayStore
-		// storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
-  //       storeFiveDaysDaily.load();
-  //       var viewFiveDaysDaily=this.getViewFiveDaysDaily()
-  //       viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
-      
-        var storeDayHourly=this.fiveDayHourlyStore;
-        storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
-        storeDayHourly.load();
+        this.storeLoadFiveDaysHourlyDefer(cityName).then({
+            success: function(store) {
+                console.log(store)         
+            },
+            failure: function(error) {
+                alert(error)
+            }
+        })
 	},
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -194,7 +198,7 @@ Ext.define('Weather.controller.Central', {
 		if(cityName==''){
 			Ext.Msg.alert('Error', 'Pls enter a city name.');
 		}else{            
-			this.getWeatherFiveDaysDaily(cityName)
+			this.getWeatherFiveDays(cityName)
 			this.getWeatherSixteenDays(cityName)
 			this.getWeatherCurrentDay(cityName)
 		}
