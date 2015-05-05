@@ -23,6 +23,7 @@ Ext.define('Weather.controller.Central', {
         this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
             model: 'Weather.model.FiveDaysDaily'
         })
+        console.log(this.fiveDayStore)
 
         // var view= this.getView("FiveDaysDaily");
         //    // view.bindStore(this.fiveDayStore);
