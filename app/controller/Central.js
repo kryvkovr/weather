@@ -72,25 +72,28 @@ Ext.define('Weather.controller.Central', {
         var storeDayHourly=this.fiveDayHourlyStore;
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
-        console.log(storeDayHourly)
+        //console.log(storeDayHourly)
 	},
 
 
 
-    loadCompanies: function() {
-      var deferred = Ext.create('Deft.Deferred');
-      deferred.resolve('hello world');
-      // this.companyStore.load({
+    storeLoadSixteenDayDefer: function() {
+        var deferred = Ext.create('Deft.Deferred');
+        var viewSexteenDays=this.getViewSexteenDays()        
+        var storeSixteenDay=this.sixteenDayStore
+        storeSixteenDay.load({
+            url:'http://api.openweathermap.org/data/2.5/forecast/datily?q=London&cnt=16&mode=json',
 
-      //   callback: function(records, operation, success) {
-      //     if (success) {
-      //       deferred.resolve(records);
-      //     } else {
-      //       deferred.reject("Error loading Companies.");
-      //     }
-      //   }
+            callback: function(records, operation, success) {
+              if (success) {
+                console.log(storeSixteenDay)
+                deferred.resolve(storeSixteenDay);
+              } else {
+                deferred.reject("Error loading Companies.");
+              }
+            }
 
-      // });
+          });
 
       return deferred.promise;
     },
@@ -101,15 +104,7 @@ Ext.define('Weather.controller.Central', {
 
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
-        this.loadCompanies().then({
-            success: function(records) {
-            alert(records+'HELLO WORLD')
-            },
-            failure: function(error) {
-      // Do something on failure.
-            }
-        })
-
+        
 		var weatherHourlyStore=this.fiveDayHourlyStore;
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.get('dt');
@@ -121,10 +116,24 @@ Ext.define('Weather.controller.Central', {
 
 	getWeatherSixteenDays:function(cityName){
         var viewSexteenDays=this.getViewSexteenDays()        
-        var storeSixteenDay=this.sixteenDayStore
-		storeSixteenDay.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json';
-		storeSixteenDay.load();
-        viewSexteenDays.bindStore(storeSixteenDay)
+        this.storeLoadSixteenDayDefer().then({
+            success: function(store) {
+                console.log(store)
+                viewSexteenDays.bindStore(store)
+               // console.log(view)
+              
+            },
+            failure: function(error) {
+                alert('everusing bad')
+        // Do something on failure.alert
+            }
+        })
+
+  //       var viewSexteenDays=this.getViewSexteenDays()        
+  //       var storeSixteenDay=this.sixteenDayStore
+		// storeSixteenDay.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json';
+		// storeSixteenDay.load();
+  //       viewSexteenDays.bindStore(storeSixteenDay)
 	},
 
 
