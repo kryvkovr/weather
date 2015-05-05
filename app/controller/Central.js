@@ -82,7 +82,6 @@ Ext.define('Weather.controller.Central', {
       return deferred.promise;
     },
 
-
     getWeatherCurrentDay:function(cityName){
         var viewCurrentDay=this.getViewCurrentDay()      
         this.storeLoadCurrentDayDefer(cityName).then({
@@ -96,17 +95,57 @@ Ext.define('Weather.controller.Central', {
     },
 
 
+    storeLoadFiveDaysDailyDefer: function(cityName) {
+        var deferred = Ext.create('Deft.Deferred');
+        var storeFiveDaysDaily=this.fiveDayStore
+        storeFiveDaysDaily.load({
+            url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
+            callback: function(records, operation, success) {
+                if (success) {
+                    deferred.resolve(this);
+                } else {
+                    deferred.reject("Error loading weather.");
+                }
+            }
+          });
+      return deferred.promise;
+    },
+
+
 	getWeatherFiveDaysDaily:function (cityName){
-		var storeFiveDaysDaily=this.fiveDayStore
-		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
-        storeFiveDaysDaily.load();
         var viewFiveDaysDaily=this.getViewFiveDaysDaily()
-        viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
+        this.storeLoadFiveDaysDailyDefer(cityName).then({
+            success: function(store) {
+                viewFiveDaysDaily.bindStore(store)            
+            },
+            failure: function(error) {
+                alert(error)
+            }
+        })
+
+
+		// var storeFiveDaysDaily=this.fiveDayStore
+		// storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
+  //       storeFiveDaysDaily.load();
+  //       var viewFiveDaysDaily=this.getViewFiveDaysDaily()
+  //       viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
       
         var storeDayHourly=this.fiveDayHourlyStore;
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
 	},
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     storeLoadSixteenDayDefer: function(cityName) {
@@ -136,6 +175,8 @@ Ext.define('Weather.controller.Central', {
             }
         })
     },
+
+
 
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){        
