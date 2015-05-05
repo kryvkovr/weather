@@ -4,7 +4,8 @@ Ext.define('Weather.controller.Central', {
     requires: ['Ext.data.JsonP',
                'Ext.Msg',
                 'Weather.view.Header',
-                'Weather.store.WeatherFiveDaysDaily'
+                'Weather.store.WeatherFiveDaysDaily',
+                'Weather.view.FiveDaysHourly',
                 ],
     refs: [
         {
@@ -14,6 +15,10 @@ Ext.define('Weather.controller.Central', {
         {
             ref: 'viewDayHourly',
             selector: 'weather-five-days-hourly'
+        },
+        {
+            ref: 'viewFiveDaysDaily',
+            selector: 'weather-five-days-daily'
         }
     ],
 
@@ -23,11 +28,8 @@ Ext.define('Weather.controller.Central', {
         this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
             model: 'Weather.model.FiveDaysDaily'
         })
-        console.log(this.fiveDayStore)
-
-        // var view= this.getView("FiveDaysDaily");
-        //    // view.bindStore(this.fiveDayStore);
-        //     //console.log(view)
+        var viewDayHourly=this.getViewDayHourly();
+        console.log(viewDayHourly)
 
 
 
@@ -57,37 +59,57 @@ Ext.define('Weather.controller.Central', {
 
 	getWeatherFiveDaysDaily:function (cityName){
 		var storeFiveDaysDaily=this.getStore('WeatherFiveDaysDaily');
+
+        var viewFiveDaysDaily=this.getViewFiveDaysDaily()
+       // console.log(viewFiveDaysDaily)
+       var storeFiveDaysDaily=viewFiveDaysDaily.getStore()
+        //console.log(store)
         // late bind store
         // var storeFiveDaysDaily=this.fiveDayStore;
 
-        console.log(storeFiveDaysDaily)
+        //console.log(storeFiveDaysDaily)
 
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
         storeFiveDaysDaily.load();
 
-        console.log(storeFiveDaysDaily)
+        //console.log(storeFiveDaysDaily)
 
         var storeDayHourly=this.getStore('WeatherFiveDaysHourly');
         storeDayHourly.getProxy().url='http://api.openweathermap.org/data/2.5/forecast?q='+cityName;
         storeDayHourly.load();
 	},
 
+
+
+
+
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
-        console.log('clicked')
+        //console.log('clicked')
 
 		var weatherHourlyStore=this.getStore('WeatherFiveDaysHourly');
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.get('dt');
 		weatherHourlyStore.filter("day", dayFilter);
+
+
 		var viewDayHourly=this.getViewDayHourly();
+        //console.log(viewDayHourly)
      	viewDayHourly.bindStore(weatherHourlyStore);     			 
 	},
+
+
+
+
+
 
 	getWeatherSixteenDays:function(cityName){
 		var storeSixteenDay=Ext.getStore('WeatherSixteenDays');
 		storeSixteenDay.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json';
 		storeSixteenDay.load();
 	},
+
+
+
 
 	getAllWeather:function(){
 		var cityName =this.getCityName().getValue();

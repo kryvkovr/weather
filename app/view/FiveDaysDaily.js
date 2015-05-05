@@ -13,8 +13,10 @@ Ext.define("Weather.view.FiveDaysDaily", {
 
     initComponent: function() {
         this.itemTpl=Weather.template.FiveDaysDaily.create({});
+        this.store=Weather.store.WeatherFiveDaysDaily.create({});
+        console.log(this.store)
         this.callParent(arguments);
-    },
+    }
    
-    store:'WeatherFiveDaysDaily'
+   // store:'WeatherFiveDaysDaily'
 });
