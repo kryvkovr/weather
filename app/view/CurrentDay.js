@@ -10,7 +10,7 @@ Ext.define("Weather.view.CurrentDay", {
     id:'current-day',
     title: 'CURRENT DAY',
     itemSelector: '',
-    store:"CurrentDay",
+   // store:"CurrentDay",
 
     initComponent: function() {
         this.itemTpl=Weather.template.CurrentDay.create({});

@@ -26,6 +26,10 @@ Ext.define('Weather.controller.Central', {
         {
             ref: 'viewSexteenDays',
             selector: 'sixteen-days'
+        },
+        {
+            ref: 'viewCurrentDay',
+            selector: 'weather-current-day'
         }
     ],
 
@@ -62,10 +66,33 @@ Ext.define('Weather.controller.Central', {
     },
 
 
-    getWeatherOneDay:function(cityName){        
-        var storeCurrentDay=Ext.getStore('CurrentDay');
-        storeCurrentDay.getProxy().url="http://api.openweathermap.org/data/2.5/weather?q="+cityName;
-        storeCurrentDay.load();
+    storeLoadCurrentDayDefer: function(cityName) {
+        var deferred = Ext.create('Deft.Deferred');
+        var storeCurrentDay=Ext.getStore('CurrentDay')
+        storeCurrentDay.load({
+            url:"http://api.openweathermap.org/data/2.5/weather?q="+cityName,
+            callback: function(records, operation, success) {
+                if (success) {
+                    deferred.resolve(this);
+                } else {
+                    deferred.reject("Error loading weather.");
+                }
+            }
+          });
+      return deferred.promise;
+    },
+
+
+    getWeatherCurrentDay:function(cityName){
+        var viewCurrentDay=this.getViewCurrentDay()      
+        this.storeLoadCurrentDayDefer(cityName).then({
+            success: function(store) {
+                viewCurrentDay.bindStore(store)            
+            },
+            failure: function(error) {
+                alert(error)
+            }
+        })
     },
 
 
@@ -128,7 +155,7 @@ Ext.define('Weather.controller.Central', {
 		}else{            
 			this.getWeatherFiveDaysDaily(cityName)
 			this.getWeatherSixteenDays(cityName)
-			this.getWeatherOneDay(cityName)
+			this.getWeatherCurrentDay(cityName)
 		}
 		this.getCityName().setValue('');
 	},
