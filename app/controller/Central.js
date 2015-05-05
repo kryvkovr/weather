@@ -7,7 +7,8 @@ Ext.define('Weather.controller.Central', {
                 'Weather.store.WeatherFiveDaysDaily',
                 'Weather.view.FiveDaysHourly',
                 'Weather.model.FiveDaysDaily',
-                'Weather.model.SixteenDays'
+                'Weather.model.SixteenDays',
+                'Deft.Deferred'
                 ],
     refs: [
         {
@@ -75,7 +76,40 @@ Ext.define('Weather.controller.Central', {
 	},
 
 
-	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){       
+
+    loadCompanies: function() {
+      var deferred = Ext.create('Deft.Deferred');
+      deferred.resolve('hello world');
+      // this.companyStore.load({
+
+      //   callback: function(records, operation, success) {
+      //     if (success) {
+      //       deferred.resolve(records);
+      //     } else {
+      //       deferred.reject("Error loading Companies.");
+      //     }
+      //   }
+
+      // });
+
+      return deferred.promise;
+    },
+
+
+
+
+
+
+	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
+        this.loadCompanies().then({
+            success: function(records) {
+            alert(records+'HELLO WORLD')
+            },
+            failure: function(error) {
+      // Do something on failure.
+            }
+        })
+
 		var weatherHourlyStore=this.fiveDayHourlyStore;
 		weatherHourlyStore.clearFilter(true);
 		var dayFilter=record.get('dt');
