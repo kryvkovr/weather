@@ -62,6 +62,13 @@ Ext.define('Weather.controller.Central', {
     },
 
 
+    getWeatherOneDay:function(cityName){        
+        var storeCurrentDay=Ext.getStore('CurrentDay');
+        storeCurrentDay.getProxy().url="http://api.openweathermap.org/data/2.5/weather?q="+cityName;
+        storeCurrentDay.load();
+    },
+
+
 	getWeatherFiveDaysDaily:function (cityName){
 		var storeFiveDaysDaily=this.fiveDayStore
 		storeFiveDaysDaily.getProxy().url='http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json';
@@ -76,51 +83,41 @@ Ext.define('Weather.controller.Central', {
 
 
     storeLoadSixteenDayDefer: function(cityName) {
-
         var deferred = Ext.create('Deft.Deferred');
-
         var storeSixteenDay=this.sixteenDayStore;
         storeSixteenDay.load({
             url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
-
             callback: function(records, operation, success) {
                 if (success) {
                     deferred.resolve(this);
                 } else {
-                    deferred.reject("Error loading Companies.");
+                    deferred.reject("Error loading weather.");
                 }
             }
           });
-
       return deferred.promise;
     },
 
-
-
-
-
-
-	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){
-        
-		var weatherHourlyStore=this.fiveDayHourlyStore;
-		weatherHourlyStore.clearFilter(true);
-		var dayFilter=record.get('dt');
-		weatherHourlyStore.filter("day", dayFilter);
-		var viewDayHourly=this.getViewDayHourly();       
-     	viewDayHourly.bindStore(weatherHourlyStore);     			 
-	},
-
-
-	getWeatherSixteenDays:function(cityName){
+    getWeatherSixteenDays:function(cityName){
         var viewSexteenDays=this.getViewSexteenDays()        
         this.storeLoadSixteenDayDefer(cityName).then({
             success: function(store) {
                 viewSexteenDays.bindStore(store)            
             },
             failure: function(error) {
-                alert('everusing bad')
+                alert(error)
             }
         })
+    },
+
+
+	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){        
+		var weatherHourlyStore=this.fiveDayHourlyStore;
+		weatherHourlyStore.clearFilter(true);
+		var dayFilter=record.get('dt');
+		weatherHourlyStore.filter("day", dayFilter);
+		var viewDayHourly=this.getViewDayHourly();       
+     	viewDayHourly.bindStore(weatherHourlyStore);     			 
 	},
 
 
@@ -134,13 +131,6 @@ Ext.define('Weather.controller.Central', {
 			this.getWeatherOneDay(cityName)
 		}
 		this.getCityName().setValue('');
-	},
-
-
-	getWeatherOneDay:function(cityName){		
-		var storeCurrentDay=Ext.getStore('CurrentDay');
-		storeCurrentDay.getProxy().url="http://api.openweathermap.org/data/2.5/weather?q="+cityName;
-		storeCurrentDay.load();
 	},
 
 
