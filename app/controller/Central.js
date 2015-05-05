@@ -79,7 +79,7 @@ Ext.define('Weather.controller.Central', {
 
     storeLoadSixteenDayDefer: function() {
         var deferred = Ext.create('Deft.Deferred');
-        var viewSexteenDays=this.getViewSexteenDays()        
+       // var viewSexteenDays=this.getViewSexteenDays()        
         var storeSixteenDay=this.sixteenDayStore
         storeSixteenDay.load({
             url:'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=16&mode=json',
@@ -87,7 +87,7 @@ Ext.define('Weather.controller.Central', {
             callback: function(records, operation, success) {
               if (success) {
                 console.log(storeSixteenDay)
-                deferred.resolve(storeSixteenDay);
+                deferred.resolve(this);
               } else {
                 deferred.reject("Error loading Companies.");
               }
@@ -117,8 +117,9 @@ Ext.define('Weather.controller.Central', {
 	getWeatherSixteenDays:function(cityName){
         var viewSexteenDays=this.getViewSexteenDays()        
         this.storeLoadSixteenDayDefer().then({
-            success: function(store) {
+            success: function(store, view) {
                 console.log(store)
+                console.log(view)
                 viewSexteenDays.bindStore(store)
                // console.log(view)
               
