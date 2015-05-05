@@ -82,7 +82,7 @@ Ext.define('Weather.controller.Central', {
         var viewSexteenDays=this.getViewSexteenDays()        
         var storeSixteenDay=this.sixteenDayStore
         storeSixteenDay.load({
-            url:'http://api.openweathermap.org/data/2.5/forecast/datily?q=London&cnt=16&mode=json',
+            url:'http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=16&mode=json',
 
             callback: function(records, operation, success) {
               if (success) {
