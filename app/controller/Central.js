@@ -35,22 +35,9 @@ Ext.define('Weather.controller.Central', {
     ],
 
     init: function(){
-        var Promise=Ext.create('Weather.Classes.GetWeatherData')
+        this.Promise=Ext.create('Weather.Classes.GetWeatherData')
             
-        Promise.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q=London").then(function(response) {
-          console.log("Success!", response);
-        }, function(error) {
-          console.error("Failed!", error);
-        });
-
-
-
-
-
-
-
-
-
+        
 
     	Ext.Ajax.useDefaultXhrHeader = false;
 
@@ -85,35 +72,42 @@ Ext.define('Weather.controller.Central', {
 
 
     storeLoadCurrentDayDefer: function(cityName) {
-        var deferred = Ext.create('Deft.Deferred');
-        var storeCurrentDay=Ext.getStore('CurrentDay')
-        storeCurrentDay.load({
-            url:"http://api.openweathermap.org/data/2.5/weather?q="+cityName,
-            callback: function(records, operation, success) {
-                if (success) {
-                    deferred.resolve(this);
-                } else {
-                    deferred.reject('Cant load weather for current day ');
-                }
-            }
-          });
-      return deferred.promise;
+
+
+      //   var deferred = Ext.create('Deft.Deferred');
+      //   var storeCurrentDay=Ext.getStore('CurrentDay')
+      //   storeCurrentDay.load({
+      //       url:"http://api.openweathermap.org/data/2.5/weather?q="+cityName,
+      //       callback: function(records, operation, success) {
+      //           if (success) {
+      //               deferred.resolve(this);
+      //           } else {
+      //               deferred.reject('Cant load weather for current day ');
+      //           }
+      //       }
+      //     });
+      // return deferred.promise;
     },
 
     getWeatherCurrentDay:function(cityName){
-        var viewCurrentDay=this.getViewCurrentDay()      
-        this.storeLoadCurrentDayDefer(cityName).then({
-            success: function(store) {
-                viewCurrentDay.bindStore(store)            
-            },
-            failure: function(error) {
-                Ext.Msg.show({
-                    title: error,
-                    msg: 'Pls try again later.',
-                    buttons: Ext.Msg.OK
-                });
-            }
-        })
+        this.Promise.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q="+cityName).then(function(response) {
+          console.log("Success!", response);
+        }, function(error) {
+          console.error("Failed!", error);
+        });
+        // var viewCurrentDay=this.getViewCurrentDay()      
+        // this.storeLoadCurrentDayDefer(cityName).then({
+        //     success: function(store) {
+        //         viewCurrentDay.bindStore(store)            
+        //     },
+        //     failure: function(error) {
+        //         Ext.Msg.show({
+        //             title: error,
+        //             msg: 'Pls try again later.',
+        //             buttons: Ext.Msg.OK
+        //         });
+        //     }
+        // })
     },
 
 

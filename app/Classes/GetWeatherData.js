@@ -8,7 +8,7 @@ Ext.define('Weather.Classes.GetWeatherData', {
       if (req.readyState==4 && req.status == 200) {
         resolve(req.response);
       }else {
-
+        
       }
     };
 
