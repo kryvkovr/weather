@@ -3,14 +3,20 @@ Ext.define('Weather.Classes.GetWeatherData', {
     return new Promise(function(resolve, reject) {
         var req = new XMLHttpRequest();
         req.open('GET', url);
-        req.onreadystatechange = function() {
-            if (req.readyState==4 && req.status == 200){
+
+        req.onload = function() {
+            if (req.status == 200){
                 resolve(req.response);
             }else {
-      }
-    }
-    req.send();
-  });
+                reject(Error(req.statusText));
+            }
+        };
+
+        req.onerror = function() {
+          reject(Error("Network Error"));
+        };
+        req.send();
+      });
 }
 
 
