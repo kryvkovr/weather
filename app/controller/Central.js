@@ -84,87 +84,30 @@ Ext.define('Weather.controller.Central', {
         });
     },
 
-
-    // storeLoadFiveDaysDailyDefer: function(cityName) {
-    //     var deferred = Ext.create('Deft.Deferred');
-    //     var storeFiveDaysDaily=this.fiveDayStore
-    //     storeFiveDaysDaily.load({
-    //         url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json',
-    //         callback: function(records, operation, success) {
-    //             if (success) {
-    //                 deferred.resolve(this);
-    //             } else {
-    //                 deferred.reject('Cant load weather for five days daily ');
-    //             }
-    //         }
-    //       });
-    //   return deferred.promise;
-    // },
-
     getWeatherFiveDays:function(cityName){
         var storeFiveDaysDaily=this.fiveDayStore;
-
         var viewFiveDaysDaily=this.getViewFiveDaysDaily()
 
         this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json').then(
             function(response){
-                   //console.log(response)       
                      storeFiveDaysDaily.loadRawData(JSON.parse(response));
                      viewFiveDaysDaily.bindStore(storeFiveDaysDaily) 
             },
             function(error) {
                 console.error("Failed!", error);
         });
+
+
+        var storeFiveDaysHourly=this.fiveDayHourlyStore;
+       
+        this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName).then(
+            function(response){
+                     storeFiveDaysHourly.loadRawData(JSON.parse(response));
+            },
+            function(error) {
+                console.error("Failed!", error);
+        });
     },
-
-
-
-
-    storeLoadFiveDaysHourlyDefer: function(cityName) {
-        var deferred = Ext.create('Deft.Deferred');
-        var storeFiveDaysHourly=this.fiveDayHourlyStore
-        storeFiveDaysHourly.load({
-            url:'http://api.openweathermap.org/data/2.5/forecast?q='+cityName,
-            callback: function(records, operation, success) {
-                if (success) {
-                    deferred.resolve(this);
-                } else {
-                    deferred.reject('Cant load weather for five days hourly ');
-                }
-            }
-          });
-      return deferred.promise;
-    },
-
-
-	// getWeatherFiveDays:function (cityName){
- //        var viewFiveDaysDaily=this.getViewFiveDaysDaily()
- //        this.storeLoadFiveDaysDailyDefer(cityName).then({
- //            success: function(store) {
- //                viewFiveDaysDaily.bindStore(store)            
- //            },
- //            failure: function(error) {
- //               Ext.Msg.show({
- //                    title:error,
- //                    msg: 'Pls try again later.',
- //                    buttons: Ext.Msg.OK
- //                });
- //            }
- //        })
-
- //        this.storeLoadFiveDaysHourlyDefer(cityName).then({
- //            success: function(store) {
- //               // console.log(store)         
- //            },
- //            failure: function(error) {
- //               Ext.Msg.show({
- //                    title:error,
- //                    msg: 'Pls try again later.',
- //                    buttons: Ext.Msg.OK
- //                });
- //            }
- //        })
-	// },
 
 
     storeLoadSixteenDayDefer: function(cityName) {
