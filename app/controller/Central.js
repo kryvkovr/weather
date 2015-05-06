@@ -35,8 +35,22 @@ Ext.define('Weather.controller.Central', {
     ],
 
     init: function(){
-        var me=Ext.create('Weather.Classes.GetWeatherData')
-            me.greet()
+        var Promise=Ext.create('Weather.Classes.GetWeatherData')
+            
+        Promise.getWeatherJson('some.txt').then(function(response) {
+          console.log("Success!", response);
+        }, function(error) {
+          console.error("Failed!", error);
+        });
+
+
+
+
+
+
+
+
+
 
     	Ext.Ajax.useDefaultXhrHeader = false;
 
