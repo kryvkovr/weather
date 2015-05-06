@@ -71,29 +71,42 @@ Ext.define('Weather.controller.Central', {
     },
 
 
-    storeLoadCurrentDayDefer: function(cityName) {
+    // storeLoadCurrentDayDefer: function(cityName) {
 
 
-      //   var deferred = Ext.create('Deft.Deferred');
-      //   var storeCurrentDay=Ext.getStore('CurrentDay')
-      //   storeCurrentDay.load({
-      //       url:"http://api.openweathermap.org/data/2.5/weather?q="+cityName,
-      //       callback: function(records, operation, success) {
-      //           if (success) {
-      //               deferred.resolve(this);
-      //           } else {
-      //               deferred.reject('Cant load weather for current day ');
-      //           }
-      //       }
-      //     });
-      // return deferred.promise;
-    },
+    //     var deferred = Ext.create('Deft.Deferred');
+    //     var storeCurrentDay=Ext.getStore('CurrentDay')
+    //     storeCurrentDay.load({
+    //         url:"http://api.openweathermap.org/data/2.5/weather?q="+cityName,
+    //         callback: function(records, operation, success) {
+    //             if (success) {
+    //                 deferred.resolve(this);
+    //             } else {
+    //                 deferred.reject('Cant load weather for current day ');
+    //             }
+    //         }
+    //       });
+    //   return deferred.promise;
+    // },
 
     getWeatherCurrentDay:function(cityName){
-        this.Promise.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q="+cityName).then(function(response) {
-          console.log("Success!", response);
-        }, function(error) {
-          console.error("Failed!", error);
+        var storeCurrentDay=Ext.getStore('CurrentDay')
+        console.log(storeCurrentDay)
+
+        var viewCurrentDay=this.getViewCurrentDay()
+        console.log(viewCurrentDay)
+
+        this.Promise.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q="+cityName).then(
+            function(response){
+                console.log(JSON.parse(response));
+                              
+                 storeCurrentDay.loadRawData(JSON.parse(response))
+                 console.log(storeCurrentDay)
+                // viewCurrentDay.bindStore(storeCurrentDay) 
+
+            },
+            function(error) {
+                console.error("Failed!", error);
         });
         // var viewCurrentDay=this.getViewCurrentDay()      
         // this.storeLoadCurrentDayDefer(cityName).then({
