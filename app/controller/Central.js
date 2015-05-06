@@ -82,29 +82,28 @@ Ext.define('Weather.controller.Central', {
         });
     },
 
+   
+
     getWeatherFiveDays:function(cityName){
+        var self=this;
+
         var storeFiveDaysDaily=this.fiveDayStore;
+
         var viewFiveDaysDaily=this.getViewFiveDaysDaily()
 
-        this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json').then(
+        self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
+        ).then(
             function(response){
-                     storeFiveDaysDaily.loadRawData(JSON.parse(response));
-                     viewFiveDaysDaily.bindStore(storeFiveDaysDaily) 
-            },
-            function(error) {
-                alert(error);
-        });
-
-
-        var storeFiveDaysHourly=this.fiveDayHourlyStore;
-       
-        this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName).then(
+                    storeFiveDaysDaily.loadRawData(JSON.parse(response));
+                    viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
+                    return  self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName)
+        }).then(
             function(response){
-                     storeFiveDaysHourly.loadRawData(JSON.parse(response));
-            },
-            function(error) {
-                alert(error);
-        });
+               var storeFiveDaysHourly=self.fiveDayHourlyStore;
+               storeFiveDaysHourly.loadRawData(JSON.parse(response));
+            }
+
+        )
     },
 
 
