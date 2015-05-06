@@ -102,7 +102,7 @@ Ext.define('Weather.controller.Central', {
                               
                  storeCurrentDay.loadRawData(JSON.parse(response))
                  console.log(storeCurrentDay)
-                // viewCurrentDay.bindStore(storeCurrentDay) 
+                 viewCurrentDay.bindStore(storeCurrentDay) 
 
             },
             function(error) {
