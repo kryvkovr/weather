@@ -8,7 +8,8 @@ Ext.define('Weather.controller.Central', {
                 'Weather.view.FiveDaysHourly',
                 'Weather.model.FiveDaysDaily',
                 'Weather.model.SixteenDays',
-                'Deft.Deferred'
+                'Deft.Deferred',
+                'Weather.Classes.GetWeatherData',
                 ],
     refs: [
         {
@@ -34,9 +35,12 @@ Ext.define('Weather.controller.Central', {
     ],
 
     init: function(){
+        var me=Ext.create('Weather.Classes.GetWeatherData')
+            me.greet()
+
     	Ext.Ajax.useDefaultXhrHeader = false;
 
-        this.fiveDayStore = Ext.create('Weather.store.WeatherMainStore', {
+        this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
             model: 'Weather.model.FiveDaysDaily'
         })
 
@@ -44,7 +48,7 @@ Ext.define('Weather.controller.Central', {
             model: 'Weather.model.FiveDaysHourly'
         })
 
-        this.sixteenDayStore = Ext.create('Weather.store.WeatherSixteenDays', {
+        this.sixteenDayStore = Ext.create('Weather.store.WeatherMainStore', {
             model: 'Weather.model.SixteenDays'
         })
 
