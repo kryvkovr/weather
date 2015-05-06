@@ -161,7 +161,6 @@ Ext.define('Weather.controller.Central', {
             msg: 'Pls enter a city name.',
             buttons: Ext.Msg.OK
         });
-
 		}else{            
 			this.getWeatherFiveDays(cityName)
 			this.getWeatherSixteenDays(cityName)
