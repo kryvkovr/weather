@@ -89,21 +89,21 @@ Ext.define('Weather.controller.Central', {
 
         var storeFiveDaysDaily=this.fiveDayStore;
 
-        var viewFiveDaysDaily=this.getViewFiveDaysDaily()
+        var viewFiveDaysDaily=this.getViewFiveDaysDaily();
 
         self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=5&mode=json'
+
         ).then(
             function(response){
                     storeFiveDaysDaily.loadRawData(JSON.parse(response));
                     viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
                     return  self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName)
+                    
         }).then(
             function(response){
                var storeFiveDaysHourly=self.fiveDayHourlyStore;
                storeFiveDaysHourly.loadRawData(JSON.parse(response));
-            }
-
-        )
+        })
     },
 
 
