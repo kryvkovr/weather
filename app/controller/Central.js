@@ -37,8 +37,6 @@ Ext.define('Weather.controller.Central', {
     init: function(){
         this.promiseGetWeather=Ext.create('Weather.Classes.GetWeatherData')
             
-        
-
     	Ext.Ajax.useDefaultXhrHeader = false;
 
         this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
@@ -110,37 +108,51 @@ Ext.define('Weather.controller.Central', {
     },
 
 
-    storeLoadSixteenDayDefer: function(cityName) {
-        var deferred = Ext.create('Deft.Deferred');
+    getWeatherSixteenDays:function(cityName){
         var storeSixteenDay=this.sixteenDayStore;
-        storeSixteenDay.load({
-            url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
-            callback: function(records, operation, success) {
-                if (success) {
-                    deferred.resolve(this);
-                } else {
-                    deferred.reject('Cant load weather for sixteen days');
-                }
-            }
-          });
-      return deferred.promise;
+        var viewSexteenDays=this.getViewSexteenDays() 
+
+        this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json').then(
+            function(response){              
+                storeSixteenDay.loadRawData(JSON.parse(response));
+                viewSexteenDays.bindStore(storeSixteenDay) 
+            },
+            function(error) {
+                console.error("Failed!", error);
+        });
     },
 
-    getWeatherSixteenDays:function(cityName){
-        var viewSexteenDays=this.getViewSexteenDays()        
-        this.storeLoadSixteenDayDefer(cityName).then({
-            success: function(store) {
-                viewSexteenDays.bindStore(store)            
-            },
-            failure: function(error) {
-                Ext.Msg.show({
-                    title: error,
-                    msg: 'Pls try again later.',
-                    buttons: Ext.Msg.OK
-                });
-            }
-        })
-    },
+    // storeLoadSixteenDayDefer: function(cityName) {
+    //     var deferred = Ext.create('Deft.Deferred');
+    //     var storeSixteenDay=this.sixteenDayStore;
+    //     storeSixteenDay.load({
+    //         url:'http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json',
+    //         callback: function(records, operation, success) {
+    //             if (success) {
+    //                 deferred.resolve(this);
+    //             } else {
+    //                 deferred.reject('Cant load weather for sixteen days');
+    //             }
+    //         }
+    //       });
+    //   return deferred.promise;
+    // },
+
+    // getWeatherSixteenDays:function(cityName){
+    //     var viewSexteenDays=this.getViewSexteenDays()        
+    //     this.storeLoadSixteenDayDefer(cityName).then({
+    //         success: function(store) {
+    //             viewSexteenDays.bindStore(store)            
+    //         },
+    //         failure: function(error) {
+    //             Ext.Msg.show({
+    //                 title: error,
+    //                 msg: 'Pls try again later.',
+    //                 buttons: Ext.Msg.OK
+    //             });
+    //         }
+    //     })
+    // },
 
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){        
