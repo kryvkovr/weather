@@ -39,17 +39,21 @@ Ext.define('Weather.controller.Central', {
             
     	Ext.Ajax.useDefaultXhrHeader = false;
 
-        this.fiveDayStore = Ext.create('Weather.store.WeatherFiveDaysDaily', {
+        this.fiveDayStore = Ext.create('Weather.store.WeatherMainStore', {
             model: 'Weather.model.FiveDaysDaily'
+        });
+
+        this.fiveDayHourlyStore = Ext.create('Weather.store.WeatherMainStore', {
+            // model: 'Weather.model.FiveDaysHourly'
         })
 
-        this.fiveDayHourlyStore = Ext.create('Weather.store.WeatherFiveDaysHourly', {
-            model: 'Weather.model.FiveDaysHourly'
-        })
+        this.fiveDayHourlyStore.getProxy().setModel('Weather.model.FiveDaysHourly');
 
         this.sixteenDayStore = Ext.create('Weather.store.WeatherMainStore', {
-            model: 'Weather.model.SixteenDays'
+            // model: 'Weather.model.SixteenDays'
         })
+
+        this.sixteenDayStore.getProxy().setModel('Weather.model.SixteenDays');
 
 
         this.control({
@@ -69,16 +73,17 @@ Ext.define('Weather.controller.Central', {
     },
 
     getWeatherCurrentDay:function(cityName){
+        var self=this;
         var storeCurrentDay=Ext.getStore('CurrentDay');
         var viewCurrentDay=this.getViewCurrentDay();
 
         this.promiseGetWeather.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q="+cityName).then(
             function(response){              
-                 storeCurrentDay.loadRawData(JSON.parse(response));
-                 viewCurrentDay.bindStore(storeCurrentDay) 
+                storeCurrentDay.loadRawData(JSON.parse(response));
+                viewCurrentDay.bindStore(storeCurrentDay) 
             },
             function(error) {
-                alert(error);
+                self.showErrorMsg(error)
         });
     },
 
@@ -95,32 +100,46 @@ Ext.define('Weather.controller.Central', {
 
         ).then(
             function(response){
-                    storeFiveDaysDaily.loadRawData(JSON.parse(response));
-                    viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
-                    return  self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName)
-                    
+                storeFiveDaysDaily.loadRawData(JSON.parse(response));
+                viewFiveDaysDaily.bindStore(storeFiveDaysDaily)
+                return  self.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast?q='+cityName)
+
         }).then(
             function(response){
-               var storeFiveDaysHourly=self.fiveDayHourlyStore;
-               storeFiveDaysHourly.loadRawData(JSON.parse(response));
+                var storeFiveDaysHourly=self.fiveDayHourlyStore;
+                storeFiveDaysHourly.loadRawData(JSON.parse(response));
+
+        }).catch(function(err) {
+                self.showErrorMsg(error)
         })
     },
 
 
     getWeatherSixteenDays:function(cityName){
+        var self=this;
         var storeSixteenDay=this.sixteenDayStore;
         var viewSexteenDays=this.getViewSexteenDays() 
 
         this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json').then(
-            function(response){              
-                storeSixteenDay.loadRawData(JSON.parse(response));
+            function(response){  
+
+
+                storeSixteenDay.loadRawData(JSON.parse(response).list);
                 viewSexteenDays.bindStore(storeSixteenDay) 
             },
             function(error) {
-                console.error(error);
-        });
+                self.showErrorMsg(error)
+        })
     },
 
+    showErrorMsg:function(error){
+        Ext.Msg.show({
+            title: error,
+            msg: 'Pls try again later.',
+            buttons: Ext.Msg.OK
+        });
+
+    },
     // storeLoadSixteenDayDefer: function(cityName) {
     //     var deferred = Ext.create('Deft.Deferred');
     //     var storeSixteenDay=this.sixteenDayStore;
@@ -177,7 +196,7 @@ Ext.define('Weather.controller.Central', {
 			this.getWeatherSixteenDays(cityName)
 			this.getWeatherCurrentDay(cityName)
 		}
-		this.getCityName().setValue('');
+		// this.getCityName().setValue('');
 	},
 
 
