@@ -78,7 +78,7 @@ Ext.define('Weather.controller.Central', {
                  viewCurrentDay.bindStore(storeCurrentDay) 
             },
             function(error) {
-                console.error("Failed!", error);
+                alert(error);
         });
     },
 
@@ -92,7 +92,7 @@ Ext.define('Weather.controller.Central', {
                      viewFiveDaysDaily.bindStore(storeFiveDaysDaily) 
             },
             function(error) {
-                console.error("Failed!", error);
+                alert(error);
         });
 
 
@@ -103,7 +103,7 @@ Ext.define('Weather.controller.Central', {
                      storeFiveDaysHourly.loadRawData(JSON.parse(response));
             },
             function(error) {
-                console.error("Failed!", error);
+                alert(error);
         });
     },
 
@@ -118,7 +118,7 @@ Ext.define('Weather.controller.Central', {
                 viewSexteenDays.bindStore(storeSixteenDay) 
             },
             function(error) {
-                console.error("Failed!", error);
+                console.error(error);
         });
     },
 
