@@ -37,7 +37,7 @@ Ext.define('Weather.controller.Central', {
     init: function(){
         var Promise=Ext.create('Weather.Classes.GetWeatherData')
             
-        Promise.getWeatherJson('some.txt').then(function(response) {
+        Promise.getWeatherJson("http://api.openweathermap.org/data/2.5/weather?q=London").then(function(response) {
           console.log("Success!", response);
         }, function(error) {
           console.error("Failed!", error);
