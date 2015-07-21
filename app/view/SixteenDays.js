@@ -3,9 +3,8 @@ Ext.define("Weather.view.SixteenDays", {
     alias: 'widget.sixteen-days',
 
     requires:[
-         'Weather.template.SixteenDays',
-         'Weather.store.WeatherSixteenDays',
-         'Weather.model.SixteenDays'
+         'Weather.template.SixteenDays'
+
      ],
 
     

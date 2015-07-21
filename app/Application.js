@@ -9,7 +9,7 @@ Ext.define('Weather.Application', {
         "Weather.view.FiveDaysDaily",
         "Weather.view.FiveDaysHourly",
         "Weather.view.SixteenDays",
-        "Weather.view.CurrentDay",    
+        "Weather.view.CurrentDay"
     ],
 
     controllers: [        

@@ -8,7 +8,7 @@ Ext.define('Weather.model.FiveDaysDaily', {
             convert: function(v, record){
             	return moment.unix(v).format('dddd');
             }
-        },       	
+        }
     ]   
 });
 

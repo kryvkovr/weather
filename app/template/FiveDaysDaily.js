@@ -7,7 +7,7 @@ Ext.define('Weather.template.FiveDaysDaily', {
                 '<div class="temp-min">temp min {temp.min}</div>',
             '</div>'
     ],
-        
+
     constructor: function () {
         this.callParent(this.tpl);
     }
