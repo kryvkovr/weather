@@ -1,2 +1,2 @@
 // @tag full-page
-// @require D:\weatherSencha\app.js
+// @require D:\weatherSencha - Copy\app.js

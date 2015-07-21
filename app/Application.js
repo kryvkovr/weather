@@ -17,20 +17,18 @@ Ext.define('Weather.Application', {
        'Weather.controller.Main'
     ],
 
-    stores: [
-        // TODO: add stores here
-        'WeatherFiveDaysDaily',
-        'WeatherFiveDaysHourly',
-        'WeatherSixteenDays',
-        'WeatherSixteenDays',
-        'CurrentDay',
-        'WeatherMainStore'
-    ],
     models: [
         // TODO: add stores here
         'Weather.model.FiveDaysDaily',
         'Weather.model.FiveDaysHourly',
         'Weather.model.SixteenDays',
         'Weather.model.CurrentDay'
-    ]    
+    ],
+    stores: [
+        // TODO: add stores here
+        'WeatherFiveDaysDaily',
+        'WeatherFiveDaysHourly',
+        'WeatherSixteenDays',
+        'CurrentDay'
+    ]
 });

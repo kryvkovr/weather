@@ -4,9 +4,8 @@ Ext.define("Weather.view.SixteenDays", {
 
     requires:[
          'Weather.template.SixteenDays',
-         'Weather.store.WeatherMainStore',
+         'Weather.store.WeatherSixteenDays',
          'Weather.model.SixteenDays'
-
      ],
 
     

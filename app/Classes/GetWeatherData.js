@@ -21,6 +21,4 @@ Ext.define('Weather.Classes.GetWeatherData', {
           });
     }
 
-
-   
 });

@@ -7,7 +7,6 @@ Ext.define("Weather.view.FiveDaysDaily", {
         'Weather.template.FiveDaysDaily',
         'Weather.store.WeatherFiveDaysDaily',
         'Weather.model.FiveDaysDaily'
-
     ],
 
     id:'weatherDaily',

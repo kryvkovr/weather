@@ -1,6 +1,6 @@
 Ext.define('Weather.store.WeatherSixteenDays', {
     extend: 'Ext.data.Store',
-    //model:'Weather.model.SixteenDays',
+    model:'Weather.model.SixteenDays',
     autoLoad:false,
     proxy: {
         type: 'ajax',      
