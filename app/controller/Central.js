@@ -70,7 +70,6 @@ Ext.define('Weather.controller.Central', {
         });
     },
 
-   
 
     getWeatherFiveDays:function(cityName){
         var self=this;
@@ -92,21 +91,19 @@ Ext.define('Weather.controller.Central', {
                 var storeFiveDaysHourly=Ext.getStore('FiveDaysHourly');
                 storeFiveDaysHourly.loadRawData(JSON.parse(response));
 
-        }).catch(function(err) {
-                self.showErrorMsg(error)
+        }).catch(function(error) {
+                self.showErrorMsg(error);
         })
     },
 
 
     getWeatherSixteenDays:function(cityName){
         var self=this;
-        var storeSixteenDay=Ext.getStore('WeatherSixteenDays')
-        var viewSexteenDays=this.getViewSexteenDays() 
+        var storeSixteenDay=Ext.getStore('WeatherSixteenDays');
+        var viewSexteenDays=this.getViewSexteenDays();
 
         this.promiseGetWeather.getWeatherJson('http://api.openweathermap.org/data/2.5/forecast/daily?q='+cityName+'&cnt=16&mode=json').then(
             function(response){
-
-
                 storeSixteenDay.loadRawData(JSON.parse(response).list);
                 viewSexteenDays.bindStore(storeSixteenDay) 
             },
@@ -123,7 +120,6 @@ Ext.define('Weather.controller.Central', {
         });
 
     },
-
 
 
 	showWeatherOneDayHourly:function(view, record, item, idx, event, opts){        
